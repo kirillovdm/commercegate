@@ -1,0 +1,582 @@
+/* Barebones Compass form styles
+ *
+ * Form field styles
+ */
+
+/*
+ * Local variables for form elements
+ */
+
+$label-color: $colorGrey;
+
+
+/*
+ * Styles starts here
+ */
+
+.form-group {
+    margin-bottom: $base-margin;
+}
+
+label {
+    margin-bottom: $base-margin / 4;
+    
+    display: inline-block;
+}
+
+.form-group{
+    label{
+        vertical-align: top;
+    }
+    &.has-error{
+        .form-control{
+            border-color:transparent;
+            border-bottom-color: $colorRed;
+        }
+        p.help-block{
+            color: $colorRed;
+            margin: 0;
+        }
+    }
+    &.has-success{
+        .form-control{
+            border-color:transparent;
+            border-bottom-color: $colorBlue;
+        }
+    }
+    &.disabled-input{
+        background-color: transparent;
+        border-bottom-color:#dbdee5;
+        &::placeholder{
+            color:#dbdee5;
+        }
+        label{
+            color:#dbdee5;
+            cursor: default;
+            pointer-events:none;
+        }
+    }
+    &.sel{
+        label{
+            vertical-align: top;
+            margin-top: 3px;
+        }
+    }
+} 
+.form-control {
+    margin: 0;
+    outline: 0;
+    border:1px solid transparent;
+    border-bottom: 1px solid $colorGrey;
+    padding: 4px 0;
+    background-color: transparent;
+
+    transition: border-color .15s linear;
+
+    display: block;
+    color:$dark;
+    width: 100%;
+    height: 30px;
+
+    &:hover{
+        border-bottom-color: $colorBlueLight;
+    }
+    &:active,
+    &:focus {
+        border-bottom-color: $colorBlueDark;
+    }
+
+    &::placeholder {
+        color: $colorGrey;
+    }
+    
+    &:disabled{
+        background-color: transparent;
+        border-bottom-color:#dbdee5;
+        &::placeholder{
+            color:#dbdee5;
+        }
+        label{
+            color:#dbdee5;
+        }
+    }
+}
+
+select.form-control {
+    // Compensate for default select text paddings
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+textarea.form-control {
+    height: auto;
+    width: 100%;
+    min-height: 70px;
+    resize: vertical;
+    padding-top: 0;
+}
+
+
+
+.label-left{
+    display: block;
+    label{
+        display: inline-block;
+        width: 34%;
+    }
+    .form-control{
+        display: inline-block;
+        width: 65%;
+    }
+    &.has-error{
+        .form-control{
+            border-color:transparent;
+            border-bottom-color: $colorRed;
+        }
+        p.help-block{
+            margin-left: 35%;
+        }
+    }
+
+    .selectize-control{
+        display: inline-block;
+        width: 65%;
+        height: 40px;
+    }
+    textarea{
+
+    }
+}
+/*
+ * Standart input elements
+ */
+
+// .radio,
+// .checkbox {
+//     margin: ($base-margin / 2) 0;
+//     padding-left: 20px;
+
+//     display: block;
+
+//     label {
+//         display: inline;
+//     }
+// }
+
+// .radio input[type="radio"],
+// .checkbox input[type="checkbox"] {
+//     margin-left: -20px;
+
+//     float: left;
+// }
+
+
+/*
+ * Custom input elements
+ */
+
+input[type="radio"],
+input[type="checkbox"],
+input[type="file"] {
+    display: none;
+}
+
+
+/*
+ * Custom radio button
+ */
+
+.radio-label {
+    padding-left: 25px;
+    color: $label-color;
+    display: block;
+    width: auto;
+    &:before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        vertical-align: middle;
+        margin: -5px 12px 0 -24px;
+        border-radius: 50%;
+        border: 4px solid transparent;
+        box-shadow: 0px 0 0px 2px #c3cad9, 0 0 0 7px transparent inset;
+        transition: box-shadow .15s linear;
+    }
+    &:hover {
+        &:before {
+            box-shadow: 0px 0 0px 2px $colorBlueLight, 0 0 0 7px transparent inset;
+        }
+    }
+}
+
+input[type="radio"]:checked + label:before {
+    border-color: transparent;
+    box-shadow: 0px 0 0px 2px $colorBlueLight, 0 0 0 7px $colorBlueLight inset;
+}
+input[type="radio"]:disabled + .radio-label:before{
+    opacity: .5;
+    background-color: #C3CAD9;
+    border-color: #C3CAD9;
+    box-shadow:0px 0 0px 2px #C3CAD9;
+}
+input[type="radio"]:checked + label {
+    color:$dark;
+}
+input[type="radio"]:disabled + label {
+    color:#C3CAD9;
+}
+
+input[type="radio"]:checked:hover + label:before {
+    border-color: transparent;
+    box-shadow: 0px 0 0px 2px $colorBlue, 0 0 0 7px $colorBlue inset;
+}
+
+/*
+ * Custom checkbox
+ */
+
+.checkbox-label {
+    padding-left: 25px;
+    color: $label-color;
+    display: block;
+    width: auto;
+    &:before {
+        content: "";
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        vertical-align: middle;
+        margin: -5px 10px 0 -25px;
+        border: 2px solid #c3cad9;
+        transition: border-color, background-color .15s linear;
+    }
+    &:hover {
+        &:before {
+            border-color: $colorBlueLight;
+        }
+    }
+}
+
+input[type="checkbox"]:checked + .checkbox-label:before {
+    background-image: url(../images/check.png);
+    @extend %bg-pos;
+    border-color: $colorBlueLight;
+    font-size: 20px;
+    line-height: 16px;
+    background-color: $colorBlueLight;
+    color: #fff;
+}
+input[type="checkbox"]:disabled + .checkbox-label:before{
+    opacity: .5;
+    background-color: #C3CAD9;
+    border-color: #C3CAD9;
+    box-shadow:none;
+}
+input[type="checkbox"]:checked + label {
+    color:$dark;
+}
+input[type="checkbox"]:disabled + label {
+    color:#C3CAD9;
+}
+input[type="checkbox"]:checked:hover + .checkbox-label:before {
+    background-image: url(../images/check.png);
+    @extend %bg-pos;
+    background-color: $colorBlue;
+    color: #fff;
+    border-color: $colorBlue;
+}
+
+
+/*
+ * Toggle
+ */
+
+.toggle-label {
+    padding-left: 25px;
+    color: $label-color;
+    display: inline-block;
+    width: auto;
+    position: relative;
+    cursor: pointer;
+    &:before {
+        content: "";
+        width: 30px;
+        height: 18px;
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 10px;
+        margin: -5px 10px 0 -25px;
+        background-color: #C3CAD9;
+        transition: all .15s linear;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        background: #fff;
+        top: 2px;
+        left: 0;
+        border: 2px solid #c3cad9;
+        transition: border-color .15s linear, left .1s linear;
+    }
+}
+
+input[type="checkbox"]:checked + .toggle-label {
+    &:before {
+        background: $colorBlue;
+    }
+    &:after {
+        border-color: $colorBlue;
+        left: 12px;
+    }
+}
+
+input[type="checkbox"]:disabled + .toggle-label {
+    &:before {
+        background: #c3cad9;
+    }
+    &:after {
+        border-color: #c3cad9;
+        background: #e1e5ec;
+        left: 12px;
+    }
+}
+
+
+
+
+
+
+
+
+
+.selectize-control{
+    .selectize-input.dropdown-active{
+        border-bottom-color:$colorBlue!important;
+    }
+    .selectize-input.dropdown-active:before{
+        border-bottom-color:$colorBlueDark;
+    }
+}
+.selectize-control.single .selectize-input, 
+.selectize-dropdown.single{
+    border-color: transparent;
+    border-bottom-color:$colorGrey;
+    background-color: transparent;
+    box-shadow: none;
+    background-image: none;
+    border-radius: 0;
+    padding: 4px 0;
+    font-size: 16px;
+    transition: all .15s linear;
+    &:hover{
+        border-bottom-color: $colorBlueLight;
+    }
+    &:active,
+    &:focus {
+        border-bottom-color: $colorBlueDark;
+    }
+}
+.selectize-dropdown.single{
+    background-color: #fff;
+}
+.selectize-control.multi .selectize-input, 
+.selectize-dropdown.multi{
+    border-color: transparent;
+    border-bottom-color:$colorGrey;
+    background-color: transparent;
+    box-shadow: none;
+    background-image: none;
+    border-radius: 0;
+    padding: 4px 0;
+    font-size: 16px;
+    transition: all .15s linear;
+    &:hover{
+        border-bottom-color: $colorBlueLight;
+    }
+    &:active,
+    &:focus {
+        border-bottom-color: $colorBlueDark;
+    }
+}
+.selectize-dropdown.multi{
+    background-color: #fff;
+}
+.selectize-control.multi .selectize-input [data-value]{
+        background-image: none;
+        text-shadow:none;
+        color:#fff;
+        background-color: $colorBlue;
+        transition: background-color .15s linear;
+        &:hover{
+            background-color: $colorBlueLight;
+        }
+        &:active{
+            background-color: $colorBlueDark;
+        }
+        .remove{
+            color:#fff;
+            margin-left: 2px;
+            vertical-align: middle;
+            &:hover,
+            &:active,
+            &:focus{
+                color:#fff;
+            }
+        }
+        .item.active{
+            color:#fff;
+        }
+}
+.selectize-control.multi .selectize-input.has-items {
+    padding: 4px 0;
+}
+
+.selectize-dropdown.selectize,
+.selectize-dropdown.multi{
+    width: 110%!important;
+    margin-left: -5%;
+    margin-top: 1px;
+    padding: 4px 7px;
+    box-shadow: 0 1px 3px rgba(0, 78, 141, 0.25);
+}
+.selectize-dropdown-content{
+    .option,
+    .option.active{
+        color:$colorGrey;
+        &:hover{
+            color:$dark;
+            background-color: #fff;
+        }
+    }
+}
+
+
+
+
+
+
+
+.dropZone {    
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 80px;
+    padding: 18px 15px;
+    margin: 10px 0 25px;
+    border-radius: 5px;
+    color: $colorBlue;
+    background: transparent;
+    border: 2px dashed $colorBlue;
+    text-align: left;
+    transition: all .15s linear;
+    .dd-progress-bar{
+        display: inline-block;
+        position: absolute;
+        width: 57%;
+        height: 2px;
+        background-image: linear-gradient(to right, #30BAFF 0%, #67E672 100%);
+    } 
+    .dd-progress-line{
+        position: absolute;
+        top:0;
+        left:0;
+        display: inline-block;
+        width: 20%;
+        height: 2px;
+        background-color: #e6e8ed;
+    }
+    .cloud-icon-block{
+        display: inline-block;
+        width: 54px;
+        height: 39px;
+        margin-right: 20px;
+        background-image: url(../images/cloud-icon-default.png);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 2;
+    }
+    .drop-text{
+        display: inline-block;
+        z-index: 5;
+        vertical-align: top;
+        line-height: 40px;
+        a{
+            text-decoration: none;
+        }
+    }
+    .cloud-icon-block,
+    .drop-text{
+        transition: all .15s linear;
+    }
+}
+
+.dropZone.hover,
+.dropZone:hover {
+    border-color: $colorBlueLight;
+    .cloud-icon-block{
+        background-image: url(../images/cloud-icon-hover.png);
+    }
+    .drop-text{
+            color:$colorBlueLight;
+    }
+}
+
+.dropZone.error {
+    // background: rgba(255, 121, 76, .1);
+    border: 2px solid $colorRed;
+    .cloud-icon-block{
+        background-image: url(../images/cloud-icon-error.png);
+    }
+    .drop-text{
+        color:$colorRed;
+        a{
+            text-decoration: none;
+            color:$colorRed;
+        }
+    }
+}
+
+.dropZone.progress {
+    border-color: $colorBlueDark;
+    .drop-text{
+        line-height: 35px; 
+        color:$colorBlueDark;}
+    .cloud-icon-block{
+        background-image: url(../images/cloud-icon-progress.png);
+    }
+}
+
+
+.dropZone.success {
+    // background: rgba(0, 204, 134, .1);
+    border: 2px solid $colorGreen;
+    .drop-text{
+            color:$colorGreen;
+    }
+    .cloud-icon-block{
+        background-image: url(../images/cloud-icon-success.png);
+    }
+}
+
+.drop-zone-label{
+    color: $colorGrey;
+    span{
+        color:$colorBlue;
+    }
+}
+
+.form-group.label-left{
+    .drop-zone-label{
+        display: inline-block;
+        width: 34%;
+    }
+    label.dropZone{
+        display: inline-block;
+        width: 65%;
+    }
+}

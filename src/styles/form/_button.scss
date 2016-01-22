@@ -1,0 +1,121 @@
+/* Barebones Compass form styles
+ *
+ * Form button styles
+ */
+
+.btn {
+    letter-spacing: 1px;
+    text-align: center;
+
+    height: 35px;
+    width: 100%;
+    background-image: none;
+
+    margin: 7px 0;
+    outline: 0;
+    border: 0;
+    border-radius: 17px;
+    padding: 5px;
+    cursor: pointer;
+
+    display: inline-block;
+    vertical-align: middle;
+    transition:all .15s linear;
+
+    user-select: none;
+
+}
+
+.btn-primary {
+    box-shadow: 0 1px 2px #004E8D;
+    @include button-basic(
+        $bg:        $colorBlue, $color:        #fff,
+        $bg-hover:  $colorBlueLight, $color-hover:  #fff,
+        $bg-active: $colorBlueDark, $color-active: #fff
+    );
+    &:hover{
+        box-shadow: 0 2px 10px rgba(0, 78, 141, 0.5);
+    }
+    &:active,
+    &:focus{
+        box-shadow: 0 1px 2px rgba(255, 255, 255, 0.03), inset 0 1px 1px rgba(0, 76, 117, 0.25);
+    }
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+
+    & + & {
+        margin-top: $base-margin / 2;
+    }
+}
+.btn-small{
+    display: inline-block;
+    width: 95px;
+    background-color: $colorRed;
+    box-shadow: 0 1px 2px #801500;
+    color:#fff;
+    &:hover{
+        background-color: $colorRedLight;
+        box-shadow: 0 2px 10px rgba(128, 21, 0, 0.5);
+    }
+    &:active,
+    &:focus{
+        background-color: $colorRedDark;
+        box-shadow: 0 1px 2px rgba(255, 255, 255, 0.03), inset 0 1px 1px rgba(0, 76, 117, 0.25);    
+    }
+    &.btn-transparent{
+        background-color: #fff;
+        color:$colorRed;
+        &:hover{
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(128, 21, 0, 0.5);
+        color:$colorRed;
+        }
+        &:active,
+        &:focus{
+            background-color: #F5F7FA;
+            color:$colorRed;
+            box-shadow: 0 1px 2px rgba(255, 255, 255, 0.03), inset 0 1px 1px rgba(0, 76, 117, 0.25);    
+        }
+    } 
+}
+
+.btn-transparent {
+    background: transparent;
+    outline: 0;
+    text-decoration: none;
+    color: $colorBlue;
+    box-shadow: 0 1px 5px rgba(0, 78, 141, 0.25);
+    &:hover{
+        color:$colorBlueLight;
+        box-shadow: 0 2px 10px rgba(0, 78, 141, 0.35);
+    }
+    &:active,
+    &:focus{
+        background-color: #F5F7FA;
+        box-shadow: 0 1px 2px rgba(255, 255, 255, 0.03), inset 0 1px 1px rgba(0, 76, 117, 0.15);
+    }
+}
+
+.btn-disabled {
+    background-color: #edeff2 !important;
+    box-shadow: none!important;
+
+    outline: 0;
+    text-decoration: none;
+    cursor: default;
+    pointer-events:none;
+    color: #c3cad9!important;
+
+    &:hover,
+    &:active{
+        background: #edeff2!important;
+        box-shadow: none!important;
+    }
+}
+
+.btn-right{
+    float: right;
+}
