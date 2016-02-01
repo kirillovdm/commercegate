@@ -4,7 +4,8 @@
  */
 
 .layout-footer {
-    background-color: #f0f2f5;
+    background-color: transparent;
+    border-top: 1px solid #d4d8de;
 
     @if ($layout-footer-height > 0) {
         height: $layout-footer-height;
@@ -36,5 +37,61 @@ $layout-footer-sticky: false !default;
     .layout-footer {
         clear: both;
         position: relative;
+    }
+}
+
+.layout-footer{
+        padding-top: 34px;
+    .left-block{
+        display: inline-block;
+        margin-left: 30px;
+        .copyrights{
+            display: inline-block;
+            border-right: 1px solid #dbdee4;
+            height: 26px;
+            margin-right: 25px;
+            padding-right: 50px;
+            pointer-events:none;
+        }
+        ul{
+            display: inline-block;
+            margin: 0;
+            margin-left: 20px;
+            li{
+                display: inline-block;
+                width: auto;
+                margin: 0;
+                margin-right: 40px;
+                text-align: right;
+                a{
+                    color:$colorGrey;
+                    &:hover{
+                        color:$colorGreyLight;
+                    }
+                    &:active{
+                        color:$colorGreyDark;
+                    }
+                    &.active{
+                        color:$colorBlue;
+                    }
+                    &:visited{ 
+                        color:$colorGrey;
+                    }
+                }
+            }
+        }
+    }
+    .right-block{
+        float:right;
+        text-align: right;
+        margin-top: -10px;
+            .icon-placeholder{
+                display: inline-block;
+                height: 40px;
+                width: 40px;
+                margin-left: 10px;
+                background-color: #ccc;
+                cursor: pointer;
+            }
     }
 }

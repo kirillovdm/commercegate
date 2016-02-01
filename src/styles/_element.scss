@@ -143,6 +143,9 @@ hr {
 .caps{
     text-transform: uppercase !important;
 }
+.aligncenter{
+    text-align: center;
+}
 .noborder{
     border: none !important;
 }
@@ -178,4 +181,11 @@ hr {
     color:#d9d4d0;
     font-size: 8px;
     transition: all .15s linear;
+}
+
+.whitebg{
+    background-color: #fff !important;
+}
+.nobg{
+    background-color: transparent !important;
 }

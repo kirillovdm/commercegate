@@ -19,6 +19,8 @@
 @import "../vendor/selectize-scss/src/selectize.default.scss";
 @import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/grid";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
 @import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/carousel";
 
 
@@ -42,6 +44,9 @@
 // Standalone blocks
 @import "block";
 @import "block/guilist";
+@import "block/global";
+@import "block/slider";
+@import "block/cards";
 // @import "block/blockname";
 
 // Layout styles

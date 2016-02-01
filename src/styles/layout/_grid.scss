@@ -3,7 +3,7 @@
  * Grid styles
  */
 
-$layout-grid-columns:        12 !default;
+$layout-grid-columns:        16 !default;
 $layout-grid-column-width:   60px !default;
 $layout-grid-column-spacing: 20px !default;
 
@@ -42,4 +42,20 @@ $layout-grid-col-padding: $layout-grid-column-spacing / 2;
             }
         }
     }
+}
+
+
+.container.full{
+  padding: 0;
+}
+
+@media (min-width: 992px) and (max-width: 1280px) {
+    .container.news{
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+}
+
+.container-fluid{
+    padding: 0;
 }

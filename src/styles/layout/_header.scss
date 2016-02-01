@@ -11,7 +11,75 @@ $layout-header-fixed: false !default;
         top: 0;
         left: 0;
         right: 0;
+        padding-top: 15px;
+        z-index: 200;
+        background-color: #fff;
     } @else if ($layout-header-height > 0) {
         height: $layout-header-height;
     }
+}
+
+.right-block{
+	display: block;
+	float: right;
+	text-align: right;
+	margin-right: 30px;
+	ul{
+		margin: 0;
+		li{
+			display: inline-block;
+			width: 96px;
+			margin: 0;
+			margin-left: 7px;
+			text-align: right;
+			a:not([class*="btn"]){
+				color:$colorGrey;
+				&:hover{
+					color:$colorGreyLight;
+				}
+				&:active{
+					color:$colorGreyDark;
+				}
+				&.active{
+					color:$colorBlue;
+				}
+				&:visited{
+					color:$colorGrey;
+				}
+			}
+		}
+		.header-vline{
+			display: inline-block;
+			height: 34px;
+			width: 1px;
+			background-color: #667593;
+			opacity: 0.1;
+		}
+	}
+	.login-link{
+		border-left: 1px solid #eff1f4;
+		height: 34px;
+		padding-left: 27px;
+    	padding-right: 15px;
+
+	}
+}
+
+.logo-block{
+	display: inline-block;
+	margin-left: 30px;
+	width: 240px;
+    height: 36px;
+    margin-top: 2px;
+	background-image: url(../images/logo.png);
+	@extend %bg-pos;
+	background-size: contain;
+	opacity: .9;
+	transition:opacity .15s linear;
+	&:hover{
+		opacity: .65;
+	}
+	&:active{
+		opacity: 1;
+	}
 }

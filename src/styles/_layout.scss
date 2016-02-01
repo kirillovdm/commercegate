@@ -4,7 +4,7 @@
  */
 
 .layout-content {
-    margin: 0 20px;
+    margin: 0;
 }
 
 /* Default layout container width
@@ -13,7 +13,7 @@
  *
  * @see base/_variable.scss
  */
-$layout-container-width: 940px !default;
+$layout-container-width: 1280px !default;
 
 .layout-container {
     width: $layout-container-width;
@@ -22,8 +22,23 @@ $layout-container-width: 940px !default;
     @extend %clearfix;
 }
 
+.layout-container-fluid.fix{
+	width: $layout-container-width;
+}
+
 .layout-container-fluid {
     margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
 
     @extend %clearfix;
 }
+
+
+
+@media all and (min-width: 1280px) {
+	 .layout-container-fluid.fix{
+		width: 1280px !important;
+	}
+}
+

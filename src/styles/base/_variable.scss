@@ -47,7 +47,8 @@ $button-transition-function: linear;
 
 /* Layout settings
  */
-$layout-container-width: 940px;
+$layout-container-width: 1280px;
+$layout-container-big-width: 1280px;
 
 /* Layout grid settings
  *
@@ -66,7 +67,7 @@ $layout-grid-column-width:   60px;
 $layout-grid-column-spacing: 20px;
 
 $layout-header-fixed: true;
-$layout-header-height: 50px;
+$layout-header-height: 75px;
 
 /* Sticky footer settings
  *
@@ -78,7 +79,7 @@ $layout-header-height: 50px;
  * .layout-content
  */
 $layout-footer-sticky: true;
-$layout-footer-height: 100px;
+$layout-footer-height: 85px;
 
 $layout-aside-width: 300px;
 $layout-aside-margin-right: 10px;
