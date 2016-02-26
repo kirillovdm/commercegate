@@ -83,7 +83,7 @@
 }
 
 .btn-transparent {
-    background: transparent;
+    background: #fff;
     outline: 0;
     text-decoration: none;
     color: $colorBlue;
@@ -118,4 +118,11 @@
 
 .btn-right{
     float: right;
+}
+.autowidth{
+    width: auto;
+    padding: 5px 20px;
+}
+.btn-apply{
+    width: 140px;
 }

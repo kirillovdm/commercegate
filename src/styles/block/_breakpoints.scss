@@ -1,0 +1,31 @@
+@media (max-width: 601px) {
+	.news-card{
+		margin-right: 0;
+	}
+}
+
+@media (max-width: 768px) {
+	.affix{
+		display: none;
+	}
+	.cards-wrapper{
+		margin-right: 0;
+	}
+	.container{
+		 width: 100%;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+
+}
+
+@media (min-width: 993px) and (max-width: 1280px) {
+	// .cards-wrapper.free{
+	// 	margin-left: 15px;
+	// }
+}
+
+@media (min-width: 1280px) {
+
+}

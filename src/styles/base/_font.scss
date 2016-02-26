@@ -55,3 +55,265 @@ $font-monospace: Consolas, monaco, monospace;
   font-style: normal;
 }
 
+@charset "UTF-8";
+
+@font-face {
+  font-family: "cg-present";
+  src:url("../fonts/cg-present.eot");
+  src:url("../fonts/cg-present.eot?#iefix") format("embedded-opentype"),
+      url("../fonts/cg-present.woff") format("woff"),
+      url("../fonts/cg-present.ttf") format("truetype"),
+      url("../fonts/cg-present.svg#cg-present") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "cg-present" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="cicon-"]:before,
+[class*=" cicon-"]:before {
+  font-family: "cg-present" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cicon-advanced-security:before {
+  content: "\61";
+}
+.cicon-all-major-currencies:before {
+  content: "\62";
+}
+.cicon-api:before {
+  content: "\63";
+}
+.cicon-multiplatform:before {
+  content: "\64";
+}
+.cicon-commercegate-02-about-map:before {
+  content: "\65";
+}
+.cicon-commercegate-02-about-sagrada:before {
+  content: "\66";
+}
+.cicon-upload-01:before {
+  content: "\67";
+}
+.cicon-24-7:before {
+  content: "\68";
+}
+.cicon-membership-management:before {
+  content: "\69";
+}
+.cicon-multichanel-access:before {
+  content: "\6a";
+}
+.cicon-multiply-languages:before {
+  content: "\6b";
+}
+.cicon-professional-agents:before {
+  content: "\6c";
+}
+.cicon-shield:before {
+  content: "\6d";
+}
+.cicon-support:before {
+  content: "\6e";
+}
+.cicon-subscription-management:before {
+  content: "\6f";
+}
+.cicon-site-and-offer:before {
+  content: "\70";
+}
+.cicon-risk-and-antifraud-management:before {
+  content: "\71";
+}
+.cicon-payment-gateway:before {
+  content: "\72";
+}
+.cicon-intelligent-dashboard:before {
+  content: "\73";
+}
+.cicon-direct-merchant-account:before {
+  content: "\74";
+}
+.cicon-contact-customer-support:before {
+  content: "\75";
+}
+.cicon-agility-collaboration-innovation:before {
+  content: "\76";
+}
+.cicon-cutting-edge-technology:before {
+  content: "\77";
+}
+.cicon-intelligence-functionality:before {
+  content: "\78";
+}
+.cicon-geo-ip-management:before {
+  content: "\79";
+}
+.cicon-intelligent-dashboard-1:before {
+  content: "\7a";
+}
+.cicon-level-1-pci-compliance:before {
+  content: "\41";
+}
+.cicon-our-tech-your-way:before {
+  content: "\42";
+}
+.cicon-rock-solid-security:before {
+  content: "\43";
+}
+.cicon-risk-and-antifraud-management-1:before {
+  content: "\44";
+}
+.cicon-payment-gateway-1:before {
+  content: "\45";
+}
+.cicon-direct-merchant-account-1:before {
+  content: "\46";
+}
+.cicon-contact-customer-support-1:before {
+  content: "\47";
+}
+.cicon-3d-secure-validation:before {
+  content: "\48";
+}
+.cicon-3d-transaction:before {
+  content: "\49";
+}
+.cicon-advanced-algorithm:before {
+  content: "\4a";
+}
+.cicon-card-verification:before {
+  content: "\4b";
+}
+.cicon-credit-card-number:before {
+  content: "\4c";
+}
+.cicon-credit-card-validation:before {
+  content: "\4d";
+}
+.cicon-geo-tracking:before {
+  content: "\4e";
+}
+.cicon-host-validation:before {
+  content: "\4f";
+}
+.cicon-inflight-decision:before {
+  content: "\50";
+}
+.cicon-intelligent-risk-scrolling:before {
+  content: "\51";
+}
+.cicon-smart-device-recognation:before {
+  content: "\52";
+}
+.cicon-velocity-filters:before {
+  content: "\53";
+}
+.cicon-unsubscribe-or-cancel-membership:before {
+  content: "\54";
+}
+.cicon-retrieve-username:before {
+  content: "\55";
+}
+.cicon-find-credit-card:before {
+  content: "\56";
+}
+.cicon-contact-ustomer-support:before {
+  content: "\57";
+}
+.cicon-hr:before {
+  content: "\58";
+}
+.cicon-partners:before {
+  content: "\59";
+}
+.cicon-public-relations:before {
+  content: "\5a";
+}
+.cicon-sales-department:before {
+  content: "\30";
+}
+.cicon-tel:before {
+  content: "\31";
+}
+.cicon-pin:before {
+  content: "\32";
+}
+.cicon-mail:before {
+  content: "\33";
+}
+.cicon-bubble-01:before {
+  content: "\34";
+}
+.cicon-pricing-no-daily-costs:before {
+  content: "\35";
+}
+.cicon-pricing-no-hidden-costs:before {
+  content: "\36";
+}
+.cicon-pricing-no-monthly-costs:before {
+  content: "\37";
+}
+.cicon-pricing-no-refund-costs:before {
+  content: "\38";
+}
+.cicon-4000:before {
+  content: "\39";
+}
+.cicon-geography-focus:before {
+  content: "\21";
+}
+.cicon-our-team:before {
+  content: "\22";
+}
+.cicon-services:before {
+  content: "\23";
+}
+.cicon-small-merchant-account:before {
+  content: "\24";
+}
+.cicon-small-payment-gateway:before {
+  content: "\25";
+}
+.cicon-small-risk-management:before {
+  content: "\26";
+}
+.cicon-small-support:before {
+  content: "\27";
+}
+.cicon-twitter:before {
+  content: "\28";
+}
+.cicon-skype:before {
+  content: "\29";
+}
+.cicon-linkedin:before {
+  content: "\2a";
+}
+.cicon-facebook:before {
+  content: "\2b";
+}
+.cicon-commerce-arrow:before {
+  content: "\2c";
+}

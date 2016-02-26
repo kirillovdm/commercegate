@@ -4,13 +4,15 @@
 	height: 100vh;
 	background-color: #fcfdfd;
 	&.planetbg{
-		background-image: url(../images/head-bg.jpg);
+		background-image: url(../images/head-bg.png);
 		background-repeat: no-repeat;
-		background-position: 100% 100%;
+		background-position: 100% 170px;
+		background-size: contain;
 	}
 	.head-block-middle-content{
 		height: 100%;
     	position: relative;
+    	padding-top: 15%;
     	.car-container{
 				height: 100%;
     		position: absolute;
@@ -46,7 +48,6 @@
 			.inf-item{
 				display: inline-block;
 				width: 120px;
-				margin-right: 40px;
 				vertical-align: top;
 				height: auto;
 				.icon-placeholder{
@@ -73,21 +74,22 @@
 		    }
 		}
 	}
-	.head-arrow-down{
-		display: block;
-		width: 20px;
-		height: 20px;
-		position: absolute;
-		bottom: 30px;
-		left:50%;
-		margin-left: -18px;
-		transform:rotate(45deg);
-		border-right:1px solid $colorGrey;
-		border-bottom: 1px solid $colorGrey;
-		background-color: transparent;
-		cursor: pointer;
-		z-index: 99;
-	}
+}
+
+.head-arrow-down{
+	display: block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	bottom: 30px;
+	left:50%;
+	margin-left: -18px;
+	transform:rotate(45deg);
+	border-right:1px solid $colorGrey;
+	border-bottom: 1px solid $colorGrey;
+	background-color: transparent;
+	cursor: pointer;
+	z-index: 99;
 }
 
 .simple-card{
@@ -111,8 +113,11 @@
 		top: 35px;
 		left: 35px;
 		height: 70px;
-		width: 70px;
-		background-color: #ccc;
+		width: 80px;
+		img{
+			width: 100%;
+			max-height: 100%;
+		}
 
 	}
 	.card-text{
@@ -140,7 +145,10 @@
 		margin: 0 auto;
 		width: 80px;
 		height: 80px;
-		background-color: #ccc;
+		img{
+			width: 100%;
+			
+		}
 	}
 	.btn-primary{
 		margin-top: 85px;
@@ -151,7 +159,36 @@
 	    margin-right: 8px;
 	    width: 20px;
 	    height: 16px;
+	}
+}
+
+.careeers-cont{
+	.icon-placeholder80{
+		display: block;
+		margin: 0 auto;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		margin-bottom: 15px;
+		overflow: hidden;
+		background-color: #ccc;
+	}
+	.contact-sale{
+		display: inline-block;
+	    margin-bottom: -3px;
+	    margin-right: 8px;
+	    width: 20px;
+	    height: 16px;
 	    background-color: #ccc;
+	}
+	.info-block{
+		display: inline-block;
+		width: 235px;
+		img{
+			max-height: 100%;
+    		margin-left: -25%;
+			text-align: center;
+		}
 	}
 }
 
@@ -205,4 +242,82 @@
 	    }
 	  }
 
+}
+
+.pr-cont{
+	.news-main-item-block{
+		background-color: #fff;
+		padding-bottom: 30px;
+		p{
+			padding: 0 30px;
+		}
+	}
+}
+.contacts-cont{
+	background-image: linear-gradient(135deg, #FFF 0%, #EDEFF2 100%);
+}
+.career-list-cont{
+	padding-top: 100px;
+    padding-bottom: 75px;
+}
+
+.contacts-wrapper{
+	width: 100%;
+	.contact-item{
+		display: inline-block;
+		width: 285px;
+		margin-bottom: 30px;
+		h3{
+			padding-left: 30px;
+		}
+
+	}
+	.contact-footer{
+		display: block;
+		border-top: 1px solid $borderGrey;
+		margin-top: 30px;
+		padding-top: 30px;
+	}
+}
+.phone-icon,
+.icon-email,
+.icon-local{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	vertical-align: middle;
+	@extend %bg-pos;
+}
+
+.phone-icon{
+	background-image: url(../images/phone.png);
+}
+.icon-email{
+	background-image: url(../images/mail.png);
+}
+.icon-local{
+	background-image: url(../images/local.png);
+}
+.contacts-form-block{
+	background-color: #fff;
+	padding: 30px 40px;
+	margin-bottom: 50px;
+}
+
+.map-bg{
+	width: 100%;
+	margin-top: -150px;
+    margin-bottom: -90px;
+}
+
+.spy-content{
+	h2{
+		color:#1f2b3a;
+	}
+}
+#spy-list{
+	li {
+		list-style: none;
+	}
 }

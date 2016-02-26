@@ -2,15 +2,35 @@
 .tabs-section{
 	    min-height: 250px;
 }
+.simple-tabs{
+    li[role="presentation"]{
+      list-style: none;
+      a{
+        color:$colorGrey;
+      }
+      &.active a{
+        color:$link-color;
+      }
+      &:hover a{
+        color:$link-hover-color;
+      }
+    }
+}
 .main-tabs {
     list-style: none;
     margin: 0;
     padding: 0;
     width: 100%;
-    &.five li{
+    &.five li[role="presentation"]{
         width: 20%;
     }
-    li {
+    &.four li[role="presentation"]{
+        width: 25%;
+    }
+    &.three li[role="presentation"]{
+        width: 33%;
+    }
+    li[role="presentation"] {
         display: inline-block;
         float: left;
         width: 25%;

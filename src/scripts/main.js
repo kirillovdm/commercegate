@@ -47,9 +47,21 @@
     //     $bg.eq(activeIndex).removeClass('active');
     // });
 
-    $('.carousel').carousel({
-        // interval: false
+
+    $("#spy-list a").on('click', function(event) {
+
+       event.preventDefault();
+       var hash = this.hash;
+
+       $('html, body').animate({
+           scrollTop: $(hash).offset().top-100
+         }, 400, $.bez([.67,.27,.45,.89]), function(){
+           window.location.hash = hash;
+         });
+
     });
+
+   
 
     $(document).on("focus", ".date-input", function(){
         $(this).datepicker('show');
@@ -57,9 +69,23 @@
 
     $('.ccat.content').columnCatalog(window.ccatOpts || {})
 
+    $('body').scrollspy({ target: '#spy-list', offset: '100' });
+
+    $(document).on('click', '[data-card-parent]', function(){
+        $('[data-card-parent]').removeClass('open');
+        $('[data-card-children]').closest('.bx-wrapper').removeClass('open');
+
+        $(this).addClass('open');
+        var parentNum = $(this).data('card-parent');
+        var childrenSlider = $('[data-card-children="' + parentNum + '"]');
+        childrenSlider.closest('.bx-wrapper').addClass('open');
+    });
+
 })(window.jQuery);
 
-
+ $('.carousel').carousel({
+        interval: false
+    });
 $(document).on("change", ".file-input", function(){
 
         var $fileLabel = $(".drop-text");
@@ -111,7 +137,7 @@ $(document).ready(function(){
   $('.fullscreen-slider').bxSlider({
     slideWidth: 430,
     minSlides: 4,
-    maxSlides: 4,
+    maxSlides: 5,
     moveSlides: 2,
     slideMargin: 10
   });
@@ -132,7 +158,20 @@ $(document).ready(function(){
     slideMargin: 20
   });
 
-
+  $('.career-slider').bxSlider({
+    slideWidth: 290,
+    minSlides: 3,
+    maxSlides: 8,
+    moveSlides: 2,
+    slideMargin: 20
+  });
+  $('.v-card-slider').bxSlider({
+    slideWidth: 320,
+    minSlides: 3,
+    maxSlides: 8,
+    moveSlides: 1,
+    slideMargin: 20
+  });
 });
 
 
@@ -140,3 +179,39 @@ $(document).on('click','.head-arrow-down', function(){
     $('body').animate({scrollTop:$('.layout-content').offset().top-40});
 });
 
+/*jQuery BEZ Plugin for cubic-bezier easing*/
+        jQuery.extend({ bez: function(encodedFuncName, coOrdArray) {
+            if (jQuery.isArray(encodedFuncName)) {
+                coOrdArray = encodedFuncName;
+                encodedFuncName = 'bez_' + coOrdArray.join('_').replace(/\./g, 'p');
+            }
+            if (typeof jQuery.easing[encodedFuncName] !== "function") {
+                var polyBez = function(p1, p2) {
+                    var A = [null, null], B = [null, null], C = [null, null],
+                        bezCoOrd = function(t, ax) {
+                            C[ax] = 3 * p1[ax], B[ax] = 3 * (p2[ax] - p1[ax]) - C[ax], A[ax] = 1 - C[ax] - B[ax];
+                            return t * (C[ax] + t * (B[ax] + t * A[ax]));
+                        },
+                        xDeriv = function(t) {
+                            return C[0] + t * (2 * B[0] + 3 * A[0] * t);
+                        },
+                        xForT = function(t) {
+                            var x = t, i = 0, z;
+                            while (++i < 14) {
+                                z = bezCoOrd(x, 0) - t;
+                                if (Math.abs(z) < 1e-3) break;
+                                x -= z / xDeriv(x);
+                            }
+                            return x;
+                        };
+                        return function(t) {
+                            return bezCoOrd(xForT(t), 1);
+                        }
+                };
+                jQuery.easing[encodedFuncName] = function(x, t, b, c, d) {
+                    return c * polyBez([coOrdArray[0], coOrdArray[1]], [coOrdArray[2], coOrdArray[3]])(t/d) + b;
+                }
+            }
+            return encodedFuncName;
+        }});
+        /*jQuery BEZ Plugin for cubic-bezier easing END*/

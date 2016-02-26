@@ -1,0 +1,22 @@
+.cicon-small-merchant-account{
+	color: $colorBlue;
+	font-size: 27px;
+}
+.cicon-small-payment-gateway{
+	color: $colorBlue;
+	font-size: 36px;
+    margin-bottom: -9px;
+    margin-top: -5px;
+}
+.cicon-small-risk-management{
+	color: $colorBlue;
+	font-size: 27px;
+}
+.cicon-small-support{
+	color: $colorBlue;
+	font-size: 27px;
+}
+.contact-sale.blue{
+	background-image: url(../images/s-mail.png);
+	@extend %bg-pos;
+}

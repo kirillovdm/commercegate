@@ -19,10 +19,14 @@ h1,
 h2,
 h3 {
     margin-top: $base-margin;
+    &.thin {
+        font-weight: 300;
+    }
 }
 
 h1 {
     font-size: rem(50px);
+    color: #1f2b3a;
 }
 h1.big {
     font-size: 54pt;
