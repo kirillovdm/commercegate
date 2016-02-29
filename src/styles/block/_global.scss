@@ -312,7 +312,8 @@
 }
 
 .spy-content{
-	h2{
+	h2,
+	h3 {
 		color:#1f2b3a;
 	}
 }
@@ -320,4 +321,8 @@
 	li {
 		list-style: none;
 	}
+}
+
+.black-text {
+	color:#1f2b3a;
 }
