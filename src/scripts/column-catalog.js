@@ -323,7 +323,7 @@
         columnNumber: function () {
             var columnWidth  = this.columnWidth(),
                 windowWidth  = $(window).width(),
-                columnNumber = Math.floor(windowWidth / columnWidth);
+                columnNumber = 3;
             return columnNumber < this.options.minColumns ? this.options.minColumns : columnNumber;
         },
 
