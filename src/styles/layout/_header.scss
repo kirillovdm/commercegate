@@ -13,12 +13,27 @@ $layout-header-fixed: false !default;
         right: 0;
         padding-top: 15px;
         z-index: 200;
-        background-color: #fff;
+        background-color: transparent;
     } @else if ($layout-header-height > 0) {
         height: $layout-header-height;
     }
+    &.scrolled{
+    	background-color: #fff;
+    	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    &.s-header{
+    	&.scrolled{
+	    	background-color: #52269d;
+	    	box-shadow: 0 5px 10px rgba(29, 10, 51, 0.5);
+	    }
+    }
+    transition: all .15s linear;
 }
 
+body.risk-body .layout-header.s-header.scrolled{
+	background-color: #02B899;
+	box-shadow: 0 10px 20px rgba(0, 51, 51, 0.5);
+}
 .right-block{
 	display: block;
 	float: right;
@@ -40,12 +55,16 @@ $layout-header-fixed: false !default;
 				&:active{
 					color:$colorGreyDark;
 				}
-				&.active{
-					color:$colorBlue;
-				}
-				&:visited{
-					color:$colorGrey;
-				}
+				// &:visited{
+				// 	color:$colorGrey;
+				// }
+			}
+			&.active a{
+				color:$colorBlue;
+			}
+			&.btn-li {
+				width: 190px;
+				margin-left: 15px;
 			}
 		}
 		.header-vline{
@@ -71,15 +90,16 @@ $layout-header-fixed: false !default;
 	width: 240px;
     height: 36px;
     margin-top: 2px;
-	background-image: url(../images/logo.png);
+	background-image: url(../images/logo.svg);
 	@extend %bg-pos;
 	background-size: contain;
 	opacity: .9;
 	transition:opacity .15s linear;
 	&:hover{
-		opacity: .65;
+		opacity: .75;
 	}
 	&:active{
 		opacity: 1;
 	}
 }
+

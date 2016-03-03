@@ -14,12 +14,24 @@
 	.container{
 		 width: 100%;
 	}
+	.head-block .carousel-wrap .carousel {
+	    width: 100%;
+	}
 }
 
 @media (min-width: 769px) and (max-width: 992px) {
-	
+
 	.newsletter-news-wrapper{
 		margin-left: -10px;
+	}
+}
+
+@media (min-width: 993px){
+	
+	.ppad{
+	    p{
+	        padding-right: 75px;
+	    }
 	}
 }
 
@@ -33,5 +45,23 @@
 }
 
 @media (min-width: 1280px) {
+	.legal-not-affix{
+		margin-left: -70px;
+	}
+	.container.support-cont,
+	.container.solutions-cont{
+		  .cards-wrapper{
+		    margin-right: -34px;
+		  }
+	}
+
+	.careeers-cont{
+		.cards-wrapper.free{
+			text-align: left;
+			.news-card:nth-of-type(4){
+				margin-right: 0;
+			}
+		}
+	}
 
 }

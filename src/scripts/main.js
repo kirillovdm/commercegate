@@ -1,3 +1,10 @@
+$(window).on('load', function () {
+    var $preloader = $('.page-preloader'),
+        $spinner   = $preloader.find('.preloader-itself');
+    $spinner.fadeOut();
+    $preloader.delay(350).fadeOut('slow');
+});
+
 (function ($) {
     "use strict";
 
@@ -133,6 +140,27 @@ $(document).on('resetcontrolmessage.popel.validator', '.form-control', function 
 $(document).off('keyup.popel.validator');
 
 
+$(function(){
+    var pageArray = window.location.pathname.split( '/' );
+    var page = pageArray[pageArray.length-1];
+    $('.layout-header li a').each(function(){
+      var $href = $(this).attr('href');
+      if ($href == page) {
+        $(this).parent().addClass('active');
+      }
+    });
+});
+
+$(document).on('scroll onload', function(){
+    var $header = $('.layout-header');
+    if($header.offset().top > $header.height()) {
+        $header.addClass('scrolled');
+    }
+    else {
+        $header.removeClass('scrolled');
+    }
+});
+
 $(document).ready(function(){
   $('.fullscreen-slider').bxSlider({
     slideWidth: 430,
@@ -172,6 +200,7 @@ $(document).ready(function(){
     moveSlides: 1,
     slideMargin: 20
   });
+
 });
 
 
@@ -215,3 +244,9 @@ $(document).on('click','.head-arrow-down', function(){
             return encodedFuncName;
         }});
         /*jQuery BEZ Plugin for cubic-bezier easing END*/
+
+$(document).on('click', '.affix li a', function(){
+    $('.affix a.active').removeClass('active');
+    $(this).addClass('active');
+
+});

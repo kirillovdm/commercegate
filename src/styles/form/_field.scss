@@ -111,7 +111,6 @@ select.form-control {
 textarea.form-control {
     height: auto;
     width: 100%;
-    min-height: 70px;
     resize: vertical;
     padding-top: 0;
 }
@@ -579,4 +578,8 @@ input[type="checkbox"]:disabled + .toggle-label {
         display: inline-block;
         width: 65%;
     }
+}
+
+[data-value="value0"]{
+    color:#8d95a6;
 }

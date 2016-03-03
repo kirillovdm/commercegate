@@ -55,8 +55,8 @@
 
     // CONTROLS
     controls: true,
-    nextText: '<div class="cicon-commerce-arrow"></div>',
-    prevText: '<div class="cicon-commerce-arrow"></div>',
+    // nextText: '<div class="cicon-commerce-arrow"></div>',
+    // prevText: '<div class="cicon-commerce-arrow"></div>',
     nextSelector: null,
     prevSelector: null,
     autoControls: false,

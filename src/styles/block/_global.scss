@@ -59,11 +59,18 @@
 				}
 				.inf-text{
 					color:$colorBlue;
+					&:hover{
+						color:$colorBlueLight;
+					}
+					&:active{
+						color:$colorBlueDark;
+					}
 				}
+
 			}
 		}
 		.carousel-indicators {
-		    bottom: 100px;
+		    bottom: 5%;
 		    li{
 		    	border: 2px solid #dde6f0;
 		    	background-color: #dde6f0;
@@ -92,41 +99,6 @@
 	z-index: 99;
 }
 
-.simple-card{
-	display: block;
-	position: relative;
-	width: 100%;
-	height: 250px;
-	padding: 40px;
-	padding-left: 130px;
-    box-shadow: 0 1px 3px rgba(0, 78, 141, 0.25);
-    cursor: pointer;
-    transition: all .15s linear;
-    background-color: #fff;
-    z-index: 10;
-    &:hover{
-      box-shadow: 0 2px 30px rgba(0, 78, 141, 0.45);
-      z-index: 20;
-    }
-	.icon-placeholder{
-		position: absolute;
-		top: 35px;
-		left: 35px;
-		height: 70px;
-		width: 80px;
-		img{
-			width: 100%;
-			max-height: 100%;
-		}
-
-	}
-	.card-text{
-		h3{
-			margin-top: 10px;
-		}
-	}
-	
-}
 
 .news-and-events{
 	& > h2{
@@ -162,6 +134,23 @@
 	}
 }
 
+.green-square{
+	display: block;
+    width: 290px;
+    height: 288px;
+    background-image: linear-gradient(to bottom left, #0BE699 0%, #1AECFF 100%);
+    box-shadow: 0 15px 45px rgba(55, 80, 135, 0.3), 0 0 35px rgba(55, 80, 135, 0.05);
+    color:#fff;
+    padding-top: 75px;
+    text-align: center;
+    h2{
+		font-weight: 300;
+		margin: 0;
+    }
+    p{
+
+    }
+}
 .careeers-cont{
 	.icon-placeholder80{
 		display: block;
@@ -172,6 +161,7 @@
 		margin-bottom: 15px;
 		overflow: hidden;
 		background-color: #ccc;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
 	}
 	.contact-sale{
 		display: inline-block;
@@ -186,7 +176,7 @@
 		width: 235px;
 		img{
 			max-height: 100%;
-    		margin-left: -25%;
+    		// margin-left: -25%;
 			text-align: center;
 		}
 	}
@@ -259,8 +249,18 @@
 .career-list-cont{
 	padding-top: 100px;
     padding-bottom: 75px;
+    .card-row .news-card:active{
+    	background-color: #EEF0F3;
+		box-shadow: inset 0 1px 3px rgba(99, 100, 102, 0.25);
+    }
+
 }
 
+.career-list-cont.news-and-events{
+	.main-h{
+		margin-top: 30px;
+	}
+}
 .contacts-wrapper{
 	width: 100%;
 	.contact-item{
@@ -288,16 +288,17 @@
 	margin-right: 10px;
 	vertical-align: middle;
 	@extend %bg-pos;
+	background-size: contain;
 }
 
 .phone-icon{
-	background-image: url(../images/phone.png);
+	background-image: url(../images/phone.svg);
 }
 .icon-email{
 	background-image: url(../images/mail.png);
 }
 .icon-local{
-	background-image: url(../images/local.png);
+	background-image: url(../images/local.svg);
 }
 .contacts-form-block{
 	background-color: #fff;
@@ -325,4 +326,24 @@
 
 .black-text {
 	color:#1f2b3a;
+}
+
+.backlink{
+	cursor: pointer;
+	.cicon-commerce-arrow{
+		display: inline-block;
+		transform:scaleX(-1);
+		margin-right: 10px;
+		&:before{
+			position: absolute;
+    		top: -14px;
+		}
+	}
+}
+
+.layout-content.news-page-cont{
+	padding-top: 0;
+}
+.affix li a.active{
+	color:#000;
 }
