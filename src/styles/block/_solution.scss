@@ -24,6 +24,7 @@
 			}
 		}
 	}
+
 	.layout-content{
 		padding-top: 0;
 	}
@@ -152,30 +153,76 @@
     		margin: 34px 50px 20px 30px;
     		p{
     			display: inline-block;
-    			vertical-align: top;
-    			margin-top: 40px;
-    		}
+    			vertical-align: top;    		}
 
 	    	.v-info-head{
 	    		font-weight: bold;
+	    		margin-bottom: 10px;
+	    		margin-top: 0;
 	    	}
 
     	}
 
 		.icon-placeholder80{
 			display: inline-block;
-			margin: 20px;
-			width: 80px;
-			height: 80px;
-			border-radius: 50%;
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top:0;
+			left:0;
 			overflow: hidden;
-			background-color: #ccc;
 		}
     }
+    .slide{
+			width: 320px !important;
+			.info-block{
+				margin: 0;
+				padding-left: 55px;
+				width: 320px;
+				.info-block-cont{
+					width: 275px;
+				}
+			}
+		}
+		.bx-wrapper .bx-next,
+		.bx-wrapper .bx-prev{
+			background-color: #643fd3;
+		}
+		&.overflowscrollX{
+			position: relative;
+			&:after{
+				position: absolute;
+				top: 0;
+				right: 0;
+				content: "";
+			    width: 130px;
+			    height: 100%;
+			    background-image: linear-gradient(to left, rgba(35, 184, 172, 0.9) 20%, rgba(255, 255, 255, 0) 100%);
+			}
+
+			.info-block{
+				width: 320px;
+				vertical-align: top;
+				p{
+					margin-top: 0;
+				}
+				.info-block-cont{
+    				white-space: normal;
+				}
+			}
+		}
+	.int-bg{
+		background-image: url(../images/int-bg.png);
+		@extend %bg-pos;
+		background-size: cover;
+		img{
+			margin: 20px 0;
+		}
+	}
     a.mail-link{
-    	color: #bf66ff;
+    	color: #22c5e6;
     	&:hover{
-    		color: #bf66ff + 15%;
+    		color: #22c5e6 + 15%;
     	}
     	.contact-sale{
 			display: inline-block;
@@ -184,7 +231,7 @@
 			vertical-align: middle;
     		margin-right: 10px;
     		margin-top: -5px;
-			background-image: url(../images/v-mail.png);
+			background-image: url(../images/s-mail.png);
 			@extend %bg-pos;
     	}
     }
@@ -493,9 +540,6 @@
 			}
 		}
     }
-    &.overflowscrollX{
-    	white-space: nowrap;
-    }
     a.mail-link{
     	color: #00f7ce;
     	&:hover{
@@ -544,6 +588,9 @@
 	}
 }
 
+.overflowscrollX{
+	white-space: nowrap;
+}
 .risk-info-wrapper{
 	margin:  0;
 	.risk-info-item{

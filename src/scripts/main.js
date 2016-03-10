@@ -200,6 +200,13 @@ $(document).ready(function(){
     moveSlides: 1,
     slideMargin: 20
   });
+  $('.team-slider').bxSlider({
+    slideWidth: 600,
+    minSlides: 2,
+    maxSlides: 10,
+    moveSlides: 1,
+    slideMargin: 20
+  });
 
 });
 

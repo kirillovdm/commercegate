@@ -36,6 +36,15 @@
     }
 }
 
+.team-slider{
+    margin-left: 20px;
+    height: 392px;
+    .slide{
+        margin-top: 20px;
+        width: 600px !important;
+    }
+}
+
 .main-carousel-left{
   position: relative;
 }
@@ -260,3 +269,5 @@ ul.bxslider {
 .bx-controls .bx-pager {
   display: none;
 }
+
+

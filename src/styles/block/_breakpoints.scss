@@ -17,12 +17,19 @@
 	.head-block .carousel-wrap .carousel {
 	    width: 100%;
 	}
+	
+	.about-p{
+		width: 100%;
+	}
 }
 
 @media (min-width: 769px) and (max-width: 992px) {
 
 	.newsletter-news-wrapper{
 		margin-left: -10px;
+	}
+	.about-p{
+		width: 100%;
 	}
 }
 

@@ -43,7 +43,9 @@ html {
     color: #fff;
     background-color: #177ee6;
 }
-
+body{
+    overflow-x: hidden;
+}
 /* Custom element styles
  */
 p {
@@ -172,7 +174,10 @@ hr {
     border-top: 4px solid #d9d4d0;
 }
 .posrelative{
-    position: relative;
+    position: relative !important;
+}
+.posabsolute{
+    position: absolute !important;
 }
 .grey-line{
     display: block;
@@ -233,3 +238,6 @@ hr {
     box-shadow: 0 2px 15px rgba(55, 80, 135, 0.2);
 }
 
+.bold{
+    font-weight: bold;
+}

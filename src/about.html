@@ -1,0 +1,314 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <!-- partial:include('page/meta.partial.html') -->
+    </head>
+    <body class="about-body">
+        <!-- partial:include('layout/header.partial.html') -->
+        <div class="head-block planetbg bottom-shadow" id="head-block">
+            <div class="about-head-cont">
+                <h1>About CommerceGate</h1>
+                <p>Since 2006 we have helped thousands of merchants grow their business and maximise their revenue. We offer you a complete set of services built from the ground up based on best-of-breed technology and business practices.</p>
+                <a href="">Learn more about us</a>
+            </div>
+
+            <div class="head-arrow-down"></div>
+        </div>
+
+        <script>
+
+            var container, stats;
+            var camera, scene, renderer;
+            var group;
+            var mouseX = 0, mouseY = 0;
+
+            var windowHalfX = window.innerWidth / 2;
+            var windowHalfY = window.innerHeight / 2;
+
+            init();
+            animate();
+
+            function init() {
+
+                container = document.getElementById( 'head-block' );
+
+                camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 2000 );
+                camera.position.z = 1200;
+
+                scene = new THREE.Scene();
+
+                group = new THREE.Group();
+                group.position.x = 600;
+                group.position.y = -150;
+
+                scene.add( group );
+
+                // earth
+
+                var loader = new THREE.TextureLoader();
+                loader.load( 'images/map-lines.png', function ( texture ) {
+
+                    var geometry = new THREE.SphereGeometry( 500, 40, 40 );
+
+                    var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.15 } );
+                    var mesh = new THREE.Mesh( geometry, material );
+                    group.add( mesh );
+
+                } );
+
+                // shadow
+
+                var canvas = document.createElement( 'canvas' );
+                canvas.width = 128;
+                canvas.height = 128;
+
+                var context = canvas.getContext( '2d' );
+                // var gradient = context.createRadialGradient(
+                //     canvas.width / 2,
+                //     canvas.height / 2,
+                //     0,
+                //     canvas.width / 2,
+                //     canvas.height / 2,
+                //     canvas.width / 2
+                // );
+                // gradient.addColorStop( 0.1, 'rgba(210,210,210,1)' );
+                // gradient.addColorStop( 1, 'rgba(255,255,255,1)' );
+
+                // context.fillStyle = gradient;
+                // context.fillRect( 0, 0, canvas.width, canvas.height );
+
+                var texture = new THREE.CanvasTexture( canvas );
+
+                var geometry = new THREE.PlaneBufferGeometry( 300, 300, 3, 3 );
+                var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5 } );
+
+                var mesh = new THREE.Mesh( geometry, material );
+                mesh.position.y = - 450;
+                mesh.rotation.x = - Math.PI / 2;
+                group.add( mesh );
+
+                renderer = new THREE.CanvasRenderer();
+                renderer.setClearColor( 0xfcfdfd );
+                renderer.setPixelRatio( window.devicePixelRatio );
+                renderer.setSize( window.innerWidth, window.innerHeight );
+                container.appendChild( renderer.domElement );
+
+                document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+
+                //
+
+                window.addEventListener( 'resize', onWindowResize, false );
+
+            }
+
+            function onWindowResize() {
+
+                windowHalfX = window.innerWidth / 2;
+                windowHalfY = window.innerHeight / 2;
+
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+
+                renderer.setSize( window.innerWidth, window.innerHeight);
+
+            }
+
+            function onDocumentMouseMove( event ) {
+
+                mouseX = ( event.clientX - windowHalfX );
+                mouseY = ( event.clientY - windowHalfY );
+
+            }
+
+            //
+
+            function animate() {
+
+                requestAnimationFrame( animate );
+
+                render();
+
+            }
+
+            function render() {
+
+                camera.position.x += ( mouseX - camera.position.x ) * 0.025;
+                camera.position.y += ( - mouseY - camera.position.y ) * 0.025;
+                camera.lookAt( scene.position );
+
+                group.rotation.y -= 0.005;
+
+                renderer.render( scene, camera );
+
+            }
+        </script>
+
+        <div class="layout-content about-content">
+            <div class="container">
+                <div class="row">
+                    <h2 class="main-h">Company</h2>
+                    <p class="about-p aligncenter">CommerceGate offers award winning Merchant Accounts, Payment Gateways, Risk Management and End User Support to discerning webmasters all over Europe. We let you accept payments in all key currencies from every important market.</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 posrelative">
+                        <img src="images/rect.png" class="rect-img" height="392" width="465" alt="">
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <p>CommerceGate was founded in 2006 by industry veterans looking to offer better payment processing to online merchants. With a bespoke processing platform and state of the art risk management we quickly grew to become one of the most successful and reliable payment service providers in Europe, trusted by merchants, banks and end users alike.</p>
+                        <p>Still going strong today, we take the complexity out of payment processing and make transactions transparent and secure, allowing you to focus on growing your business and maximising your revenue. With our <span class="cblack">focus on Service, Security, Speed and Simplicity</span>, we are your ideal payment processing partner with a brand that inspires trust in your end users.</p>
+                        <p>To find out why we are the ideal billing processor for you and to learn more about the benefits of our services, contact us today. We look forward to talking to you!</p>
+                    </div>
+                </div>
+                <div class="separator75"></div>
+            </div><!--layout-container-->
+
+            <div class="container-fluid news-and-events">
+                <h2>Our evolution</h2>
+
+                    <div class="timeline-block">
+                        
+                    </div>
+            </div>
+                
+                <div class="separator75"></div>
+            <div class="container">
+                <h2 class="aligncenter">Meet our team</h2>
+                <p class="about-p aligncenter">We think globally, but act locally to help our customers build their brands. We believe that better software makes  business sense</p>
+            </div>
+
+            <div class="container-fluid team-slider">
+                <div class="slide">
+                    <div class="team-card">
+                        <div class="left-side">
+                            <img src="images/team_001.jpg" alt="team_001" class="team-photo">
+                            <div class="team-card-mask">
+                                <div class="icons-cont">
+                                    <div class="cicon-facebook"></div>
+                                    <div class="cicon-skype"></div>
+                                    <div class="cicon-linkedin"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-side">
+                            <h3>Evgen Sopin</h3>
+                            <p>CEO</p>
+                            <p>Evgen took over as CEO of CommerceGate in 2014. He has an extensive background in e-commerce and payment processing and has successfully lead the transformation of CommerceGate into a company at the cutting edge of technology, service and data driven success.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="team-card">
+                        <div class="left-side">
+                            <img src="images/team_002.jpg" alt="team_001" class="team-photo">
+                            <div class="team-card-mask">
+                                <div class="icons-cont">
+                                    <div class="cicon-facebook"></div>
+                                    <div class="cicon-skype"></div>
+                                    <div class="cicon-linkedin"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-side">
+                            <h3>Evgen Sopin</h3>
+                            <p>CEO</p>
+                            <p>Evgen took over as CEO of CommerceGate in 2014. He has an extensive background in e-commerce and payment processing and has successfully lead the transformation of CommerceGate into a company at the cutting edge of technology, service and data driven success.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="team-card">
+                        <div class="left-side">
+                            <img src="images/team_001.jpg" alt="team_001" class="team-photo">
+                            <div class="team-card-mask">
+                                <div class="icons-cont">
+                                    <div class="cicon-facebook"></div>
+                                    <div class="cicon-skype"></div>
+                                    <div class="cicon-linkedin"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-side">
+                            <h3>Evgen Sopin</h3>
+                            <p>CEO</p>
+                            <p>Evgen took over as CEO of CommerceGate in 2014. He has an extensive background in e-commerce and payment processing and has successfully lead the transformation of CommerceGate into a company at the cutting edge of technology, service and data driven success.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2 class="aligncenter">We are World Wide</h2>
+                <p class="about-p aligncenter">The CommerceGate transaction volume keeps growing as more and more merchants and end users come to appreciate the simplicity, security and speed of our services.<br><br>
+                We make payments easy, transparent and safe for both you and your customers.</p>
+            </div>
+            <div class="container-fluid">
+               <img src="images/about_map.png" class="about-map" alt="about-map">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-lg-6">
+                        <div class="v-block about-graph-bg">
+                            <h3>Total payments</h3>
+                            <p>The volume of CommerceGate transactions keeps growing as more and more merchants and end users appreciate the simplicity, security and speed of our services.
+                            <p>We make payments easy, transparent and safe for both you and your customers.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2">
+                        <div class="v-block aligncenter">
+                            <img src="images/about_001.svg" height="66" width="58" class="v-img" alt="about_001">
+                            <h2>4000+</h2>
+                            <p>merchants arount the world are already using CommerceGate payment products</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-lg-2">
+                        <div class="v-block sagrada-bg">
+                            <h3>Barcelona based<br>company</h3>
+                            <p>World Trade Center.<br>
+                            Moll de Barcelona</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-lg-2">
+                        <div class="v-block aligncenter table-v">
+                            <img src="images/about_002.svg" height="63" width="45" class="v-img" alt="about_002">
+                            <h3 class="alightcenter">Geography focus</h3>
+
+                            <table>
+                                <tr>
+                                    <td>Europe</td>
+                                    <td>72%</td>
+                                </tr>
+                                <tr>
+                                    <td>North America</td>
+                                    <td>18%</td>
+                                </tr>
+                                <tr>
+                                    <td>CIS</td>
+                                    <td>6%</td>
+                                </tr>
+                                <tr>
+                                    <td>Rest of World</td>
+                                    <td>4%</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="v-block">
+                            <h3>Engineers and consultans</h3>
+                            <img src="images/about-chart.png" alt="about-chart">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator75"></div>
+        </div><!--layout-content-->
+
+        <!-- partial:include('layout/footer.partial.html') -->
+
+        <!-- partial:include('page/footer.partial.html') -->
+
+    </body>
+</html>
