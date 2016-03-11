@@ -198,7 +198,7 @@ gulp.task('html', function () {
         // Concatenate and minify javascripts
         .pipe(scripts)
         .pipe(gulpif(process.env.NODE_ENV === 'production', uglify()))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write('.'))
         .pipe(scripts.restore())
 
         // Restore html stream and write concatenated js file names
@@ -279,7 +279,7 @@ gulp.task('style', function () {
         .pipe(sass())
         .pipe(gulpif(process.env.NODE_ENV === 'production', csso()))
         .pipe(postcss(processors))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(buildPath + config.path.style.dest))
         .pipe(connect.reload());
 });
