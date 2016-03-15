@@ -362,11 +362,14 @@
     .card-photo {
       height: 155px;
     }
+    .card-content{
+      a.more {
+        position: absolute;
+        bottom: 30px;
+      }
+    }
   }
-  a {
-    position: absolute;
-    bottom: 30px;
-  }
+
   .main-h{
     margin-bottom: 20px;
   }

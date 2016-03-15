@@ -353,6 +353,7 @@
 	position: absolute;
 	top:0;
 	left:0;
+
 }
 
 .about-body{
@@ -365,8 +366,14 @@
 		z-index: 2;
 	}
 	.about-p{
-		width: 660px;
+	  	width: 785px;
 		margin: 10px auto 60px;
+	  &.big-p{
+		font-size:20px;
+	  }
+	  &.middle-p{
+		width: 620px;
+	  }
 	}
 	.rect-img{
 		position: absolute;
@@ -521,4 +528,10 @@
 			}
 		}
 	}
+}
+a.card-link{
+  position: static!important;
+  p{
+	color: $colorGrey;
+  }
 }

@@ -27,7 +27,8 @@ html {
     line-height: $base-line-height;
     background-color: none;
 
-    background-image: linear-gradient(135deg, #FFF 0%, #E8EAED 100%);
+
+    background-image: linear-gradient(to bottom left, #e8eaed 0%, #f3f4f5 100%);
 
     // http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
     box-sizing: border-box;

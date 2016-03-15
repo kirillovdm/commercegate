@@ -211,7 +211,8 @@ $(document).ready(function(){
 });
 
 
-$(document).on('click','.head-arrow-down', function(){
+$(document).on('click','.head-arrow-down, .learn-about-link', function(e){
+    e.preventDefault();
     $('body').animate({scrollTop:$('.layout-content').offset().top-40});
 });
 
