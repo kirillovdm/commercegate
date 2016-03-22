@@ -9,7 +9,8 @@
         mouseY = 0,
         camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 2000),
         group = new THREE.Group(),
-        scene = new THREE.Scene();
+        scene = new THREE.Scene(),
+        image = (container.dataset && container.dataset.image) || 'images/map-lines.png';
 
     camera.position.z = 1200;
 
@@ -21,7 +22,7 @@
     // earth
     var loader = new THREE.TextureLoader();
 
-    loader.load('images/map-lines.png', function (texture) {
+    loader.load(image, function (texture) {
         var geometry = new THREE.SphereGeometry(500, 40, 40);
 
         var material = new THREE.MeshBasicMaterial({
