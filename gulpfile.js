@@ -60,12 +60,12 @@ var filter         = require('gulp-filter'),
     csso           = require('gulp-csso'),
 
     useref         = require('gulp-useref'),
+    rename         = require('gulp-rename'),
     uglify         = require('gulp-uglify');
 
 /* Unused plugins:
  *
  * postcssSVG = require('postcss-svg'),
- * rename = require('gulp-rename'),
  * concat = require('gulp-concat'),
  * newer = require('gulp-newer'),
  * spritesmith = require('gulp.spritesmith'),
@@ -279,6 +279,9 @@ gulp.task('style', function () {
         .pipe(sass())
         .pipe(gulpif(process.env.NODE_ENV === 'production', csso()))
         .pipe(postcss(processors))
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(buildPath + config.path.style.dest))
         .pipe(connect.reload());
