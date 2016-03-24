@@ -3,7 +3,7 @@
 	.layout-header{
 		background-color: transparent;
 		.logo-block{
-			background-image: url(../images/logo-white.png);
+			background-image: url(../images/logo-white.svg);
 		}
 		.right-block{
 			li a:not(.btn){
@@ -140,7 +140,7 @@
 		}
 
 		&.ext-bg{
-			background-image: url(../images/ext-bg.png);
+			background-image: url(../images/ext-bg.svg);
 			@extend %bg-pos;
 			background-size: cover;
 		}
@@ -372,7 +372,7 @@
 	.layout-header{
 		background-color: transparent;
 		.logo-block{
-			background-image: url(../images/logo-white.png);
+			background-image: url(../images/logo-white.svg);
 		}
 		.right-block{
 			li a:not(.btn){
@@ -626,4 +626,19 @@
 
 .num-img{
 	margin: 25px auto;
+}
+
+.info-block{
+	.icon-placeholder80.little{
+		[class^="cicon"]:before{
+			color: #22c5e6;
+		}
+	}
+}
+.risk-body .info-block{
+	.icon-placeholder80.little{
+		[class^="cicon"]:before{
+			color: #00e2c7;
+		}
+	}
 }

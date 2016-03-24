@@ -88,11 +88,17 @@ $layout-footer-sticky: false !default;
             [class^="cicon"]{
                 display: inline-block;
                 height: 40px;
-                width: 40px;
+                width: 41px;
                 font-size: 40px;
                 text-align: center;
                 margin-left: 10px;
                 cursor: pointer;
+                &:last-of-type{
+                    width: 40px;
+                }
+                &:before{
+                    transition:color .15s linear;
+                }
                 &:hover:before{
                     color:#8d95a6 +15%;
                 }
@@ -102,3 +108,23 @@ $layout-footer-sticky: false !default;
             }
     }
 }
+.layout-footer.s-footer{
+    .right-block{
+        [class^="cicon"]{
+            &:before{
+                color: #fff;
+                opacity: .75;
+                transition:opacity .15s linear;
+            }
+            &:hover:before{
+                color: #fff;
+                opacity: 1;
+            }
+            &:active:before{
+                color: #fff;
+                opacity: .65;
+            }
+        }
+    }
+}
+    

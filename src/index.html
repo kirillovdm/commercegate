@@ -190,12 +190,14 @@
                 container = document.getElementById( 'head-block' );
 
                 camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 2000 );
-                camera.position.z = 1200;
+                camera.position.z = 1650;
+                camera.position.x = 50;
 
                 scene = new THREE.Scene();
+                scene.rotation.y = -1.1;
 
                 group = new THREE.Group();
-                group.position.x = 600;
+                group.position.x = 700;
                 group.position.y = -150;
 
                 scene.add( group );
@@ -205,7 +207,7 @@
                 var loader = new THREE.TextureLoader();
                 loader.load( 'images/map-lines.png', function ( texture ) {
 
-                    var geometry = new THREE.SphereGeometry( 500, 40, 40 );
+                    var geometry = new THREE.SphereGeometry( 500, 64, 64 );
 
                     var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.15 } );
                     var mesh = new THREE.Mesh( geometry, material );
@@ -289,11 +291,12 @@
 
             function render() {
 
-                camera.position.x += ( mouseX - camera.position.x ) * 0.025;
+                // camera.position.x += ( mouseX/200 - camera.position.x ) * 0.025;
                 camera.position.y += ( - mouseY - camera.position.y ) * 0.025;
+                group.rotation.y += ( - mouseX/1000 - group.rotation.y ) * 0.025;
                 camera.lookAt( scene.position );
 
-                group.rotation.y -= 0.005;
+                // group.rotation.y -= 0.005;
 
                 renderer.render( scene, camera );
 
@@ -305,7 +308,7 @@
                 <div class="row">
                     <div class="col-lg-1"></div>
                     <div class="col-md-4 col-lg-3">
-                        <div class="simple-card">
+                        <a href="about.html#our-team" class="simple-card">
                             <div class="icon-placeholder">
                                 <img src="images/our-team.svg">
                             </div>
@@ -313,10 +316,10 @@
                                 <h3>Our team</h3>
                                 <p>CommerceGate is run by e-commerce veterans and technology professionals dedicated to bringing you better payment processing. We synergise knowledge, experience and innovation to help you grow your business. </p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-md-4 col-lg-3">
-                        <div class="simple-card">
+                        <a href="solutions.html" class="simple-card">
                             <div class="icon-placeholder">
                                 <img src="images/services.svg">
                             </div>
@@ -324,7 +327,7 @@
                                 <h3>Services</h3>
                                 <p>We offer you easy to use online billing with an intelligent processing platform and proactive risk management trusted by merchants, EU banks and end users world wide. We provide all the payment services you need. </p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div><!--layout-container-->

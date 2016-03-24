@@ -2,6 +2,15 @@
 	.news-card{
 		margin-right: 0;
 	}
+	.evolution-text{
+		span{
+			width: 300px;
+			margin-right: 160px;
+			&:after{
+				display: none;
+			}
+		}
+	}
 }
 
 @media (max-width: 768px) {

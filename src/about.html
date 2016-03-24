@@ -33,12 +33,14 @@
                 container = document.getElementById( 'head-block' );
 
                 camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 2000 );
-                camera.position.z = 1200;
+                camera.position.z = 1650;
+                camera.position.x = 50;
 
                 scene = new THREE.Scene();
+                scene.rotation.y = -1.1;
 
                 group = new THREE.Group();
-                group.position.x = 600;
+                group.position.x = 700;
                 group.position.y = -150;
 
                 scene.add( group );
@@ -48,7 +50,7 @@
                 var loader = new THREE.TextureLoader();
                 loader.load( 'images/map-lines.png', function ( texture ) {
 
-                    var geometry = new THREE.SphereGeometry( 500, 40, 40 );
+                    var geometry = new THREE.SphereGeometry( 500, 64, 64 );
 
                     var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.15 } );
                     var mesh = new THREE.Mesh( geometry, material );
@@ -132,11 +134,12 @@
 
             function render() {
 
-                camera.position.x += ( mouseX - camera.position.x ) * 0.025;
+                // camera.position.x += ( mouseX/200 - camera.position.x ) * 0.025;
                 camera.position.y += ( - mouseY - camera.position.y ) * 0.025;
+                group.rotation.y += ( - mouseX/1000 - group.rotation.y ) * 0.025;
                 camera.lookAt( scene.position );
 
-                group.rotation.y -= 0.005;
+                // group.rotation.y -= 0.005;
 
                 renderer.render( scene, camera );
 
@@ -151,7 +154,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-3 col-md-4 posrelative">
-                        <img src="images/rect.png" class="rect-img" height="392" width="465" alt="">
+                        <img src="images/rect.png" class="rect-img" height="713" width="690" alt="">
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <p>CommerceGate was founded in 2006 by industry veterans looking to offer better payment processing to online merchants. With a bespoke processing platform and state of the art risk management we quickly grew to become one of the most successful and reliable payment service providers in Europe, trusted by merchants, banks and end users alike.</p>
@@ -162,17 +165,67 @@
                 <div class="separator75"></div>
             </div><!--layout-container-->
 
-            <div class="container-fluid news-and-events">
-                <h2>Our evolution</h2>
-
+            <div class="container-fluid about-fluid-cont">
+                <h2 class="aligncenter">Our evolution</h2>
+                <div class="timeline-wrap">
                     <div class="timeline-block">
-                        
+                       <?xml version="1.0" encoding="utf-8"?>
+                       <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="7917px" height="282px" viewBox="0 0 7917 282" enable-background="new 0 0 7917 282" xml:space="preserve">
+                            <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="10.8613" y1="140.8366" x2="7906.2109" y2="140.8366">
+                                <stop  offset="0" style="stop-color:#47ABED"/>
+                                <stop  offset="1" style="stop-color:#7CF78A"/>
+                            </linearGradient>
+                            <path fill="none" stroke="url(#SVGID_1_)" stroke-width="2" stroke-miterlimit="10" d="M466.1,236.4l-455.2,39 M931,206.3l-455,29.3
+                            M1396,196.1l-455.1,9.8 M1405.8,196l455.1-9.9 M2791.1,166.1l-455.3,9.8 M2801.1,165.9l454.9-9.8 M3721.4,136.2l-455.6,19.6
+                            M3731,135.9l455.2-9.8 M4195.9,125.9l454.9-9.8 M5115.8,106.1l-454.8,9.8 M5125.8,105.8L5580.7,86 M6045.9,66.2l-455.1,19.6
+                            M6511.1,56.1l-455.2,9.8 M6975.9,46L6521,55.9 M7441.2,26.2l-455.3,19.6 M7906.2,6.2L7451,26 M2325.9,176.1l-455.2,9.9"/>
+                            <circle class="timeline-circle" fill="none" stroke="#47ABED" stroke-width="2" stroke-miterlimit="10" cx="6" cy="276" r="5"/>
+                            <circle class="timeline-circle" fill="none" stroke="#4AAFE7" stroke-width="2" stroke-miterlimit="10" cx="471" cy="236" r="5"/>
+                            <circle class="timeline-circle" fill="none" stroke="#4DB4E1" stroke-width="2" stroke-miterlimit="10" cx="936" cy="206" r="5"/>
+                            <circle class="timeline-circle" fill="none" stroke="#50B8DC" stroke-width="2" stroke-miterlimit="10" cx="1401" cy="196" r="5"/>
+                            <circle class="timeline-circle" fill="none" stroke="#53BDD6" stroke-width="2" stroke-miterlimit="10" cx="1866" cy="186" r="5"/>
+                            <circle class="timeline-circle" fill="none" stroke="#5AC6CA" stroke-width="2" stroke-miterlimit="10" cx="2331" cy="176" r="5"/>
+                            <circle class="timeline-circle" fill="none" stroke="#5DCAC4" stroke-width="2" stroke-miterlimit="10" cx="2796" cy="166" r="5"/>
+                            <circle class="timeline-circle" fill="none" stroke="#5DCAC4" stroke-width="2" stroke-miterlimit="10" cx="3261" cy="156" r="5"/>
+                            <circle class="timeline-circle" fill="none" stroke="#60CFBE" stroke-width="2" stroke-miterlimit="10" cx="3726" cy="136" r="5"/>
+                            <circle class="timeline-circle" fill="none" stroke="#63D3B9" stroke-width="2" stroke-miterlimit="10" cx="4191" cy="126" r="5"/>
+                            <circle class="timeline-circle" fill="none" stroke="#66D8B3" stroke-width="2" stroke-miterlimit="10" cx="4656" cy="116" r="5"/>
+                            <circle class="timeline-circle" fill="none" stroke="#69DCAD" stroke-width="2" stroke-miterlimit="10" cx="5121" cy="106" r="5"/>
+                            <circle class="timeline-circle" fill="none" stroke="#6CE1A7" stroke-width="2" stroke-miterlimit="10" cx="5586" cy="86" r="5"/>
+                            <circle class="timeline-circle" fill="none" stroke="#70E5A1" stroke-width="2" stroke-miterlimit="10" cx="6051" cy="66" r="5"/>
+                            <circle class="timeline-circle" fill="none" stroke="#73EA9B" stroke-width="2" stroke-miterlimit="10" cx="6516" cy="56" r="5"/>
+                            <circle class="timeline-circle" fill="none" stroke="#76EE96" stroke-width="2" stroke-miterlimit="10" cx="6981" cy="46" r="5"/>
+                            <circle class="timeline-circle" fill="none" stroke="#79F390" stroke-width="2" stroke-miterlimit="10" cx="7446" cy="26" r="5"/>
+                            <circle class="timeline-circle" fill="none" stroke="#7CF78A" stroke-width="2" stroke-miterlimit="10" cx="7911" cy="6" r="5"/>
+                        </svg>
+                        <div class="evolution-text">
+                            <span><div class="date">2006</div> CommerceGate is founded in Barcelona, Spain, forming key relationships with financial and risk management institutions while developing our advanced processing platform.</span>
+                            <span><div class="date">2007</div> We quickly become the biggest high risk payment processor in Spain and grow rapidly throughout Europe by offering superior throughput and security to our clients.</span>
+                            <span><div class="date">2008</div> CommerceGate forms a strategic partnership with key US billing companies to expand our product portfolio and market reach, becoming a global payment service provider.</span>
+                            <span><div class="date">2009</div> Relaunch of cgbilling.com, a benchmark quality service for end user billing support.</span>
+                            <span><div class="date">2009</div> We win the Strategic Alliance of the Year Award</span>
+                            <span><div class="date">2010</div> Continued expansion of the CommerceGate team to meet constantly increasing demand for our services</span>
+                            <span><div class="date">2011</div> Awarded Billing Company of the Year - Merchant Services</span>
+                            <span><div class="date">2012</div> Bestowed the European Billing Company of the Year Award</span>
+                            <span><div class="date">2012</div> Relaunch of our website and brand to highlight our success, industry knowledge and dedication to our clients. </span>
+                            <span><div class="date">2013</div> Named European Billing Company of the Year</span>
+                            <span><div class="date">2014</div> We win the European Payment Processor of the Year Award</span>
+                            <span><div class="date">2014</div> CommerceGate enters a new era of innovation and development under new management dedicated to utilising the latest technology to deliver the best solutions</span>
+                            <span><div class="date">2015</div> We expand our team to add core competence and experience in key areas while we continue to grow our client base throughout Europe.</span>
+                            <span><div class="date">2015</div> We start the development of a brand new processing platform and back office to provide our merchants with the best payment processing in the industry.</span>
+                            <span><div class="date">2015</div> CommerceGate continues to evolve, streamlining business processes and harnessing the power of agile, data-driven business intelligence and technology.</span>
+                            <span><div class="date">2016</div> We launch our brand new state of the art back office and merchant user interface making processing management easier and more powerful than ever for our clients</span>
+                            <span><div class="date">2016</div> CommerceGate introduces a new website and a new corporate profile to reflect our dedication to constant innovation. This marks the start of a new chapter for us as we relaunch as a lean, agile, technology-powered and data-driven payment processor.</span>
+                        </div>
                     </div>
+                </div>
+                
+                        
             </div>
                 
-                <div class="separator75"></div>
             <div class="container">
-                <h2 class="aligncenter">Meet our team</h2>
+                <h2 class="aligncenter">Meet our team <span class="link" id="our-team"></span></h2>
                 <p class="about-p middle-p aligncenter">We think globally, but act locally to help our customers build their brands. We believe that better software makes  business sense</p>
             </div>
 
@@ -243,8 +296,42 @@
                 <p class="about-p middle-p aligncenter">The CommerceGate transaction volume keeps growing as more and more merchants and end users come to appreciate the simplicity, security and speed of our services.<br>
                 We make payments easy, transparent and safe for both you and your customers.</p>
             </div>
-            <div class="container-fluid">
+
+            <div class="container-fluid tooltips-block">
                <img src="images/about_map.png" class="about-map" alt="about-map">
+                <div class="kiev city">
+                    <div class="map-tooltip">Kiev<br>Ukraine<br>69.314 users</div>
+                </div>
+                <div class="london city">
+                    <div class="map-tooltip">London<br>England<br>UK 150.649 users</div>
+                </div>
+                <div class="johannesburg city">
+                    <div class="map-tooltip">Johannesburg<br>South Africa</div>
+                </div>
+                <div class="moscow city">
+                    <div class="map-tooltip">Moscow<br>Russia<br> 424.156 users</div>
+                </div>
+                <div class="paris city">
+                    <div class="map-tooltip">Paris<br>France<br> 57.377 users</div>
+                </div>
+                <div class="bucharest city">
+                    <div class="map-tooltip">Bucharest<br>Romania<br> 51.552 users</div>
+                </div>
+                <div class="montreal city">
+                    <div class="map-tooltip">Montreal<br>Canada<br> 105.768 users</div>
+                </div>
+                <div class="losAngeles city">
+                    <div class="map-tooltip">Los Angeles<br>USA<br> 658.575 users</div>
+                </div>
+                <div class="newYorkU city">
+                    <div class="map-tooltip">New York<br>USA</div>
+                </div>
+                <div class="rio city">
+                    <div class="map-tooltip">Rio de Janeiro<br>Brazil<br>13.466 users </div>
+                </div>
+                <div class="sydney city">
+                    <div class="map-tooltip">Sydney<br>Australia<br>56.823 users </div>
+                </div>
             </div>
             <div class="container">
                 <div class="row">
@@ -253,10 +340,38 @@
                             <h3>Total payments</h3>
                             <p>The volume of CommerceGate transactions keeps growing as more and more merchants and end users appreciate the simplicity, security and speed of our services.
                             <p>We make payments easy, transparent and safe for both you and your customers.</p>
+                            <div class="total-graph">
+                                <?xml version="1.0" encoding="utf-8"?>
+                                <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="514 474 801 117" enable-background="new 514 474 801 117" xml:space="preserve">
+                                <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="525.2645" y1="618.3786" x2="1304.1724" y2="618.3786" gradientTransform="matrix(1 0 0 1 0 -85.41)">
+                                    <stop  offset="0" style="stop-color:#47ABED"/>
+                                    <stop  offset="1" style="stop-color:#7CF78A"/>
+                                </linearGradient>
+                                <path fill="none" stroke="url(#SVGID_1_)" stroke-width="2" stroke-miterlimit="10" d="M525.3,584.8l129.6-4.6 M664.9,579.8
+                                    l130.1-4.6 M804.7,574.4l130.4-18.6 M944.9,554.6l130.3-9.2 M1084.5,543.5l131.1-37.1 M1224.4,503.6l79.5-22.5"/>
+                                <path fill="none" stroke="#47ABED" stroke-width="2" stroke-miterlimit="10" d="M520,590L520,590c-2.8,0-5-2.2-5-5l0,0
+                                    c0-2.8,2.2-5,5-5l0,0c2.8,0,5,2.2,5,5l0,0C525,587.8,522.8,590,520,590z"/>
+                                <path fill="none" stroke="#50B8DC" stroke-width="2" stroke-miterlimit="10" d="M660,585.1L660,585.1c-2.8,0-5-2.2-5-5l0,0
+                                    c0-2.8,2.2-5,5-5l0,0c2.8,0,5,2.2,5,5l0,0C665,582.9,662.8,585.1,660,585.1z"/>
+                                <path fill="none" stroke="#59C4CC" stroke-width="2" stroke-miterlimit="10" d="M800,580L800,580c-2.8,0-5-2.2-5-5l0,0
+                                    c0-2.8,2.2-5,5-5l0,0c2.8,0,5,2.2,5,5l0,0C805,577.8,802.8,580,800,580z"/>
+                                <path fill="none" stroke="#62D1BC" stroke-width="2" stroke-miterlimit="10" d="M940,560L940,560c-2.8,0-5-2.2-5-5l0,0
+                                    c0-2.8,2.2-5,5-5l0,0c2.8,0,5,2.2,5,5l0,0C945,557.8,942.8,560,940,560z"/>
+                                <path fill="none" stroke="#6ADEAB" stroke-width="2" stroke-miterlimit="10" d="M1080,550L1080,550c-2.8,0-5-2.2-5-5l0,0
+                                    c0-2.8,2.2-5,5-5l0,0c2.8,0,5,2.2,5,5l0,0C1085,547.8,1082.8,550,1080,550z"/>
+                                <path fill="none" stroke="#73EA9B" stroke-width="2" stroke-miterlimit="10" d="M1220,510L1220,510c-2.8,0-5-2.2-5-5l0,0
+                                    c0-2.8,2.2-5,5-5l0,0c2.8,0,5,2.2,5,5l0,0C1225,507.8,1222.8,510,1220,510z"/>
+                                <path fill="none" stroke="#7CF78A" stroke-width="2" stroke-miterlimit="10" d="M1309,485L1309,485c-2.8,0-5-2.2-5-5l0,0
+                                    c0-2.8,2.2-5,5-5l0,0c2.8,0,5,2.2,5,5l0,0C1314,482.8,1311.8,485,1309,485z"/>
+                                </svg>
+
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col-md-2 col-lg-2">
+                    <div class="col-md-3 col-lg-2">
                         <div class="v-block aligncenter">
                             <img src="images/about_001.svg" height="66" width="58" class="v-img" alt="about_001">
                             <h2>4000+</h2>
@@ -270,7 +385,7 @@
                             Moll de Barcelona</p>
                         </div>
                     </div>
-                    <div class="col-md-2 col-lg-2">
+                    <div class="col-md-3 col-lg-2">
                         <div class="v-block aligncenter table-v">
                             <img src="images/about_002.svg" height="63" width="45" class="v-img" alt="about_002">
                             <h3 class="alightcenter">Geography focus</h3>
@@ -295,10 +410,10 @@
                             </table>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-5 col-lg-4">
                         <div class="v-block">
                             <h3>Engineers and consultans</h3>
-                            <img src="images/about-chart.png" alt="about-chart">
+                            <img src="images/about-chart.svg" alt="about-chart">
                         </div>
                     </div>
                 </div>
