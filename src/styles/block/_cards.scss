@@ -151,7 +151,8 @@
   .card-content{
     padding: 0 30px;
     p{
-      text-overflow: ellipsis; 
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
 
     a{
