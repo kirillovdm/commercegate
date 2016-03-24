@@ -12,9 +12,12 @@
         scene = new THREE.Scene(),
         image = (container.dataset && container.dataset.image) || 'images/map-lines.png';
 
-    camera.position.z = 1200;
+    camera.position.z = 1650;
+    camera.position.x = 50;
 
-    group.position.x = 600;
+    scene.rotation.y = -1.1;
+
+    group.position.x = 700;
     group.position.y = -150;
 
     scene.add(group);
@@ -23,7 +26,7 @@
     var loader = new THREE.TextureLoader();
 
     loader.load(image, function (texture) {
-        var geometry = new THREE.SphereGeometry(500, 40, 40);
+        var geometry = new THREE.SphereGeometry(500, 64, 64);
 
         var material = new THREE.MeshBasicMaterial({
             map: texture,
@@ -93,11 +96,12 @@
 
     // Render function
     var render = function () {
-        camera.position.x += (mouseX - camera.position.x) * 0.025;
-        camera.position.y += (-mouseY - camera.position.y) * 0.025;
+        
+        camera.position.y += ( - mouseY - camera.position.y ) * 0.025;
+        group.rotation.y += ( - mouseX/1000 - group.rotation.y ) * 0.025;
         camera.lookAt(scene.position);
 
-        group.rotation.y -= 0.005;
+        // group.rotation.y -= 0.005;
 
         renderer.render(scene, camera);
     };

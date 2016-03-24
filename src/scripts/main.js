@@ -107,15 +107,10 @@ $(window).on('load', function () {
 
 
 $(function() {
-
    $(".timeline-block").mousewheel(function(event, delta) {
-
       this.scrollLeft -= (delta * 30);
-    
       event.preventDefault();
-
    });
-
 });
 
 $('.carousel').carousel({
@@ -331,6 +326,3 @@ $(document).on('click', '.white-arrow.prev', function(){
 
     
 });
-
-var graph = Snap('#total-path-1');
-
