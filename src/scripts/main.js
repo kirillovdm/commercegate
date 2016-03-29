@@ -102,6 +102,8 @@ $(window).on('load', function () {
         $('.h-scroll-cont').addClass('addmargin');
     }
 
+    new WOW().init();
+
 
 })(window.jQuery);
 
@@ -326,3 +328,9 @@ $(document).on('click', '.white-arrow.prev', function(){
 
     
 });
+
+
+// $(document).on('click', 'a[class^="cicon"]', function(e){
+//     e.preventDefault();
+// });
+

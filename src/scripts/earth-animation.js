@@ -65,6 +65,8 @@
     var material = new THREE.MeshBasicMaterial({
         map: texture,
         overdraw: 0.5
+        // transparent: true,
+        // opacity: 0.0
     });
 
     var mesh = new THREE.Mesh(geometry, material);
@@ -109,6 +111,8 @@
     // Animate function
     var animate = function () {
         requestAnimationFrame(animate);
+
+        // TweenMax.to( mesh.material.opacity, 1, { opacity: 1 });
         render();
     };
 
