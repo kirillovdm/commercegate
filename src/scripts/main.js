@@ -68,7 +68,7 @@ $(window).on('load', function () {
 
     });
 
-   
+
 
     $(document).on("focus", ".date-input", function(){
         $(this).datepicker('show');
@@ -142,22 +142,22 @@ $.fn.popelValidator.setRuleMessage({
 
 
 $.fn.popelValidator.defaults.messageTemplate = '<p class="help-block collapse"><span class="message-text"></span></p>';
- 
+
 $.fn.popelValidator.defaults.messageTextSelector = '.message-text';
- 
+
 $(document).on('controlvalidated.popel.validator', '.form-control', function (event) {
     var state = event.state;
- 
+
     if (state === $.fn.popelValidator.Constructor.STATE_INVALID) {
         $(this).closest('.form-group').find('.help-block').collapse('show');
     }
 });
- 
+
 $(document).on('resetcontrolmessage.popel.validator', '.form-control', function (event) {
     event.preventDefault();
- 
+
     var $message = $(event.relatedTarget);
- 
+
     $message.collapse('hide').one('hidden.bs.collapse', function () {
         $message.remove();
     });
@@ -203,7 +203,7 @@ $(document).ready(function(){
     moveSlides: 3,
     slideMargin: 20
   });
-  
+
   $('.carousel-small-3').bxSlider({
     slideWidth: 220,
     minSlides: 3,
@@ -326,9 +326,11 @@ $(document).on('click', '.white-arrow.prev', function(){
 
     $hOuter.animate({scrollLeft:leftPos-150}, 200);
 
-    
+
 });
 
+// textarea
+window.autosize && autosize(document.querySelectorAll('textarea.form-control'));
 
 // $(document).on('click', 'a[class^="cicon"]', function(e){
 //     e.preventDefault();

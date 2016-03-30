@@ -458,7 +458,7 @@
       color:$base-color;
     }
   }
-  
+
 }
 
 
@@ -541,6 +541,11 @@
       color:#000;
       margin-top: 0;
       margin-bottom: 10px;
+    }
+  }
+  &:hover{
+    .team-card-mask{
+        opacity: 1;
     }
   }
 }
