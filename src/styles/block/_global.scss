@@ -637,11 +637,19 @@
 			}
 		}
 	}
-	.sagrada-bg{
-		background-image: url(../images/sagrada-bg.png);
-		background-position:100% 100%;
-		background-repeat: no-repeat;
-		background-size: contain;
+	.sagrada-bg-card{
+		position: relative;
+		.sagrada-bg{
+			position: absolute;
+			bottom:0;
+			right: 0;
+			height: 100%;
+			width: auto;
+			#sagrada-svg{
+				height: 100%;
+				float: right;
+			}
+		}
 	}
 
 	.table-v{

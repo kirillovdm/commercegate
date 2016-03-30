@@ -1,7 +1,9 @@
 $(window).on('load', function () {
     var $preloader = $('.page-preloader'),
         $spinner   = $preloader.find('.preloader-itself');
-    $spinner.fadeOut();
+    $spinner.fadeOut('fast', function(){
+            new WOW().init();
+    });
     $preloader.delay(350).fadeOut('slow');
 });
 
@@ -102,10 +104,11 @@ $(window).on('load', function () {
         $('.h-scroll-cont').addClass('addmargin');
     }
 
-    new WOW().init();
+
 
 
 })(window.jQuery);
+
 
 
 $(function() {
@@ -185,7 +188,47 @@ $(document).on('scroll onload', function(){
     else {
         $header.removeClass('scrolled');
     }
+
+
+    if($('.count-num').hasClass('animated')){
+        $('.count-num h2').attr('id', 'count-num');
+        var options = {
+              useEasing : true, 
+              useGrouping : true, 
+              separator : '', 
+              decimal : '.', 
+              prefix : '', 
+              suffix : '+' 
+        };
+        var count = new CountUp("count-num", 0, 4000, 0, 5, options);
+        count.start();
+    }
+
+    if($('.count-num2').hasClass('animated')){
+        $('.count-num2 tr:nth-of-type(1) .td-num').attr('id', 'count-num2');
+        $('.count-num2 tr:nth-of-type(2) .td-num').attr('id', 'count-num3');
+        $('.count-num2 tr:nth-of-type(3) .td-num').attr('id', 'count-num4');
+        $('.count-num2 tr:nth-of-type(4) .td-num').attr('id', 'count-num5');
+        var options2 = {
+              useEasing : true, 
+              useGrouping : true, 
+              separator : '', 
+              decimal : '.', 
+              prefix : '', 
+              suffix : '%' 
+        };
+        var count2 = new CountUp("count-num2", 0, 72, 0, 5, options2);
+        var count3 = new CountUp("count-num3", 0, 18, 0, 5, options2);
+        var count4 = new CountUp("count-num4", 0, 6, 0, 5, options2);
+        var count5 = new CountUp("count-num5", 0, 4, 0, 5, options2);
+        count2.start();
+        count3.start();
+        count4.start();
+        count5.start();
+    }
+
 });
+
 
 $(document).ready(function(){
   $('.fullscreen-slider').bxSlider({
