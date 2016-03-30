@@ -63,7 +63,7 @@
     &:active,
     &:focus{
         background-color: $colorRedDark;
-        box-shadow: 0 1px 2px rgba(255, 255, 255, 0.03), inset 0 1px 1px rgba(0, 76, 117, 0.25);    
+        box-shadow: 0 1px 2px rgba(255, 255, 255, 0.03), inset 0 1px 1px rgba(0, 76, 117, 0.25);
     }
     &.btn-transparent{
         background-color: #fff;
@@ -77,9 +77,9 @@
         &:focus{
             background-color: #F5F7FA;
             color:$colorRed;
-            box-shadow: 0 1px 2px rgba(255, 255, 255, 0.03), inset 0 1px 1px rgba(0, 76, 117, 0.25);    
+            box-shadow: 0 1px 2px rgba(255, 255, 255, 0.03), inset 0 1px 1px rgba(0, 76, 117, 0.25);
         }
-    } 
+    }
 }
 
 .btn-transparent {
@@ -129,5 +129,4 @@
 .btn-signup{
     width: 135px;
     float: right;
-    margin-top: -10px;
 }
