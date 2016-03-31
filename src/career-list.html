@@ -13,7 +13,7 @@
                     <div class="col-lg-1 col-md-2">
                         <div class="simple-tabs" role="tabpanel">
                         <div class="separator30"></div>
-                        <div class="btn btn-primary btn-apply">Apply</div>
+                        <div class="btn btn-primary btn-apply" data-target="#careerModal">Apply</div>
                           <ul role="tablist">
 <!--
                             <li role="presentation" class="">
@@ -21,13 +21,13 @@
                                     Branding Manager
                                </a>
                             </li>
-    
+
                             <li role="presentation" class="active">
                                <a href="#title12" aria-controls="title12" role="tab" data-toggle="tab">
                                     PR manager
                                </a>
                             </li>
-    
+
                             <li role="presentation" class="">
                                <a href="#title13" aria-controls="title13" role="tab" data-toggle="tab">
                                     Marketing Director
@@ -45,25 +45,25 @@
                                     Middle Marketing<br>Manager
                                </a>
                             </li>
--->                           
+-->
                             <li role="presentation" class="">
                                <a href="#title16" aria-controls="title13" role="tab" data-toggle="tab">
                                    Lead Architect &<br>Java Developer
                                </a>
                             </li>
-                            
+
                             <li role="presentation" class="">
                                <a href="#title17" aria-controls="title13" role="tab" data-toggle="tab">
                                     Lead Java<br>Developer
                                </a>
                             </li>
-    
+
                           </ul>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-5">
                         <div class="simple-tabs tab-content">
-<!--                    
+<!--
                             <div class="tab-pane fade" role="tabpanel" id="title11">
                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet..</p>
                             </div>
@@ -80,13 +80,13 @@
                                                 Responsibilities
                                            </a>
                                         </li>
-                
+
                                         <li role="presentation" class="">
                                            <a href="#title22" aria-controls="title22" role="tab" data-toggle="tab">
                                                 Qualifications
                                            </a>
                                         </li>
-                
+
                                         <li role="presentation" class="">
                                            <a href="#title23" aria-controls="title33" role="tab" data-toggle="tab">
                                                 Preferred
@@ -142,7 +142,7 @@
                             <div class="tab-pane fade" role="tabpanel" id="title15">
                                 <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
                             </div>
--->                            
+-->
                             <div class="tab-pane fade in active" role="tabpanel" id="title16">
                                 <h1>Lead Architect &<br> Java Developer</h1>
                                 <p>As a Lead Architect candidate will be responsible for a high level design choices for the API,
@@ -162,13 +162,13 @@
                                                 Responsibilities
                                            </a>
                                         </li>
-                
+
                                         <li role="presentation" class="">
                                            <a href="#title22" aria-controls="title22" role="tab" data-toggle="tab">
                                                 Expected skills
                                            </a>
                                         </li>
-                
+
                                         <li role="presentation" class="">
                                            <a href="#title23" aria-controls="title23" role="tab" data-toggle="tab">
                                                 Optional skills
@@ -286,7 +286,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="tab-pane fade" role="tabpanel" id="title17">
                                 <h1>Lead Java Developer</h1>
                                 <p>The Lead Java Developer is responsible for the development of new software solutions as
@@ -303,13 +303,13 @@
                                                 Responsibilities
                                            </a>
                                         </li>
-                
+
                                         <li role="presentation" class="">
                                            <a href="#title32" aria-controls="title32" role="tab" data-toggle="tab">
                                                 Expected skills
                                            </a>
                                         </li>
-                
+
                                         <li role="presentation" class="">
                                            <a href="#title33" aria-controls="title33" role="tab" data-toggle="tab">
                                                 Optional skills
@@ -393,7 +393,7 @@
             </div><!--container-->
         </div>
 
-<!--        
+<!--
         <div class="container-fluid career-list-cont news-and-events">
                 <h2 class="main-h">Open careers</h2>
                 <div class="cards-wrapper free">
@@ -892,13 +892,29 @@
 
                 </div>
 
-                
+
         <div class="separator50"></div>
         </div>-->
 
         <!-- partial:include('layout/footer.partial.html') -->
 
         <!-- partial:include('page/footer.partial.html') -->
-
+        <div class="modal fade" id="careerModal" tabindex="-1" role="dialog" aria-labelledby="careerModalLabel">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
     </body>
 </html>

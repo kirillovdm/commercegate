@@ -20,7 +20,7 @@ $label-color: $colorGrey;
 
 label {
     margin-bottom: $base-margin / 4;
-    
+
     display: inline-block;
 }
 
@@ -62,7 +62,7 @@ label {
             margin-top: 3px;
         }
     }
-} 
+}
 .form-control {
     margin: 0;
     outline: 0;
@@ -89,7 +89,7 @@ label {
     &::placeholder {
         color: $colorGrey;
     }
-    
+
     &:disabled{
         background-color: transparent;
         border-bottom-color:#dbdee5;
@@ -113,6 +113,7 @@ textarea.form-control {
     width: 100%;
     resize: vertical;
     padding-top: 0;
+    color: #8d95a6;
 }
 
 
@@ -360,7 +361,7 @@ input[type="checkbox"]:disabled + .toggle-label {
         border-bottom-color:$colorBlueDark;
     }
 }
-.selectize-control.single .selectize-input, 
+.selectize-control.single .selectize-input,
 .selectize-dropdown.single{
     border-color: transparent;
     border-bottom-color:$colorGrey;
@@ -382,7 +383,7 @@ input[type="checkbox"]:disabled + .toggle-label {
 .selectize-dropdown.single{
     background-color: #fff;
 }
-.selectize-control.multi .selectize-input, 
+.selectize-control.multi .selectize-input,
 .selectize-dropdown.multi{
     border-color: transparent;
     border-bottom-color:$colorGrey;
@@ -459,7 +460,7 @@ input[type="checkbox"]:disabled + .toggle-label {
 
 
 
-.dropZone {    
+.dropZone {
     display: block;
     position: relative;
     width: 100%;
@@ -478,7 +479,7 @@ input[type="checkbox"]:disabled + .toggle-label {
         width: 57%;
         height: 2px;
         background-image: linear-gradient(to right, #30BAFF 0%, #67E672 100%);
-    } 
+    }
     .dd-progress-line{
         position: absolute;
         top:0;
@@ -543,7 +544,7 @@ input[type="checkbox"]:disabled + .toggle-label {
 .dropZone.progress {
     border-color: $colorBlueDark;
     .drop-text{
-        line-height: 35px; 
+        line-height: 35px;
         color:$colorBlueDark;}
     .cloud-icon-block{
         background-image: url(../images/cloud-icon-progress.png);
