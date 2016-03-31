@@ -904,14 +904,34 @@
                 <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Modal title</h4>
+                    <h2 class="modal-title">Application form</h2>
                 </div>
                 <div class="modal-body">
-                    <p>One fine body&hellip;</p>
+                    <form action="" method="POST" data-toggle="popel-validator">
+                            <div class="form-group valid-group">
+                                <input class="form-control" type="text" id="input1" data-rules="not-empty min-length" data-min-length="2" placeholder="Full name">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="input2" placeholder="Email">
+                            </div>
+                            <div class="form-group valid-group">
+                                <input class="form-control" type="text" id="input3" placeholder="LinkedIn profile">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="" id="input4" placeholder="CV" style="height: 30px;"></textarea>
+                            </div>
+
+                            <div class="form-group label-left">
+                                <label for="file-drag" class="dropZone">
+                                <div class="cloud-icon-block"></div>
+                                <div class="drop-text">Drop your resume here <br>or click <span>upload</span> </div>
+                                </label>
+                                <input type="file" id="file-drag" class="file-input">
+                            </div>
+                        </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary">Apply</button>
                 </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->

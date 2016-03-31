@@ -48,5 +48,65 @@ body.about-body{
 }
 
 #careerModal {
+    width: 430px;
+    background-color: #fff;
+    padding: 70px;
+
+    .form-group.label-left label.dropZone {
+        width: 100%;
+    }
+
+    .dropZone .drop-text {
+        line-height: 22px;
+        color: #8d95a6;
+
+        span {
+            color: #0b94d9;
+        }
+    }
+
+    .btn {
+        width: 80px;
+        float: right;
+        margin-top: -5px;
+    }
+
+    button.close {
+        -webkit-appearance: none;
+        padding: 0;
+        cursor: pointer;
+        background: 0 0;
+        border: 0;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 51px;
+        font-weight: 200;
+        line-height: 1;
+        color: #000;
+        text-shadow: 0 1px 0 #fff;
+        filter: alpha(opacity=20);
+        opacity: .2;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
     display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+}
+
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
 }
