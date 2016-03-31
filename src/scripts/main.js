@@ -193,12 +193,12 @@ $(document).on('scroll onload', function(){
     if($('.count-num').hasClass('animated')){
         $('.count-num h2').attr('id', 'count-num');
         var options = {
-              useEasing : true, 
-              useGrouping : true, 
-              separator : '', 
-              decimal : '.', 
-              prefix : '', 
-              suffix : '+' 
+              useEasing : true,
+              useGrouping : true,
+              separator : '',
+              decimal : '.',
+              prefix : '',
+              suffix : '+'
         };
         var count = new CountUp("count-num", 0, 4000, 0, 5, options);
         count.start();
@@ -210,12 +210,12 @@ $(document).on('scroll onload', function(){
         $('.count-num2 tr:nth-of-type(3) .td-num').attr('id', 'count-num4');
         $('.count-num2 tr:nth-of-type(4) .td-num').attr('id', 'count-num5');
         var options2 = {
-              useEasing : true, 
-              useGrouping : true, 
-              separator : '', 
-              decimal : '.', 
-              prefix : '', 
-              suffix : '%' 
+              useEasing : true,
+              useGrouping : true,
+              separator : '',
+              decimal : '.',
+              prefix : '',
+              suffix : '%'
         };
         var count2 = new CountUp("count-num2", 0, 72, 0, 5, options2);
         var count3 = new CountUp("count-num3", 0, 18, 0, 5, options2);
@@ -375,7 +375,10 @@ $(document).on('click', '.white-arrow.prev', function(){
 // textarea
 window.autosize && autosize(document.querySelectorAll('textarea.form-control'));
 
+// modal
+$('#careerModal').modal(options)
+
+
 // $(document).on('click', 'a[class^="cicon"]', function(e){
 //     e.preventDefault();
 // });
-

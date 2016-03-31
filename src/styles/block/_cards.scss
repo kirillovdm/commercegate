@@ -549,3 +549,11 @@
     }
   }
 }
+
+.news-card.xxs-card.open {
+    box-shadow: 0 2px 30px rgba(0, 78, 141, 0.45);
+}
+
+.next-row.news-card:hover{
+   box-shadow: 0 1px 3px rgba(0, 78, 141, 0.25);
+}
