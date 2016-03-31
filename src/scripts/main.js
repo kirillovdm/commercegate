@@ -81,13 +81,11 @@ $(window).on('load', function () {
     $('body').scrollspy({ target: '#spy-list', offset: '100' });
 
     $(document).on('click', '[data-card-parent]', function(){
-        $('[data-card-parent]').removeClass('open');
-        $('[data-card-children]').closest('.bx-wrapper').removeClass('open');
 
-        $(this).addClass('open');
+        $(this).toggleClass('open');
         var parentNum = $(this).data('card-parent');
         var childrenSlider = $('[data-card-children="' + parentNum + '"]');
-        childrenSlider.closest('.bx-wrapper').addClass('open');
+        childrenSlider.closest('.bx-wrapper').toggleClass('open');
     });
 
     var isPC;
@@ -119,8 +117,9 @@ $(function() {
 });
 
 $('.carousel').carousel({
-    interval: false
+    interval: 3000
 });
+
 
 $(document).on("change", ".file-input", function(){
 

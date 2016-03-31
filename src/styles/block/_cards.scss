@@ -153,6 +153,17 @@
     p{
       text-overflow: ellipsis;
       overflow: hidden;
+      color: #8d95a6;
+    }
+
+    .card-title {
+      color: #0094de;
+      transition: color 0.15s linear;
+    }
+
+    .card-title:hover,
+    .card-titl:focus {
+      color: #30baff;
     }
 
     a{
