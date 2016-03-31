@@ -376,7 +376,7 @@ $(document).on('click', '.white-arrow.prev', function(){
 window.autosize && autosize(document.querySelectorAll('textarea.form-control'));
 
 // modal
-$('#careerModal').modal('show')
+$('#careerModal').modal();
 
 // $(document).on('click', 'a[class^="cicon"]', function(e){
 //     e.preventDefault();
