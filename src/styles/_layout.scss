@@ -48,9 +48,34 @@ body.about-body{
 }
 
 #careerModal {
-    width: 430px;
-    background-color: #fff;
-    padding: 70px;
+
+    .modal-content {
+        position: relative;
+        background-color: #fff;
+        border: none;
+        border-radius: 0;
+        box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+        background-clip: padding-box;
+        outline: 0;
+        width: 430px;
+        background-color: #fff;
+        padding: 70px;
+    }
+
+    .modal-header {
+        padding: 0;
+        border-bottom: none;
+    }
+
+    .modal-body {
+        position: relative;
+        padding: 15px 0 0 0;
+    }
+
+    .modal-footer {
+        padding: 0;
+        border-top: none;
+    }
 
     .form-group.label-left label.dropZone {
         width: 100%;
