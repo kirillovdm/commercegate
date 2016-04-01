@@ -155,6 +155,8 @@ $(window).on('load', function () {
     // var myBarChart = new Chart(ctx).Bar(data, options);
 
 
+
+
 })(window.jQuery);
 
 
@@ -458,9 +460,32 @@ function drawESGraph(){
     TweenMax.from(vLines, 10, {drawSVG:0, ease:Sine.easeOut});
 }
 
+function drawBanks(){
+    var shadows = '#_x31__1_, #_x32__1_, #_x33__1_, #_x34__1_, #_x35__1_, #_x36__1_, #_x37__1_';
+    var points = '#_x37_, #_x36_, #_x35_, #_x34_, #_x33_, #_x32_, #_x31_';
+    var lines = '#_x37_-to-1, #_x32_-to-7, #_x36_-to-7, #_x36_-to-7, #_x33_-to-6, #_x35_-to-6, #_x34_-to-5, #_x33_-to-4, #_x32_-to-3, #_x31_-to-2';
+
+    TweenMax.from('#_x31_',.3, {opacity:0, delay:3});
+    TweenMax.from('#_x32_',.3, {opacity:0, delay:3.3});
+    TweenMax.from('#_x33_',.3, {opacity:0, delay:3.6});
+    TweenMax.from('#_x34_',.3, {opacity:0, delay:3.9});
+    TweenMax.from('#_x35_',.3, {opacity:0, delay:4.2});
+    TweenMax.from('#_x36_',.3, {opacity:0, delay:4.5});
+    TweenMax.from('#_x37_',.3, {opacity:0, delay:4.8});
+    TweenMax.from(lines, 3, {drawSVG:0, delay:5.2, onComplete:animationCompete, onCompleteParams:['Dots-gradient']});
+    //TweenMax.from(shadows, 1, {opacity:3, delay:10});
+}
+
+function drawESGraph(){
+    var vLines = '#graph-lines';
+
+    TweenMax.from(vLines, 10, {drawSVG:0, ease:Sine.easeOut});
+}
+
 drawMap();
-// drawSagrada();
+ drawSagrada();
 drawESGraph();
+drawBanks();
 
 
 (function ($) {
@@ -472,3 +497,8 @@ drawESGraph();
     console.log('1');
 
  })(window.jQuery);
+
+$(document).on('hover', '.fae-c', function(){
+    $('.st11').css('color', '#000');
+    console.log('asdasd');
+});
