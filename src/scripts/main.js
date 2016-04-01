@@ -88,6 +88,15 @@ $(window).on('load', function () {
         childrenSlider.closest('.bx-wrapper').toggleClass('open');
     });
 
+
+    $('body:not(.news-card)').on('click', function(){
+        $('.bx-wrapper').removeClass('open');
+    });
+    
+    $('.bx-wrapper').on('click', function(){
+        $(this).addClass('open');
+      });
+
     var isPC;
     if(navigator.userAgent.indexOf('Mac OS X') != -1){
       // for Mac
