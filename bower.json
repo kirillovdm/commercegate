@@ -22,7 +22,8 @@
     "selectize-scss": "~0.8.9",
     "inuit-normalize": "~3.0.3",
     "eonasdan-bootstrap-datetimepicker": "~4.17.37",
-    "three.js": "threejs#*"
+    "three.js": "threejs#*",
+    "Chart.js": "~1.0.2"
   },
   "resolutions": {
     "bootstrap": "~3.3.4",
