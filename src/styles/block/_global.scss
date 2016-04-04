@@ -688,7 +688,7 @@ a.card-link{
 .bottom-info{
 	    margin-top: -20px;
 	ul{
-		padding-left: 0;
+		padding-left: 0!important;
 		li{
 			display: inline-block;
 			list-style: none;
@@ -739,6 +739,26 @@ a.card-link{
     position: relative;
     height: 410px;
     margin-bottom: 50px;
+    z-index: 10;
+    &:before,
+    &:after{
+		display: block;
+		position: absolute;
+		content: "";
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 30%;
+		background-color: transparent;
+		pointer-events:none;
+		z-index: 999;
+    }
+    &:after{
+		top:0;
+    }
+    &:after{
+		bottom:0;
+    }
 }
 .timeline-block{
     position: relative;

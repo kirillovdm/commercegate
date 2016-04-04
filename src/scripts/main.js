@@ -240,6 +240,7 @@ $(function(){
     });
 });
 
+
 $(document).on('scroll onload', function(){
     var $header = $('.layout-header');
     if($header.offset().top > $header.height()) {
@@ -286,6 +287,24 @@ $(document).on('scroll onload', function(){
         count4.start();
         count5.start();
     }
+
+    if($('.lc-block').hasClass('animated')){
+        $('.lc-count').attr('id', 'lc-count-num');
+        var options = {
+              useEasing : true,
+              useGrouping : true,
+              separator : ',',
+              decimal : '.',
+              prefix : '',
+              suffix : ''
+        };
+        var lcCount = new CountUp("lc-count-num", 2.5, 0.7, 1, 6, options);
+            lcCount.start();
+    }
+
+
+
+        checkAnimations();
 
 });
 
@@ -442,59 +461,115 @@ $('#careerModal').modal();
 //     e.preventDefault();
 // });
 
+
+
 function animationCompete(inputId){
 
-        // $('#'+inputId).('opacity', '0.3');
-        $('#'+inputId).attr('data-animated', 'done');
-        // $(this).closest('svg').attr('data-animated', 'done');
-        console.log(this.targe);
+        // // $('#'+inputId).('opacity', '0.3');
+        // $('#'+inputId).attr('data-animated', 'done');
+        // // $(this).closest('svg').attr('data-animated', 'done');
+        // console.log(this.targe);
+
+        animComplete = true;
 }
+
 
 function drawMap(){
     var anematedMapLines = '#_x31_0-line-london_1_, #_x39_-line-paris_1_, #_x35_-line-sydney_1_, #_x34_-line-johannensburg_1_, #_x33_-line-moskow_1_, #_x31_-line-buharest_1_, #_x32_-line-ukraine_1_';
     var anematedMapLinesRev = '#_x31_1-line-montreal_1_,#_x38_-line-rio_1_,#_x37_-line-la_1_,#_x36_-line-ny_1_'
-
-    TweenMax.staggerFrom(anematedMapLines, 10, {drawSVG:0});
-    TweenMax.staggerFromTo(anematedMapLinesRev, 10, {drawSVG:"100% 100%"}, {drawSVG:'0% 100%', ease: Circ.easeOut , onComplete:animationCompete, onCompleteParams:['map-points']});
+    var mPoints = '#map-points'
+    var tlMap = new TimelineMax();
+    TweenMax.staggerFrom(anematedMapLines, 6, {drawSVG:0, delay:1}, 0.2);
+    tlMap.staggerFromTo(anematedMapLinesRev, 6, {drawSVG:"100% 100%"}, {drawSVG:'0% 100%', delay:1, ease: Circ.easeOut}, 0.2).to(mPoints, 1, {opacity:0.3});;
 }
 
 function drawSagrada(){
-    var animSagrada = '#sagrada-path';
-    TweenMax.staggerFrom(animSagrada, 15, {drawSVG:0});
+    var animSagrada = '.spoint';
+    TweenMax.staggerFrom(animSagrada, .2, {drawSVG:0, delay:1}, .01);
 }
 
-function drawESGraph(){
-    var vLines = '#graph-lines';
-
-    TweenMax.from(vLines, 10, {drawSVG:0, ease:Sine.easeOut});
-}
 
 function drawBanks(){
     var shadows = '#_x31__1_, #_x32__1_, #_x33__1_, #_x34__1_, #_x35__1_, #_x36__1_, #_x37__1_';
     var points = '#_x37_, #_x36_, #_x35_, #_x34_, #_x33_, #_x32_, #_x31_';
     var lines = '#_x37_-to-1, #_x32_-to-7, #_x36_-to-7, #_x36_-to-7, #_x33_-to-6, #_x35_-to-6, #_x34_-to-5, #_x33_-to-4, #_x32_-to-3, #_x31_-to-2';
-
-    TweenMax.from('#_x31_',.3, {opacity:0, delay:3});
-    TweenMax.from('#_x32_',.3, {opacity:0, delay:3.3});
-    TweenMax.from('#_x33_',.3, {opacity:0, delay:3.6});
-    TweenMax.from('#_x34_',.3, {opacity:0, delay:3.9});
-    TweenMax.from('#_x35_',.3, {opacity:0, delay:4.2});
-    TweenMax.from('#_x36_',.3, {opacity:0, delay:4.5});
-    TweenMax.from('#_x37_',.3, {opacity:0, delay:4.8});
-    TweenMax.from(lines, 3, {drawSVG:0, delay:5.2, onComplete:animationCompete, onCompleteParams:['Dots-gradient']});
-    //TweenMax.from(shadows, 1, {opacity:3, delay:10});
+    var tlBank = new TimelineMax();
+    tlBank.staggerFrom('.dots-fill',.3, {opacity:0, delay:1}, .3)
+            .from(lines, 3, {drawSVG:0, ease:Power2.easeOut})
+            .from(shadows, 1, {opacity:0});
 }
 
-function drawESGraph(){
-    var vLines = '#graph-lines';
+function drawPulse(){
+    var dot = '#pulse-dot2';
 
-    TweenMax.from(vLines, 10, {drawSVG:0, ease:Sine.easeOut});
+    if($(dot).length<1) return;
+    
+    var path = MorphSVGPlugin.pathDataToBezier('#pulse-back', {align:dot});
+    TweenMax.set(dot, {xPercent:-50, yPercent:-50});
+    TweenMax.to(dot, 3, {bezier:{values:path, type:'cubic'}, ease:Linear.easeNone, repeat:-1});
+  
+}
+drawPulse();
+
+function drawUsers(){
+    var users = ".s-users";
+    var usertl = new TimelineMax();
+    usertl.staggerFrom(users, 1, {opacity:0, delay:1}, .25).to('#b-user', .75, {morphSVG:'#b-user-end'}).from('#done-icon', .75, {opacity:0});
+    
 }
 
-drawMap();
- drawSagrada();
-drawESGraph();
-drawBanks();
+var aboutKey = true;
+var sagradaKey = true;
+var bankKey = true;
+var usersKey = true;
+
+
+function checkAnimations(){
+    var animElement, elemIsAnimated, animatedSVG;
+
+        animElement = $('[data-start-anim]');
+        elemIsAnimated = animElement.hasClass('animated');
+        animatedSVG = $('.animated[data-start-anim]');
+
+        animData = animatedSVG.attr('data-start-anim');
+        console.log('check');
+
+            switch (animData) {
+
+                case 'about_map':
+                    if(aboutKey){
+                        drawMap();
+                    }
+                        aboutKey = false;
+                        break
+
+                case 'sagrada': 
+                    if(sagradaKey){
+                        drawSagrada();
+                    }
+                        sagradaKey = false;
+                    break
+
+                case 'ext_map':
+                    if(bankKey){
+                        drawBanks();
+                    }
+                    bankKey = false;
+                    break
+
+                case 'pulse':
+                    drawPulse();
+                    break
+
+                case 'users':
+                    if(usersKey){
+                        drawUsers();
+                    }
+                    usersKey = false;
+                    break
+            }
+
+}
 
 
 (function ($) {
@@ -511,3 +586,14 @@ $(document).on('hover', '.fae-c', function(){
     $('.st11').css('color', '#000');
     console.log('asdasd');
 });
+
+
+function over(){
+    TweenMax.to('#ellipse3', 1, {top:'-5'});
+}
+
+function out(){
+    TweenMax.to('#ellipse3', 1, {top:'5px'});
+}
+
+$("#ellipse3").hover(over, out);

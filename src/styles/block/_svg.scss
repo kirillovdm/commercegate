@@ -6,10 +6,6 @@
 	#map-points {
 		opacity: 0;
 		transition:opacity .25s linear;
-		&[data-animated="done"]{
-			opacity: .3;
-			transition:opacity .25s linear;
-		}
 	}
 }
 
@@ -89,44 +85,46 @@
 }
 
 #Dots-gradient{
-	opacity:0;
+	opacity:1;
 	transition:opacity .3s linear;
-	&[data-animated="done"]{
-		opacity:1;
-	}
-}
-#Dots-fill_1_{
-	#_x37_, #_x36_, #_x35_, #_x34_, #_x33_, #_x32_, #_x31_{
-		opacity: 1;
-		transition:opacity .2s linear;
-	}
+// #Dots-fill_1_{
+// 	#_x37_, #_x36_, #_x35_, #_x34_, #_x33_, #_x32_, #_x31_{
+// 		opacity: 1;
+// 		transition:opacity .2s linear;
+// 	}
 
-	&.animated{
-		#_x37_, #_x36_, #_x35_, #_x34_, #_x33_, #_x32_, #_x31_{
-			transition:opacity .3s linear;
-			opacity: 1;
-		}
-		#_x31_{
-			transition-delay: 0;
-		}
-		#_x32_{
-			transition-delay: 0.3;
-		}
-		#_x33_{
-			transition-delay: 0.6;
-		}
-		#_x34_{
-			transition-delay: 0.9;
-		}
-		#_x35_{
-			transition-delay: 1.2;
-		}
-		#_x36_{
-			transition-delay: 1.5;
-		}
-		 #_x37_{
-			 transition-delay: 1.8;
-		 }
-	}
+// 	&.animated{
+// 		#_x37_, #_x36_, #_x35_, #_x34_, #_x33_, #_x32_, #_x31_{
+// 			transition:opacity .3s linear;
+// 			opacity: 1;
+// 		}
+// 		#_x31_{
+// 			transition-delay: 0;
+// 		}
+// 		#_x32_{
+// 			transition-delay: 0.3;
+// 		}
+// 		#_x33_{
+// 			transition-delay: 0.6;
+// 		}
+// 		#_x34_{
+// 			transition-delay: 0.9;
+// 		}
+// 		#_x35_{
+// 			transition-delay: 1.2;
+// 		}
+// 		#_x36_{
+// 			transition-delay: 1.5;
+// 		}
+// 		 #_x37_{
+// 			 transition-delay: 1.8;
+// 		 }
+// 	}
+// }
 }
-
+#pulse-svg{
+	width: 100%;
+}
+#b-user-end{
+	display: none;
+}
