@@ -588,12 +588,16 @@ $(document).on('hover', '.fae-c', function(){
 });
 
 
-function over(){
-    TweenMax.to('#ellipse3', 1, {top:'-5'});
-}
+// function over(){
+//     TweenMax.to('#ellipse3', 1, {top:'-5'});
+// }
 
-function out(){
-    TweenMax.to('#ellipse3', 1, {top:'5px'});
-}
+// function out(){
+//     TweenMax.to('#ellipse3', 1, {top:'5px'});
+// }
 
-$("#ellipse3").hover(over, out);
+// $("#ellipse3").hover(over, out);
+
+$(document).on('click tap', '.menu-icon', function(){
+    $('.right-block, .menu-icon, body').toggleClass('active');
+});
