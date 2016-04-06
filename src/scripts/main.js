@@ -584,9 +584,6 @@ $(document).on('click', '.timeline-arrow.prev', function(){
 // textarea
 window.autosize && autosize(document.querySelectorAll('textarea.form-control'));
 
-// modal
-$('#careerModal').modal();
-
 // $(document).on('click', 'a[class^="cicon"]', function(e){
 //     e.preventDefault();
 // });
