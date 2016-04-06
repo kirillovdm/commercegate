@@ -242,3 +242,15 @@ hr {
 .bold{
     font-weight: bold;
 }
+
+.scrollX{
+        overflow-x: scroll!important;
+}
+
+.show-mob{
+    display: none!important;
+}
+
+.nominheight{
+    min-height:0!important; 
+}

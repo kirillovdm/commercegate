@@ -516,8 +516,8 @@ function drawMap(){
 }
 
 function drawSagrada(){
-    var animSagrada = '.spoint';
-    TweenMax.staggerFrom(animSagrada, .2, {drawSVG:0, delay:1}, .01);
+    var animSagrada = '#sagrada-svg line, #sagrada-svg path';
+    TweenMax.staggerFrom(animSagrada, .2, {drawSVG:0, delay:1}, .001);
 }
 
 
@@ -620,12 +620,16 @@ $(document).on('hover', '.fae-c', function(){
 });
 
 
-function over(){
-    TweenMax.to('#ellipse3', 1, {top:'-5'});
-}
+// function over(){
+//     TweenMax.to('#ellipse3', 1, {top:'-5'});
+// }
 
-function out(){
-    TweenMax.to('#ellipse3', 1, {top:'5px'});
-}
+// function out(){
+//     TweenMax.to('#ellipse3', 1, {top:'5px'});
+// }
 
-$("#ellipse3").hover(over, out);
+// $("#ellipse3").hover(over, out);
+
+$(document).on('click tap', '.menu-icon', function(){
+    $('.right-block, .menu-icon, body').toggleClass('active');
+});
