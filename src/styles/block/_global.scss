@@ -737,7 +737,7 @@ a.card-link{
 }
 .timeline-arrow {
 	position: absolute;
-    top: 10%;
+    top: 5%;
 	outline: 0;
 	width: 50px;
 	height: 50px;
@@ -766,7 +766,6 @@ a.card-link{
 .timeline-wrap{
     position: relative;
     height: 450px;
-    margin-bottom: 50px;
     z-index: 10;
     &:before,
     &:after{
@@ -803,74 +802,74 @@ a.card-link{
 		display: inline-block;
 		position: relative;
 		max-width: 380px;
-		margin-right: 80px;
+		margin-right: 22px;
     	white-space: normal;
     	vertical-align: top;
     	&:nth-of-type(1){
     		top:56px;
     	}
     	&:nth-of-type(2){
-    		top:24px;
+    		top:4px;
     	}
     	&:nth-of-type(3){
-    		top:-12px;
-    		margin-right: 86px;
+    		top: 16px;
+    		margin-right: 16px;
     	}
     	&:nth-of-type(4){
-    		top:-22px;
+    		top:-12px;
     	}
     	&:nth-of-type(5){
-    		top:-32px;
-    		margin-right: 129px;
+    		top:8px;
+    		margin-right: 69px;
     		&:after{
 				height: 20%;
     		}
     	}
     	&:nth-of-type(6){
-    		top:-44px;
+    		top:-20px;
     		&:after{
 				height: 20%;
     		}
     	}
     	&:nth-of-type(7){
-    		top:-50px;
+    		top:10px;
     	}
     	&:nth-of-type(8){
-    		top:-61px;
+    		top:-21px;
     	}
     	&:nth-of-type(9){
-    		top:-80px;
+    		top:10px;
     	}
     	&:nth-of-type(10){
-    		top:-91px;
-    		margin-right: 143px;
+    		top:-11px;
+    		margin-right: 83px;
     		&:after{
 				height: 20%;
     		}
     	}
     	&:nth-of-type(11){
-    		top:-102px;
+    		top:14px;
     		&:after{
 				height: 20%;
     		}
     	}
     	&:nth-of-type(12){
-    		top:-114px;
+    		top:-30px;
     	}
     	&:nth-of-type(13){
-    		top:-132px;
+    		top:-2px;
     	}
     	&:nth-of-type(14){
-    		top:-150px;
+    		top:-22px;
     	}
     	&:nth-of-type(15){
-    		top:-162px;
+    		top:-2px;
     	}
     	&:nth-of-type(16){
-    		top:-172px;
+    		top:-28px;
     	}
     	&:nth-of-type(17){
-    		top:-189px;
+    		top:-12px;
     	}
     	&:after{
     		position: absolute;
