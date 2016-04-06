@@ -120,7 +120,7 @@
 		height: 80px;
 		img{
 			width: 100%;
-			
+
 		}
 	}
 	.btn-primary{
@@ -358,7 +358,7 @@
 
 .about-body{
 	.about-head-cont{
-		max-width: 490px;     
+		max-width: 490px;
 		position: absolute;
 		top: 50%;
 		left: 10%;
@@ -387,7 +387,7 @@
 	padding-left:65px;
 	width: 100%;
     height: auto;
-    overflow-y: hidden;
+    //overflow-y: hidden;
 	// background-image: url(../images/timeline.png);
 	// background-size: contain;
 	// background-repeat: no-repeat;
@@ -428,7 +428,7 @@
         list-style: disc;
       }
       h3{
-      font-weight:300; 
+      font-weight:300;
       margin-top: 10px;
       color:#2d3947;
       }
@@ -463,7 +463,7 @@
         opacity: .7;
       }
       .v-item-cont{
-        
+
       }
     }
     .v-img{
@@ -523,7 +523,7 @@
 			position: absolute;
 			left: 50%;
 			transform: translateX(-50%);
-			width: 90%;    
+			width: 90%;
 			bottom: 15px;
     		margin-left: -15px;
 			#total-graph-svg{
@@ -674,14 +674,15 @@ a.card-link{
 }
 
 .h-scroll-wrap{
+    position: relative;
 	overflow-y: hidden;
     margin-top: 30px;
     .h-scroll-cont{
     	position: relative;
-    	overflow-x: scroll;   	
+    	overflow-x: scroll;
     	white-space: nowrap;
     	&.addmargin{
-    		margin-bottom: -17px; 
+    		margin-bottom: -17px;
     	}
     }
 }
@@ -734,10 +735,37 @@ a.card-link{
 	    // left: 0;
 	}
 }
+.timeline-arrow {
+	position: absolute;
+    top: 10%;
+	outline: 0;
+	width: 50px;
+	height: 50px;
+	text-indent: -9999px;
+	z-index: 99;
+	background-color: #fff!important;
+	border-radius: 50%;
+	transition: all .15s linear;
+	&.next {
+		right: 20px;
+		background: url("../images/gallery-arrow.svg") no-repeat 50% 50%;
+		&.hidden{
+			display: none;
+		}
+	}
+	&.prev {
+		left: 20px;
+		background: url("../images/gallery-arrow.svg") no-repeat 50% 50%;
+		-webkit-transform: scaleX(-1);
+		transform: scaleX(-1);
+		&.hidden{
+			display: none;
+		}
+	}
+}
 .timeline-wrap{
-    overflow: hidden;
     position: relative;
-    height: 410px;
+    height: 450px;
     margin-bottom: 50px;
     z-index: 10;
     &:before,
@@ -909,7 +937,7 @@ a.card-link{
 			&.london{
 				top: 33%;
 				left: 47%;
-			} 
+			}
 			&.johannesburg{
 				top: 86%;
 				left: 55%
@@ -937,11 +965,11 @@ a.card-link{
 			&.newYorkU{
 				top: 46%;
 				left: 27%;
-			}		
+			}
 			&.rio{
 				top: 85%;
 				left: 36.5%;
-			}  
+			}
 			&.sydney{
 				top: 93%;
 				left: 88%;
@@ -951,7 +979,7 @@ a.card-link{
 			display: none;
 			position: absolute;
 			width: 150px;
-			height: 80px;
+			height: 60px;
 			padding: 8px;
 			line-height: 21px;
 			top:-88px;
