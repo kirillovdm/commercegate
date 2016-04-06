@@ -516,8 +516,8 @@ function drawMap(){
 }
 
 function drawSagrada(){
-    var animSagrada = '.spoint';
-    TweenMax.staggerFrom(animSagrada, .2, {drawSVG:0, delay:1}, .01);
+    var animSagrada = '#sagrada-svg line, #sagrada-svg path';
+    TweenMax.staggerFrom(animSagrada, .2, {drawSVG:0, delay:1}, .001);
 }
 
 
