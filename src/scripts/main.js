@@ -468,7 +468,7 @@ $(document).on('click', '.timeline-arrow.next', function(){
     var leftPos = $hOuter.scrollLeft();
     rt = $hOuter.width() - leftPos;
 
-    if(rt < -4530){
+    if(rt < -3414){
         $tarrowNext.addClass('hidden');
     }
     else if(leftPos > -1){
@@ -482,7 +482,7 @@ $(document).on('click', '.timeline-arrow.next', function(){
 $(document).on('click', '.timeline-arrow.prev', function(){
     var leftPos = $hOuter.scrollLeft();
     lt = $hOuter.width() - leftPos;
-console.log(leftPos);
+
     if(leftPos < 1700){
         $tarrowPrev.addClass('hidden');
     }
