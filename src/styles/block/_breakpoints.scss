@@ -11,7 +11,7 @@
 	.head-block .carousel-wrap .carousel {
 	    width: 100%;
 	}
-	
+
 	.about-p{
 		width: 100%;
 	}
@@ -28,7 +28,7 @@
 }
 
 @media (min-width: 993px){
-	
+
 	.ppad{
 	    p{
 	        padding-right: 75px;
@@ -173,7 +173,7 @@
 			// transform:translateX(-90vw);
 			transform:translateX(-80vw);
 			.right-block{
-				
+
 				box-shadow: 0 2px 15px rgba(55, 80, 135, 0.4);
 				&:before{
 					opacity: 1;
@@ -259,7 +259,7 @@
 	}
 
 	.carousel-wrap{
-		.carousel .item{ 
+		.carousel .item{
 			h1{
 				font-size: 35px;
 
@@ -416,7 +416,7 @@
 				width: 500px !important;
 				overflow-x: scroll;
 				left: 0!important;
-				transform:translateX(0)!important; 
+				transform:translateX(0)!important;
 				.circles-block .circle-wrapper{
 					&.circle1{
 						    bottom: 39%!important;
@@ -446,7 +446,7 @@
 						bottom: 89.8%!important;
 						left: 98%;
 					}
-				} 
+				}
 			}
 			.bottom-info{
 				ul {
@@ -526,7 +526,7 @@
 				width: 100%!important;
 			}
 		}
-		
+
 		.sol-body,
 		.risk-body{
 			.v-block{
@@ -544,7 +544,7 @@
 			left: 0!important;
 			transform:translate(0,0)!important;
 			padding-top: 70px;
-			padding-bottom: 70px; 
+			padding-bottom: 70px;
 		}
 		.sol-body .bx-wrapper .slide,
 		.risk-body .v-block .bx-wrapper .slide{
@@ -610,7 +610,7 @@
 			width: 285px!important;
 		}
 
-		// .fadeInUp, 
+		// .fadeInUp,
 		// .fadeIn{
 		// 	opacity: 1!important;
 		// 	transform:translate(0)!important;
@@ -655,6 +655,133 @@
 
 .sol-body .v-card-slider .slide:last-of-type .icon-placeholder80 {
     left: 10px!important;
+    }
+
+}
+
+@media (min-width: 361px) {
+    .news-wrapper.career-list-cont.head-screen {
+        .container.desktop {
+            display: block;
+        }
+
+        .container.mobile {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 360px) {
+
+    .layout-header {
+        height: 75px;
+        background-image: linear-gradient(to bottom left, #e8eaed 0%, #f3f4f5 100%);
+    }
+
+    #careerModal .modal-content {
+        width: 100%;
+        padding: 30px 10px 15px 10px;
+    }
+
+    .news-wrapper.career-list-cont.head-screen {
+        background-image: linear-gradient(to bottom left, #e8eaed 0%, #f3f4f5 100%);
+        padding-bottom: 20px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+        .container.desktop {
+            display: none;
+        }
+
+        .container.mobile {
+            display: block;
+        }
+
+        .career-list-cont {
+            padding-top: 75px;
+            padding-bottom: 0;
+        }
+
+        .btn {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        h1 {
+           text-align: center;
+        }
+
+        h3 {
+           color: #1f2b3a;
+           text-align: left;padding-top: 22px;
+           margin: 15px 0;
+           border-top: 1px solid #d4d8de;
+        }
+
+        .arrow {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            margin: 6px 0 0 6px;
+            transform: rotate(225deg);
+            border-left: 1px solid #8d95a6;
+            border-top: 1px solid #8d95a6;
+            transition: all 0.6s ease-in-out;
+        }
+
+        .up {
+            transform: rotate(45deg);
+            margin: 10px 0 0 6px;
+            border-left: 2px solid #1f2b3a;
+            border-top: 2px solid #1f2b3a;
+        }
+
+        .collapse-title {
+            display: block;
+            color: #1f2b3a;
+            font-weight: 700;
+            border-top: 1px solid #d4d8de;
+            padding: 15px 0;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 4px 4px 0 0;
+            box-shadow: 0px 2px 7px -2px #616061;
+        }
+
+        .collapse-title.collapsed {
+            display: block;
+            color: #8d95a6;
+            font-weight: 400;
+            border-top: 1px solid #d4d8de;
+            padding: 15px 0;
+            background-color: #ECECEC;
+            padding: 10px;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .vacancies-title {
+            display: block;
+            color: #8d95a6;
+            padding: 5px 0;
+        }
+
+        li.active .vacancies-title {
+            color: #0094de;
+        }
+
+        .collapse.in {
+            display: block;
+            visibility: visible;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 0 0 4px 4px;
+            box-shadow: 0px 2px 7px -2px rgba(97,96,97,1);
+            margin-bottom: 10px;
+        }
+
+        .tab-content {
+            padding: 0;
+        }
     }
 
 }
