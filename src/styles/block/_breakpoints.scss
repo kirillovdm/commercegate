@@ -574,7 +574,10 @@
 		.show-mob{
 			display: block;
 		}
-
+		
+		.scrollX{
+		        overflow-x: scroll!important;
+		}
 		.v-block.cust-bg-graph img.right-img{
 			    width: 50px;
 			    transform:translate(0,0);
@@ -647,15 +650,29 @@
 	}
 
 	.layout-header.s-header.scrolled {
-	    background-color: rgba(82, 38, 157, 1)!important;
+		background-color: rgba(82, 38, 157, 1)!important;
 	}
 	body.risk-body .layout-header.s-header.scrolled {
-    background-color: rgba(2, 184, 153, 1) !important;
-}
+		background-color: rgba(2, 184, 153, 1) !important;
+	}
 
-.sol-body .v-card-slider .slide:last-of-type .icon-placeholder80 {
-    left: 10px!important;
-    }
+	.sol-body .v-card-slider .slide:last-of-type .icon-placeholder80 {
+		left: 10px!important;
+	}
+
+	#adout-chart{
+		margin-right: 20px;
+	}
+
+	.head-block.planetbg {
+		background-position: -50% 125%!important;
+		background-size: 108%!important;
+	}
+
+
+	.head-block canvas {
+		display: none!important;
+	}
 
 }
 
