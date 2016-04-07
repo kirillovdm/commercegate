@@ -765,7 +765,7 @@ a.card-link{
 }
 .timeline-wrap{
     position: relative;
-    height: 200px;
+    height: 250px;
     z-index: 10;
     &:before,
     &:after{
@@ -789,6 +789,7 @@ a.card-link{
 }
 .timeline-block{
     position: relative;
+    height: 250px;
     margin-bottom: -20px;
     padding-top: 10px;
 }
