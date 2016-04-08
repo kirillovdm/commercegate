@@ -396,6 +396,7 @@
 .about-map{
 	min-width: 100%;
 	width: 100%;
+	margin-top: -70px;
 }
 
 .about-content{
@@ -908,6 +909,9 @@ a.card-link{
 		}
 	}
 }
+[data-hover-child]{
+	transition:all .2s linear;
+}
 
 .tooltips-block{
 	display: block;
@@ -921,8 +925,8 @@ a.card-link{
 		position: absolute;
 		background-color: transparent;
 		cursor: pointer;
-		width: 20px;
-		height: 20px;
+		width: 30px;
+		height: 30px;
 		border-radius: 50%;
 			&:hover{
 				& .map-tooltip {
@@ -932,46 +936,46 @@ a.card-link{
 			}
 			&.kiev{
 				top: 35%;
-				left: 57%;
+				left: 58%;
 			}
 			&.london{
-				top: 33%;
+				top: 35%;
 				left: 47%;
 			}
 			&.johannesburg{
-				top: 86%;
-				left: 55%
+				top: 79%;
+				left: 55%;
 			}
 			&.moscow{
-				top: 28%;
-				left: 59%;
+				top: 32%;
+				left: 60%;
 			}
 			&.paris{
-				top: 37%;
+				top: 40%;
 				left: 49%;
 			}
 			&.bucharest{
-				top: 39%;
-				left: 55%;
+				top: 38%;
+				left: 56%;
 			}
 			&.montreal{
-				top: 38%;
+				top: 40%;
 				left: 29%;
 			}
 			&.losAngeles{
-				top: 48%;
-				left: 16%;
+				top: 47%;
+				left: 17%;
 			}
 			&.newYorkU{
 				top: 46%;
-				left: 27%;
+				left: 28%;
 			}
 			&.rio{
-				top: 85%;
+				top: 79%;
 				left: 36.5%;
 			}
 			&.sydney{
-				top: 93%;
+				top: 86%;
 				left: 88%;
 			}
 
@@ -982,8 +986,8 @@ a.card-link{
 			height: 60px;
 			padding: 8px;
 			line-height: 21px;
-			top:-88px;
-			left:-65px;
+			top: -65px;
+			left: -60px;
 			color:#fff;
 			opacity: 0;
 			text-align: center;
@@ -1057,3 +1061,14 @@ a.card-link{
 	display: none!important;
 }
 
+
+.you-can-be-here {
+    position: absolute;
+    top: 40px;
+    left: 48px;
+    width: 100%;
+}
+
+svg#you-can {
+    width: 200px;
+}

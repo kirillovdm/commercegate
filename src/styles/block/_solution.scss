@@ -326,8 +326,27 @@
 .v-block{
 	position: relative;
 	&.cust-bg-table{
-		background-image: url(../images/table-bg.jpg);
+		// background-image: url(../images/table-bg.jpg);
 		@extend %bg-pos;
+		img{
+			position: absolute;
+			top:0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			filter:blur(2px);
+			z-index: 1;
+			transition:filter 3s linear, opacity .3s linear;
+			opacity: .8;
+		}
+		&[style*="visibility: visible"] img{
+			filter:blur(0);
+		}
+		&:hover{
+			img{
+				opacity: 1;
+			}
+		}
 	}
 	&.cust-bg-graph{
 		background-image: url(../images/graph_002.png);
@@ -335,8 +354,10 @@
 		background-repeat: no-repeat;
 	}
 	.left-cont{
+		position: relative;
 		display: inline-block;
 		max-width: 370px;
+		z-index: 2;
 	}
 	.bottom-img{
 		position: absolute;
