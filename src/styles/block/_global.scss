@@ -197,6 +197,10 @@
 	background-color: #fff;
 }
 
+.news-wrapper.center{
+	text-align: center;
+}
+
 .news-main-item-block{
 	img{
 		width: 100%;
@@ -320,6 +324,7 @@
 	}
 }
 #spy-list{
+    margin-top: 35px;
 	li {
 		list-style: none;
 	}
