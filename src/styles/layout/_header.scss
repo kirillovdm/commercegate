@@ -36,6 +36,23 @@ body.risk-body .layout-header.s-header.scrolled{
 	background-color: rgba(2,184,153,.8);
 	box-shadow: 0 10px 20px rgba(0, 51, 51, 0.5);
 }
+body.risk-body {
+    .btn-primary {
+        box-shadow: 0 1px 2px #004E8D;
+        @include button-basic(
+            $bg:        #00f7ce, $color:        #007373,
+            $bg-hover:  #4dffe1, $color-hover:  #008c8c,
+            $bg-active: #0be0bd, $color-active: #007373
+        );
+        &:hover{
+            box-shadow: 0 2px 10px rgba(0, 78, 141, 0.5);
+        }
+        &:active,
+        &:focus{
+            box-shadow: 0 1px 2px rgba(255, 255, 255, 0.03), inset 0 1px 1px rgba(0, 76, 117, 0.25);
+        }
+    }
+}
 .right-block{
 	display: block;
 	float: right;
