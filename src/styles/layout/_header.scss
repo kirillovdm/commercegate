@@ -18,7 +18,7 @@ $layout-header-fixed: false !default;
         height: $layout-header-height;
     }
     &.scrolled{
-    	background-color: #fff;
+    	background-color: rgba(255,255,255,.9);
     	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     }
     &.s-header{
