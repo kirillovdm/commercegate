@@ -143,6 +143,7 @@
     box-shadow: 0 15px 45px rgba(55, 80, 135, 0.3), 0 0 35px rgba(55, 80, 135, 0.05);
     color:#fff;
     padding-top: 75px;
+    margin-top: 25px;
     text-align: center;
     h2{
 		font-weight: 300;
@@ -195,6 +196,10 @@
 
 .news-wrapper{
 	background-color: #fff;
+}
+
+.news-wrapper.center{
+	text-align: center;
 }
 
 .news-main-item-block{
@@ -320,6 +325,7 @@
 	}
 }
 #spy-list{
+    margin-top: 35px;
 	li {
 		list-style: none;
 	}
@@ -800,13 +806,25 @@ a.card-link{
 	position: relative;
 	top: -115px;
 	left: 0;
-	span{
-		display: inline-block;
+    .date{
+        display: inline-block;
+        margin-right: 160px;
+        &:hover{
+    		.tooltip-text {
+    		    opacity:1;
+    		}
+    	}
+    }
+	.tooltip-text{
+		display: none;
 		position: relative;
-		max-width: 380px;
-		margin-right: 22px;
+		max-width: 250px;
+		margin-right: -122px;
+        padding: 20px;
     	white-space: normal;
     	vertical-align: top;
+        background-color: #fff;
+        opacity:0;
     	&:nth-of-type(1){
     		top:56px;
     	}
@@ -889,10 +907,6 @@ a.card-link{
     		&:after{
     		     opacity:0;
     		}
-    	}
-    	.date{
-    		display: block;
-    		margin-bottom: 50px;
     	}
     }
 }
