@@ -3,6 +3,7 @@ $(window).on('load', function () {
         $spinner   = $preloader.find('.preloader-itself');
     $spinner.fadeOut('fast', function(){
             new WOW().init();
+            drawCareer();
     });
     $preloader.delay(350).fadeOut('slow');
 });
@@ -110,6 +111,37 @@ $(window).on('load', function () {
     if (isPC){
         $('.h-scroll-cont').addClass('addmargin');
     }
+
+
+
+    (function(){
+
+        var citys = $('.city');
+        var points = $('path[data-point]');
+        var cityPoint, cityData, pointPos;
+
+            for(var i=0; i < citys.length; i++){
+                cityPoint = $(citys[i]);
+                cityData = cityPoint.attr('data-map-tooltip');
+                pointPos = $('path[data-point="' + cityData + '"]').offset();
+
+                $(cityPoint).offset(pointPos);
+            }
+
+    })();
+
+    $('[data-hover-parent]').hover(
+        var hoverParent = $(this).attr('data-hover-parent');
+        var hoverChild = $('[data-hover-child="'+ hoverParent +'"]')
+        function(){
+            hoverChild.attr('r', 25);
+        },
+
+        function(){
+            hoverChild.attr('r', 20);
+        }
+
+    );
 
 })(window.jQuery);
 
@@ -298,7 +330,7 @@ $(document).ready(function(){
           });
           $('.v-card-slider').bxSlider({
             slideWidth: 320,
-            minSlides: 3,
+            minSlides: 2,
             maxSlides: 8,
             moveSlides: 1,
             slideMargin: 20,
@@ -558,14 +590,26 @@ drawPulse();
 function drawUsers(){
     var users = ".s-users";
     var usertl = new TimelineMax();
+
     usertl.staggerFrom(users, 1, {opacity:0, delay:1}, .25).to('#b-user', .75, {morphSVG:'#b-user-end'}).from('#done-icon', .75, {opacity:0});
 
+}
+
+function drawCareer(){
+    var arrow = '#arrow'
+    var text = "#type path";
+    var circle = ".careers-photo-block .circle"
+    var careertl = new TimelineMax();
+    console.log('draw')
+    careertl.staggerFromTo(text, .1, {drawSVG:"100% 100%"}, {drawSVG:'0% 100%', delay:1.5}, .1).from(circle, .5, {opacity:0}).fromTo(arrow, .75, {drawSVG:"100% 100%"}, {drawSVG:'0% 100%', ease:Power2.easeIn});
+    // careertl.from(text, 1.5, {opacity:0}).from(arrow, 1.5, {opacity:0});
 }
 
 var aboutKey = true;
 var sagradaKey = true;
 var bankKey = true;
 var usersKey = true;
+var careerKey = true;
 
 
 function checkAnimations(){
@@ -611,9 +655,17 @@ function checkAnimations(){
                     }
                     usersKey = false;
                     break
+
+                case 'you-can':
+                    if(careerKey){
+                        drawCareer();
+                    }
+                    careerKey = false;
+                    break
             }
 
 }
+checkAnimations();
 
 
 (function ($) {
