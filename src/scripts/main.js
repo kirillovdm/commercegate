@@ -135,7 +135,7 @@ $(window).on('load', function () {
     // $('.svg-hover').hover(
 
     //     function(){
-            
+
     //     },
 
     //     function(){
@@ -538,7 +538,7 @@ $(document).on('click', '.timeline-arrow.next', function(){
     var leftPos = $hOuter.scrollLeft();
     rt = $hOuter.width() - leftPos;
 
-    if(rt < -3414){
+    if(rt < -350){
         $tarrowNext.addClass('hidden');
     }
     else if(leftPos > -1){
@@ -553,7 +553,7 @@ $(document).on('click', '.timeline-arrow.prev', function(){
     var leftPos = $hOuter.scrollLeft();
     lt = $hOuter.width() - leftPos;
 
-    if(leftPos < 1700){
+    if(leftPos < 1278){
         $tarrowPrev.addClass('hidden');
     }
     else if(lt > -6134){
@@ -718,9 +718,9 @@ $(document).on('mouseenter', '.circle-wrapper', function(){
               prefix : '+',
               suffix : '%'
         };
-        
+
     var countCircl = new CountUp(countEl, 0, countNum, 0, 2, options);
-        
+
     countCircl.start();
 });
 
@@ -767,10 +767,10 @@ $(document).on('click tap', '.collapse-title', function(){
 var bubbleInterval;
 var topCount = 0;
 $(document).on('mouseenter', '.bubbles', function(){
-    
+
     // $('.bubbles').css({top:'-=100px'});
 
-    
+
        bubbleInterval = setInterval(function(){
             if(topCount <= 255){
                 $('.bubbles').css({top:'-=1'});
