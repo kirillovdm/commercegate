@@ -404,6 +404,8 @@
 	width: 100%;
 	margin-top: -70px;
 }
+#about-map-svg{
+}
 
 .about-content{
   .bx-viewport{
@@ -584,7 +586,7 @@
 						border-radius: 50%;
 						background-color: #fff;
 						border: 2px solid #fff;
-						transition:bordar-radius .15s linear, width .15s linear, height .15s linear;
+						transition:bordar-radius .35s ease-out, width .35s ease-out, height .35s ease-out;
 						transform:translate(-50%, -50%);
 						transform-origin:50% 50%;
 						overflow: hidden;
@@ -642,7 +644,7 @@
 							opacity: 1;
 							width: 100%;
 							transition: opacity .2s linear;
-							transition-delay:.2s;
+							transition-delay:.25s;
 						}
 					}
 				}

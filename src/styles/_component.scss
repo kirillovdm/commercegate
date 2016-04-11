@@ -395,7 +395,7 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity .6s ease-in, transform .8s ease-in;
+    transition: opacity .35s ease-in, transform .6s ease-in-out;
     h1{
         text-align: center;
     }
@@ -404,7 +404,11 @@
     opacity: 1;
   }
   .item.right,.item.left{
-    opacity: .7;
+    opacity: .2;
+  }
+  .item.right:not(.active),.item.left:not(.active){
+
+    z-index: 2;
   }
 }
 .slide-background-wrap{

@@ -251,3 +251,12 @@ hr {
 .nominheight{
     min-height:0!important; 
 }
+
+.hide{
+    display: none!important;
+}
+.transparent{
+    opacity: 0!important;
+    visibility: hidden!important;
+    pointer-events:none;
+}

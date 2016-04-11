@@ -113,37 +113,78 @@ $(window).on('load', function () {
     }
 
 
+    var hoverParent, hoverChild, startAttr;
+    $('[data-hover-parent]').on('mouseenter', function(){
+            hoverParent = $(this).attr('data-hover-parent');
+            hoverChild = $('[data-hover-child="'+ hoverParent +'"]');
+            startAttr = hoverChild.attr('r');
+            hoverChild.attr('r', 35);
+    });
 
-    (function(){
+    $('[data-hover-parent]').on('mouseleave', function(){
+            hoverChild.attr('r', startAttr);
+    });
 
-        var citys = $('.city');
-        var points = $('path[data-point]');
-        var cityPoint, cityData, pointPos;
 
-            for(var i=0; i < citys.length; i++){
-                cityPoint = $(citys[i]);
-                cityData = cityPoint.attr('data-map-tooltip');
-                pointPos = $('path[data-point="' + cityData + '"]').offset();
+    $('.svg-hover').on('mouseenter', function(){
+    });
 
-                $(cityPoint).offset(pointPos);
-            }
+    $('.svg-hover').on('mouseleave', function(){
+    });
 
-    })();
+    // $('.svg-hover').hover(
 
-    $('[data-hover-parent]').hover(
-        var hoverParent = $(this).attr('data-hover-parent');
-        var hoverChild = $('[data-hover-child="'+ hoverParent +'"]')
-        function(){
-            hoverChild.attr('r', 25);
-        },
+    //     function(){
+            
+    //     },
 
-        function(){
-            hoverChild.attr('r', 20);
-        }
+    //     function(){
 
-    );
+    // );
 
 })(window.jQuery);
+
+
+
+function pointAttachmentPos(){
+    var posEl = $('[data-pos-el]');
+    var attachEl = $('[data-attach-pos-el]');
+    var posElItem, posElItemData, posElItemPos;
+
+    if(posEl.length == 0 || attachEl.length == 0) return;
+
+    for(var i=0; i < attachEl.length; i++){
+        posElItem = $(attachEl[i]);
+        posElItemData = $(posElItem[0]).attr('data-attach-pos-el');
+        posElItemPos = $('[data-pos-el="'+ posElItemData +'"]').position();
+        $(attachEl[i]).position(posElItemPos);
+    }
+};
+
+function pointAttachmentOffset(){
+
+    var offsetEl = $('[data-offset-el]');
+    var attachOffsetEl = $('[data-attach-offset-el]');
+
+    var offsetPoint, offsetPointData, offsetPointPos, correctTop, correctLeft;
+
+    if(offsetEl.length == 0 || attachOffsetEl.length == 0) return;
+
+    for(var i=0; i < attachOffsetEl.length; i++){
+        offsetPoint = $(attachOffsetEl[i]);
+        offsetPointData = $(offsetPoint[0]).attr('data-attach-offset-el');
+        offsetPointPos = $('[data-offset-el="'+ offsetPointData +'"]').offset();
+        $(attachOffsetEl[i]).offset(offsetPointPos);
+
+        correctTop = $(offsetPoint[0]).attr('data-correct-top');
+        correctLeft = $(offsetPoint[0]).attr('data-correct-left');
+        $(attachOffsetEl[i]).css({top:'+='+correctTop+'', left:'+='+correctLeft+''});
+    }
+};
+
+
+pointAttachmentOffset();
+pointAttachmentPos();
 
 
 /*
@@ -344,7 +385,6 @@ $(document).ready(function(){
             moveSlides: 1,
             slideMargin: 20
           });
-          console.log('nomob');
     }
 
     else{
@@ -400,8 +440,6 @@ $(document).ready(function(){
             moveSlides: 1,
             slideMargin: 20
           });
-
-          console.log('mob');
     }
 
 });
@@ -576,13 +614,13 @@ function drawBanks(){
 }
 
 function drawPulse(){
-    var dot = '#pulse-dot2';
+    var dot = '#pulse-dot2 path';
 
     if($(dot).length<1) return;
 
     var path = MorphSVGPlugin.pathDataToBezier('#pulse-back', {align:dot});
     TweenMax.set(dot, {xPercent:-50, yPercent:-50});
-    TweenMax.to(dot, 3, {bezier:{values:path, type:'cubic'}, ease:Linear.easeNone, repeat:-1});
+    TweenMax.to(dot, 3, {bezier:{curviness:1, values:path, type:'cubic'}, ease:Linear.easeNone, repeat:-1});
 
 }
 drawPulse();
@@ -600,7 +638,6 @@ function drawCareer(){
     var text = "#type path";
     var circle = ".careers-photo-block .circle"
     var careertl = new TimelineMax();
-    console.log('draw')
     careertl.staggerFromTo(text, .1, {drawSVG:"100% 100%"}, {drawSVG:'0% 100%', delay:1.5}, .1).from(circle, .5, {opacity:0}).fromTo(arrow, .75, {drawSVG:"100% 100%"}, {drawSVG:'0% 100%', ease:Power2.easeIn});
     // careertl.from(text, 1.5, {opacity:0}).from(arrow, 1.5, {opacity:0});
 }
@@ -620,7 +657,6 @@ function checkAnimations(){
         animatedSVG = $('.animated[data-start-anim]');
 
         animData = animatedSVG.attr('data-start-anim');
-        console.log('check');
 
             switch (animData) {
 
@@ -668,19 +704,37 @@ function checkAnimations(){
 checkAnimations();
 
 
+$(document).on('mouseenter', '.circle-wrapper', function(){
+    var hoverCircle = $(this).attr('data-circle');
+    var countString = $(this).find('.c-content').text();
+    var countNum = parseInt(countString);
+    var countEl = "count-circle-" +hoverCircle+ "";
+
+    var options = {
+              useEasing : true,
+              useGrouping : true,
+              separator : '',
+              decimal : '.',
+              prefix : '+',
+              suffix : '%'
+        };
+        
+    var countCircl = new CountUp(countEl, 0, countNum, 0, 2, options);
+        
+    countCircl.start();
+});
+
+
 (function ($) {
 
     var container = document.getElementById('head-block');
 
     if (!container) return;
 
-    console.log('1');
-
  })(window.jQuery);
 
 $(document).on('hover', '.fae-c', function(){
     $('.st11').css('color', '#000');
-    console.log('asdasd');
 });
 
 
@@ -709,4 +763,26 @@ $('#creersTab').tab('show');
 
 $(document).on('click tap', '.collapse-title', function(){
     $(this).children().toggleClass('up');
+});
+var bubbleInterval;
+var topCount = 0;
+$(document).on('mouseenter', '.bubbles', function(){
+    
+    // $('.bubbles').css({top:'-=100px'});
+
+    
+       bubbleInterval = setInterval(function(){
+            if(topCount <= 255){
+                $('.bubbles').css({top:'-=1'});
+                topCount += 1;
+
+            }
+            else{
+                clearInterval(bubbleInterval);
+            }
+       }, 30);
+});
+
+$(document).on('mouseleave', '.dialog-block', function(){
+    clearInterval(bubbleInterval);
 });

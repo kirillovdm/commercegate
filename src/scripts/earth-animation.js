@@ -30,6 +30,18 @@
 
     // earth
     var loader = new THREE.TextureLoader();
+    var linex = new THREE.JSONLoader('scripts/vendor/line.js', function (texture) {
+        var geometry = new THREE.SphereGeometry(500, 64, 64);
+
+        var material = new THREE.MeshBasicMaterial({
+            map: texture,
+            overdraw: 0.15
+        });
+
+        var mesh = new THREE.Mesh(geometry, material);
+
+        group.add(mesh);
+    });
 
     loader.load(image, function (texture) {
         var geometry = new THREE.SphereGeometry(500, 64, 64);
