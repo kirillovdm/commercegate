@@ -642,11 +642,22 @@ function drawCareer(){
     // careertl.from(text, 1.5, {opacity:0}).from(arrow, 1.5, {opacity:0});
 }
 
+function drawAqa(){
+    var line = "#aqa-line";
+    var dots = '.qst6';
+    var aqaTl = new TimelineMax();
+
+    aqaTl.from(line, 3, {drawSVG:0}).staggerFrom(dots, .5, {opacity:0}, .3);
+    console.log('go');
+
+}
+
 var aboutKey = true;
 var sagradaKey = true;
 var bankKey = true;
 var usersKey = true;
 var careerKey = true;
+var aqaKey = true;
 
 
 function checkAnimations(){
@@ -697,6 +708,13 @@ function checkAnimations(){
                         drawCareer();
                     }
                     careerKey = false;
+                    break
+
+                case 'aqa-graph':
+                    if(aqaKey){
+                        drawAqa();
+                    }
+                    aqaKey = false;
                     break
             }
 

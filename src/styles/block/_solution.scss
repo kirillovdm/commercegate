@@ -349,9 +349,9 @@
 		}
 	}
 	&.cust-bg-graph{
-		background-image: url(../images/graph_002.png);
-		background-position:100% 50%;
-		background-repeat: no-repeat;
+		// background-image: url(../images/graph_002.png);
+		// background-position:100% 50%;
+		// background-repeat: no-repeat;
 	}
 	.left-cont{
 		position: relative;
@@ -370,7 +370,16 @@
 		top:50%;
 		right:50px;
 		transform:translateY(-50%);
+		z-index: 2;
 	}
+
+}
+
+svg#aqa-graph {
+    position: absolute;
+    bottom: 35px;
+    z-index: 1;
+    left: 0;
 }
 
 
