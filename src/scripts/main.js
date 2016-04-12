@@ -786,3 +786,56 @@ $(document).on('mouseenter', '.bubbles', function(){
 $(document).on('mouseleave', '.dialog-block', function(){
     clearInterval(bubbleInterval);
 });
+
+
+/*
+html2canvas($("body"), {
+    onrendered: function(canvas) {
+	    $(".blurheader").append(canvas);
+		$("canvas").attr("id","canvas");
+            stackBlurCanvasRGB('canvas', 0, 0, $("canvas").width(), $("canvas").height(), 5);
+	}
+
+});
+
+
+
+$(window).scroll(function(){
+  $("canvas").css("-webkit-transform", "translatey(-" + $(window).scrollTop() + "px)");
+})
+
+window.onresize = function(){
+  $("canvas").width($(window).width());
+}
+
+$(document).bind('touchmove', function(){
+  $("canvas").css("-webkit-transform", "translatey(-" + $(window).scrollTop() + "px)");
+})
+
+$(document).bind('touchend', function(){
+  $("canvas").css("-webkit-transform", "translatey(-" + $(window).scrollTop() + "px)");
+})
+*/
+
+
+document.addEventListener('DOMContentLoaded', function(){
+    var v = $(".blurheader");
+    var canvas = document.getElementById('mycanvas');
+    var context = canvas.getContext('2d');
+    var ch = $(".blurheader").height();
+    var cw = $(".blurheader").width();
+
+    canvas.width = cw;
+    canvas.height = ch;
+
+    v.addEventListener('play', function(){
+        draw(this,context,cw,ch);
+    },false);
+
+},false);
+
+function draw(v,c,w,h) {
+    if(v.paused || v.ended) return false;
+    c.drawImage(v,0,0,w,h);
+    setTimeout(draw,20,v,c,w,h);
+}
