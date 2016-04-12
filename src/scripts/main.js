@@ -260,6 +260,8 @@ $(function(){
 
 
 $(document).on('scroll onload', function(){
+
+
     var $header = $('.layout-header');
     if($header.offset().top > $header.height()) {
         $header.addClass('scrolled');
@@ -321,12 +323,9 @@ $(document).on('scroll onload', function(){
     }
 
 
-
-        checkAnimations();
-
-
-
 });
+
+
 
 
 $(document).ready(function(){
@@ -646,9 +645,7 @@ function drawAqa(){
     var line = "#aqa-line";
     var dots = '.qst6';
     var aqaTl = new TimelineMax();
-
-    aqaTl.from(line, 3, {drawSVG:0}).staggerFrom(dots, .5, {opacity:0}, .3);
-    console.log('go');
+    aqaTl.to('#aqa-graph', .1, {opacity:1}).from(line, 3, {drawSVG:0}).staggerFrom(dots, .5, {opacity:0}, .2);
 
 }
 
@@ -677,6 +674,13 @@ function checkAnimations(){
                     }
                         aboutKey = false;
                         break
+
+                case 'aqa-go':
+                    if(aqaKey){
+                        drawAqa();
+                    }
+                        aqaKey = false;
+                    break
 
                 case 'sagrada':
                     if(sagradaKey){
@@ -709,18 +713,11 @@ function checkAnimations(){
                     }
                     careerKey = false;
                     break
-
-                case 'aqa-graph':
-                    if(aqaKey){
-                        drawAqa();
-                    }
-                    aqaKey = false;
-                    break
             }
+            requestAnimationFrame(checkAnimations);
 
 }
 checkAnimations();
-
 
 $(document).on('mouseenter', '.circle-wrapper', function(){
     var hoverCircle = $(this).attr('data-circle');
