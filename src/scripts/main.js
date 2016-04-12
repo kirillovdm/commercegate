@@ -135,7 +135,7 @@ $(window).on('load', function () {
     // $('.svg-hover').hover(
 
     //     function(){
-            
+
     //     },
 
     //     function(){
@@ -538,7 +538,7 @@ $(document).on('click', '.timeline-arrow.next', function(){
     var leftPos = $hOuter.scrollLeft();
     rt = $hOuter.width() - leftPos;
 
-    if(rt < -3414){
+    if(rt < -350){
         $tarrowNext.addClass('hidden');
     }
     else if(leftPos > -1){
@@ -553,7 +553,7 @@ $(document).on('click', '.timeline-arrow.prev', function(){
     var leftPos = $hOuter.scrollLeft();
     lt = $hOuter.width() - leftPos;
 
-    if(leftPos < 1700){
+    if(leftPos < 1278){
         $tarrowPrev.addClass('hidden');
     }
     else if(lt > -6134){
@@ -736,9 +736,9 @@ $(document).on('mouseenter', '.circle-wrapper', function(){
               prefix : '+',
               suffix : '%'
         };
-        
+
     var countCircl = new CountUp(countEl, 0, countNum, 0, 2, options);
-        
+
     countCircl.start();
 });
 
@@ -785,10 +785,10 @@ $(document).on('click tap', '.collapse-title', function(){
 var bubbleInterval;
 var topCount = 0;
 $(document).on('mouseenter', '.bubbles', function(){
-    
+
     // $('.bubbles').css({top:'-=100px'});
 
-    
+
        bubbleInterval = setInterval(function(){
             if(topCount <= 255){
                 $('.bubbles').css({top:'-=1'});
@@ -804,3 +804,56 @@ $(document).on('mouseenter', '.bubbles', function(){
 $(document).on('mouseleave', '.dialog-block', function(){
     clearInterval(bubbleInterval);
 });
+
+
+/*
+html2canvas($("body"), {
+    onrendered: function(canvas) {
+	    $(".blurheader").append(canvas);
+		$("canvas").attr("id","canvas");
+            stackBlurCanvasRGB('canvas', 0, 0, $("canvas").width(), $("canvas").height(), 5);
+	}
+
+});
+
+
+
+$(window).scroll(function(){
+  $("canvas").css("-webkit-transform", "translatey(-" + $(window).scrollTop() + "px)");
+})
+
+window.onresize = function(){
+  $("canvas").width($(window).width());
+}
+
+$(document).bind('touchmove', function(){
+  $("canvas").css("-webkit-transform", "translatey(-" + $(window).scrollTop() + "px)");
+})
+
+$(document).bind('touchend', function(){
+  $("canvas").css("-webkit-transform", "translatey(-" + $(window).scrollTop() + "px)");
+})
+*/
+
+
+document.addEventListener('DOMContentLoaded', function(){
+    var v = $(".blurheader");
+    var canvas = document.getElementById('mycanvas');
+    var context = canvas.getContext('2d');
+    var ch = $(".blurheader").height();
+    var cw = $(".blurheader").width();
+
+    canvas.width = cw;
+    canvas.height = ch;
+
+    v.addEventListener('play', function(){
+        draw(this,context,cw,ch);
+    },false);
+
+},false);
+
+function draw(v,c,w,h) {
+    if(v.paused || v.ended) return false;
+    c.drawImage(v,0,0,w,h);
+    setTimeout(draw,20,v,c,w,h);
+}

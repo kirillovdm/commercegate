@@ -18,7 +18,7 @@ $layout-header-fixed: false !default;
         height: $layout-header-height;
     }
     &.scrolled{
-    	background-color: rgba(255,255,255,.9);
+        background-color: rgba(255,255,255,.9);
     	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     }
     &.s-header{
@@ -54,10 +54,12 @@ body.risk-body {
     }
 }
 .right-block{
+    position: relative;
 	display: block;
 	float: right;
 	text-align: right;
 	margin-right: 30px;
+    z-index: 10000;
 	ul{
 		margin: 0;
 		li{
@@ -121,3 +123,29 @@ body.risk-body {
 		opacity: 1;
 	}
 }
+/*
+canvas{
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'blur\'>    <feGaussianBlur stdDeviation=\'10\'/></filter>#blur");
+  -webkit-filter:blur(10px) brightness(0.7);
+  filter:blur(10px) brightness(0.7);
+  opacity: (0.7);
+  top:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+
+        .blurheader {
+            width: 100%;
+            height: 75px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255,255,255,.9);
+            overflow: hidden;
+            filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'blur\'>    <feGaussianBlur stdDeviation=\'10\'/></filter>#blur");
+  -webkit-filter:blur(10px) brightness(0.7);
+  filter:blur(10px) brightness(0.7);
+        }
+*/
