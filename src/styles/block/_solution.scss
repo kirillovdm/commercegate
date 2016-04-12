@@ -349,7 +349,6 @@
 		}
 	}
 	&.cust-bg-graph{
-		background-image: url(../images/graph_002.png);
 		background-position:100% 50%;
 		background-repeat: no-repeat;
 	}
@@ -367,7 +366,7 @@
 	}
 	.right-img{
 		position: absolute;
-		top:50%;
+		top:65%;
 		right:50px;
 		transform:translateY(-50%);
 	}
@@ -804,7 +803,7 @@
 		}
 
 		& ~ .first-item{
-			
+
 			.il-circle{
 				color:#6741D9;
 				background-color: transparent;
