@@ -38,7 +38,6 @@ input[type="checkbox"] {
 	}
 	p{
 		color: #fff;
-		margin-bottom: 20px;
 	}
 	.form-control{
 		border-bottom-color:#fff;
@@ -66,17 +65,17 @@ input[type="checkbox"] {
 	    &:focus{
 	        background-color: rgb(237, 239, 242);
 	        color:$colorBlue;
-	           
+
 	    }
 	    &:hover{
 	        background-color: rgb(237, 239, 242) +15%;
 	        color:$colorBlue;
-	        
+
 	    }
 	    &:active{
 	        background-color: rgb(237, 239, 242) - 15%;
 	        color:$colorBlue;
-	           
+
 	    }
 
 	}

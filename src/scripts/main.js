@@ -79,11 +79,11 @@ $(window).on('load', function () {
 
     $('.ccat.content').columnCatalog(window.ccatOpts || {})
 
-    $('body').scrollspy({ target: '#spy-list', offset: '100' });
+    $('body').scrollspy({target: '#spy-list', offset: '100'});
 
     $(document).on('click', '[data-card-parent]', function(){
 
-        $(this).toggleClass('open');
+        $(this).addClass('open');
         var parentNum = $(this).data('card-parent');
         var childrenSlider = $('[data-card-children="' + parentNum + '"]');
         childrenSlider.closest('.bx-wrapper').toggleClass('open');
