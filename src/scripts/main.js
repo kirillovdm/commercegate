@@ -389,7 +389,7 @@ $(document).ready(function(){
             slideWidth: 320,
             minSlides: 2,
             maxSlides: 8,
-            moveSlides: 1,
+            moveSlides: 2,
             slideMargin: 20,
             infiniteLoop: false,
             hideControlOnEnd: true
@@ -444,7 +444,7 @@ $(document).ready(function(){
             slideWidth: 300,
             minSlides: 1,
             maxSlides: 8,
-            moveSlides: 1,
+            moveSlides: 2,
             slideMargin: 20,
             infiniteLoop: false,
             hideControlOnEnd: true
@@ -882,3 +882,12 @@ function draw(v,c,w,h) {
     setTimeout(draw,20,v,c,w,h);
 }
 
+$(".commentary-textarea").keyup(function(){
+    $(".characters-remaining-wrapper").css("display", "block");
+    el = $(this);
+    if(el.val().length >= 500){
+        el.val( el.val().substr(0, 500) );
+    } else {
+        $(".characters-remaining").text(500-el.val().length);
+    }
+});

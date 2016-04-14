@@ -58,13 +58,14 @@ body.risk-body {
 	display: block;
 	float: right;
 	text-align: right;
-	margin-right: 30px;
+	margin-right: 40px;
     z-index: 10000;
 	ul{
 		margin: 0;
 		li{
 			display: inline-block;
 			width: 96px;
+            height: 45px;
 			margin: 0;
 			margin-left: 7px;
 			text-align: right;
@@ -123,6 +124,36 @@ body.risk-body {
 		opacity: 1;
 	}
 }
+
+
+.nav {
+    display: none;
+    position: absolute;
+    top: 55px;
+    opacity: 0;
+    transition: opacity .15s linear;
+    li {
+        float: none;
+        height: 30px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+}
+
+.right-block ul li:hover .nav {
+    display: block;
+    opacity: 1;
+}
+
+.right-block ul.nav li {
+    display: block;
+    margin-left: 30px;
+    width: 180px;
+    height: 30px;
+    text-align: left;
+}
+
+
 /*
 canvas{
     filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'blur\'>    <feGaussianBlur stdDeviation=\'10\'/></filter>#blur");

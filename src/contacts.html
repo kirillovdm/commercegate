@@ -60,7 +60,9 @@
                                         <input class="form-control" type="email" name="cont_email" id="cont-email" data-rules="not-empty email" placeholder="Email">
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" name="contact_commentery" id="input5" placeholder="How can we help you?"></textarea>
+                                        <textarea class="form-control commentary-textarea" max-length="500" name="contact_commentary" id="input5" placeholder="How can we help you?"></textarea>
+                                            <div class="characters-remaining-wrapper">
+                                                <span class="characters-remaining"></span>characters left</div>
                                     </div>
                                 </form>
                                 <button type="submit" class="btn btn-primary">Send request</button>
