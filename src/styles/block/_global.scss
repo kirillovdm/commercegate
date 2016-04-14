@@ -822,7 +822,14 @@ a.card-link{
 		width: 50px;
 		height: 50px;
 		border-radius: 50%;
+        span {
+            display: inline-block;
+            transition: transform .15s linear;
+        }
         &:hover{
+            span {
+                transform: scale(1.2);
+            }
 		    .year {
                 display: block;
                 .tooltip-text {
@@ -1165,4 +1172,15 @@ svg#you-can {
     color: #818285;
     margin-top: -20px;
 }
+.selectize-input.items.full.has-options.has-items  div[data-value="value0"] {
+    height: 20px;
+}
 
+.characters-remaining-wrapper {
+    display: none;
+    font-size: 14px;
+}
+
+.characters-remaining {
+    margin-right: 5px;
+}
