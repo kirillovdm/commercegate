@@ -170,12 +170,12 @@ ul.bxslider {
 }
 
 .bx-wrapper .bx-prev {
-	 left: 0;
+	left: 20px;
     background: url('../images/gallery-arrow.svg') no-repeat 50% 50%;
     transform:scaleX(-1);
 }
 .bx-wrapper .bx-next {
-    right: 0;
+    right: 20px;
     background: url('../images/gallery-arrow.svg') no-repeat 50% 50%;
 }
 
