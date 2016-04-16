@@ -126,7 +126,7 @@ body.risk-body {
 }
 
 
-.nav {
+.nav-header {
     display: none;
     position: absolute;
     top: 55px;
@@ -140,12 +140,12 @@ body.risk-body {
     }
 }
 
-.right-block ul li:hover .nav {
+.right-block ul li:hover .nav-header {
     display: block;
     opacity: 1;
 }
 
-.right-block ul.nav li {
+.right-block ul.nav-header li {
     display: block;
     margin-left: 30px;
     width: 180px;

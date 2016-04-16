@@ -358,6 +358,10 @@
 	color:#1f2b3a;;
 }
 
+.affix li.active a{
+	color:#1f2b3a;;
+}
+
 .head-block canvas{
 	position: absolute;
 	top:0;
@@ -1184,4 +1188,12 @@ svg#you-can {
 
 .characters-remaining {
     margin-right: 5px;
+}
+
+.right-block ul li.mobile-li {
+    display: none;
+}
+
+.mobile-glob {
+    display: none;
 }

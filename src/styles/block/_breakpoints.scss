@@ -67,11 +67,7 @@
 
 }
 
-
-
-
-
-@media (max-width: 644px) {
+@media (max-width: 960px) {
 	.news-card{
 		margin-right: 0;
 	}
@@ -85,13 +81,23 @@
 		}
 	}
 
+    .mobile-li {
+        display: block;
+        margin-left: 20px !important;
+    }
+
+    .right-block ul li:hover .nav-header {
+        display: none !important;
+        opacity: 0;
+    }
+
 	.menu-icon{
 		height: 80px;
 		width: 30px;
 		position: fixed;
 		top:0;
 		right: 20px;
-		z-index: 9999;
+		z-index: 9999999;
 		&.active .hamb{
 			background-color: transparent;
 			transition: background-color 0s 0s linear;
@@ -218,7 +224,182 @@
 				width: 100%;
 				text-align: left;
 				background-color: #fff;
-				border-bottom: 1px solid #ccc;
+				margin-left: 0;
+				a{
+					display: block;
+					padding: 14px;
+					padding-left: 0;
+				}
+				&.btn-li{
+					border-bottom: none;
+					margin-left: 0;
+					a{
+						padding: 6px;
+						width: 100%;
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+@media (max-width: 644px) {
+	.news-card{
+		margin-right: 0;
+	}
+	.evolution-text{
+		span{
+			width: 300px;
+			margin-right: 160px;
+			&:after{
+				display: none;
+			}
+		}
+	}
+
+    .mobile-glob {
+        display: block;
+        position: absolute;
+        bottom: -70px;
+        right: -30px;
+    }
+
+	.menu-icon{
+		height: 80px;
+		width: 30px;
+		position: fixed;
+		top:0;
+		right: 20px;
+		z-index: 9999999;
+		&.active .hamb{
+			background-color: transparent;
+			transition: background-color 0s 0s linear;
+			&:after{
+				transform: rotateZ(45deg) translate(8px, 6px);
+			}
+			&:before{
+				transform: rotateZ(-45deg) translate(8px, -6px);
+			}
+		}
+		.hamb{
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 30px;
+			height: 2px;
+			border-radius: 5px;
+			background-color: #000;
+			transition: background-color 0s .15s linear;
+			&:after,
+			&:before{
+				display: block;
+				position: absolute;
+				content: "";
+				width: 30px;
+				height: 2px;
+				border-radius: 5px;
+				background-color: #000;
+				transition: transform .15s linear;
+				transform-origin: 50% 50%;
+			}
+			&:after{
+				top:-10px;
+				left: 0;
+			}
+			&:before{
+				bottom: -10px;
+				left: 0;
+			}
+		}
+	}
+
+	body .layout-header.s-header{
+		.menu-icon{
+			.hamb{
+				background-color: #fff;
+				&:after,
+				&:before{
+					background-color: #fff;
+				}
+			}
+			&.active{
+				.hamb{
+					background-color: transparent;
+				}
+			}
+		}
+		.right-block{
+			ul{
+				li{
+					a:not(.btn){
+						color:#000!important;
+						&:active,
+						&:hover,
+						&:focus{
+							color:#000!important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.layout-header{
+
+		transition:all .15s ease-in;
+		&.active{
+			// transform:translateX(-90vw);
+			transform:translateX(-80vw);
+			.right-block{
+
+				box-shadow: 0 2px 15px rgba(55, 80, 135, 0.4);
+				&:before{
+					opacity: 1;
+					display: block;
+				}
+			}
+		}
+	}
+
+	.layout-header .right-block{
+		display: block;
+		width: 80vw ;
+		height: 100vh;
+		position: fixed;
+		top:0;
+		left: auto;
+		right: -80vw;
+		transition:all .15s ease-in;
+		margin-right: 0;
+		background-color: #fff;
+		&:before{
+			position: absolute;
+			display: none;
+			content:"";
+			top:0;
+			left: -100vw;
+			height: 100%;
+			width: 100vw;
+			opacity: 0;
+			background-color: rgba(0,0,0,0.15);
+			z-index: 99;
+			transition:all .15s ease-in;
+
+		}
+
+		ul{
+			width: 80%;
+			float: right;
+			margin-top: 20px;
+			li{
+				display: block;
+				width: 100%;
+				text-align: left;
+				background-color: #fff;
 				margin-left: 0;
 				a{
 					display: block;
@@ -252,10 +433,17 @@
 		}
 	}
 
+    .head-globe,
+    .head-arrow-down,
+    .map-bg
+     {
+        display: none;
+    }
 
 	.layout-header .logo-block {
 	    width: 200px;
 	    margin-top: 5px;
+        margin-left: 10px;
 	}
 
 	.carousel-wrap{
@@ -325,7 +513,7 @@
 		.layout-footer{
 			height: auto!important;
 			.left-block{
-				display: block;
+				display: block !important;
 				margin: 10px auto !important;
 				ul{
 					margin: 15px 0 !important;
@@ -358,6 +546,7 @@
 			padding: 20px;
 			h1{
 				font-size: 35px;
+                margin-top: 40px;
 			}
 		}
 
@@ -478,7 +667,7 @@
 
 		.head-block{
 			height: auto!important;
-			min-height: 100vh!important;
+			min-height: 60vh!important;
 			padding-bottom: 20px;
 		}
 
@@ -574,7 +763,7 @@
 		.show-mob{
 			display: block;
 		}
-		
+
 		.scrollX{
 		        overflow-x: scroll!important;
 		}
@@ -689,12 +878,12 @@
 }
 
 @media (max-width: 360px) {
-
+/*
     .layout-header {
         height: 75px;
         background-image: linear-gradient(to bottom left, #e8eaed 0%, #f3f4f5 100%);
     }
-
+*/
     #careerModal .modal-content {
         width: 100%;
         padding: 30px 10px 15px 10px;

@@ -96,7 +96,7 @@ $(window).on('load', function() {
 
     $('.ccat.content').columnCatalog(window.ccatOpts || {})
 
-    $('body').scrollspy({target: '#spy-list', offset: '100'});
+    $('body').scrollspy({target: '#spy-list'});
 
     $(document).on('click', '[data-card-parent]', function(){
 
