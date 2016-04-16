@@ -247,6 +247,10 @@
 
 
 @media (max-width: 644px) {
+    .wow {
+        visibility: visible !important;
+        animation-name: none !important;
+    }
 	.news-card{
 		margin-right: 0;
 	}
