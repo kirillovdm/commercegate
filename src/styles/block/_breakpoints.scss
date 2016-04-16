@@ -251,6 +251,19 @@
         visibility: visible !important;
         animation-name: none !important;
     }
+    .desk-only,
+    .head-globe,
+    .head-arrow-down,
+    .map-bg,
+    .about-map {
+        display: none;
+    }
+    .mobile-only {
+        display: block;
+    }
+    .layout-content {
+        padding-top: 35px !important;
+    }
 	.news-card{
 		margin-right: 0;
 	}
@@ -437,13 +450,6 @@
 		}
 	}
 
-    .head-globe,
-    .head-arrow-down,
-    .map-bg
-     {
-        display: none;
-    }
-
 	.layout-header .logo-block {
 	    width: 200px;
 	    margin-top: 5px;
@@ -515,12 +521,14 @@
 
 
 		.layout-footer{
-			height: auto!important;
+			height: 125px !important;
 			.left-block{
 				display: block !important;
 				margin: 10px auto !important;
 				ul{
 					margin: 15px 0 !important;
+                    position: absolute;
+                    top: 5px;
 					li{
 						text-align: center;
 						margin: 0 10px !important;
@@ -528,14 +536,17 @@
 				}
 				.copyrights{
 					display: block !important;
-					margin: 0 !important;
-					padding:0 !important;
+					margin: 30px 0 0 0 !important;
+                    padding: 20px 0 0 0 !important;
 					text-align: center;
 					margin-bottom: 10px;
+                    border-top: 1px solid #dbdee4;
 				}
 			}
 			.right-block{
 				display: block;
+                position: absolute;
+                top: -50px;
 				width: 100%;
 				float: none !important;
 				margin: 10px auto;
@@ -555,16 +566,19 @@
 		}
 
 		.about-body .about-p{
-			width: 100%!important;
-			padding: 0 15px;
+		    width: 100% !important;
+            padding: 0 10px 0;
+            text-align: left !important;
+            font-size: 16px !important;
+            margin: 0;
 		}
 		.about-body .rect-img {
-			position: relative;
-			width: 100%;
-			height: auto;
-			margin-bottom: -90px;
-			margin-top: -20px;
-		}
+            position: relative;
+            width: 440px;
+            height: 430px;
+            left: -50px;
+            margin: 10px 0 0;
+        }
 
 		.about-content .bx-wrapper .bx-viewport{
 			height: 720px !important;
