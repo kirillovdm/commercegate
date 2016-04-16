@@ -284,6 +284,17 @@
         right: -30px;
     }
 
+    .mobile-world-globe {
+        display: block;
+        position: relative;
+        left: 10%;
+    }
+
+    .mobile-left {
+       text-align: left !important;
+
+    }
+
 	.menu-icon{
 		height: 80px;
 		width: 30px;
@@ -567,7 +578,7 @@
 
 		.about-body .about-p{
 		    width: 100% !important;
-            padding: 0 10px 0;
+            padding: 0;
             text-align: left !important;
             font-size: 16px !important;
             margin: 0;
@@ -606,6 +617,18 @@
 				}
 			}
 		}
+
+        .leftside {
+            padding-left: 10px;
+        }
+
+        .timeline-block {
+            padding-left: 145px;
+        }
+
+        .up-block {
+            margin-top: -50%;
+        }
 
 		#about-map-svg{
 			height: 100%;
