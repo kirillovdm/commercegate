@@ -17,12 +17,12 @@ $layout-footer-sticky: false !default;
 @if ($layout-footer-sticky != false and $layout-footer-height > 0) {
     html,
     body {
-        
+
     }
 
     .layout-content {
         clear: both;
-        min-height: 100vh;
+        min-height: 70vh;
         height: auto !important;
         height: 100%;
         margin-bottom: -$layout-footer-height;
@@ -74,7 +74,7 @@ $layout-footer-sticky: false !default;
                     &.active{
                         color:$colorBlue;
                     }
-                    &:visited{ 
+                    &:visited{
                         color:$colorGrey;
                     }
                 }
@@ -105,7 +105,7 @@ $layout-footer-sticky: false !default;
                     transition:opacity .15s linear;
                     opacity: .85;
                     color: #8d95a6;
-                } 
+                }
                 &:hover:before{
                     opacity: 1;
                     color: #8d95a6;

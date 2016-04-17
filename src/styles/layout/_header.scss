@@ -38,14 +38,14 @@ body.risk-body .layout-header.s-header.scrolled{
 }
 body.risk-body {
     .btn-primary {
-        box-shadow: 0 1px 2px #004E8D;
+        box-shadow: 0 1px 2px rgba(0, 51, 51, 0.5);
         @include button-basic(
             $bg:        #00f7ce, $color:        #007373,
             $bg-hover:  #4dffe1, $color-hover:  #008c8c,
             $bg-active: #0be0bd, $color-active: #007373
         );
         &:hover{
-            box-shadow: 0 2px 10px rgba(0, 78, 141, 0.5);
+            box-shadow: 0 2px 10px rgba(0, 51, 51, 0.5);
         }
         &:active,
         &:focus{
@@ -58,13 +58,14 @@ body.risk-body {
 	display: block;
 	float: right;
 	text-align: right;
-	margin-right: 30px;
+	margin-right: 40px;
     z-index: 10000;
 	ul{
 		margin: 0;
 		li{
 			display: inline-block;
 			width: 96px;
+            height: 45px;
 			margin: 0;
 			margin-left: 7px;
 			text-align: right;
@@ -123,6 +124,36 @@ body.risk-body {
 		opacity: 1;
 	}
 }
+
+
+.nav-header {
+    display: none;
+    position: absolute;
+    top: 55px;
+    opacity: 0;
+    transition: opacity .15s linear;
+    li {
+        float: none;
+        height: 30px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+}
+
+.right-block ul li:hover .nav-header {
+    display: block;
+    opacity: 1;
+}
+
+.right-block ul.nav-header li {
+    display: block;
+    margin-left: 30px;
+    width: 180px;
+    height: 30px;
+    text-align: left;
+}
+
+
 /*
 canvas{
     filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'blur\'>    <feGaussianBlur stdDeviation=\'10\'/></filter>#blur");

@@ -57,7 +57,7 @@
     z-index: 10;
     @extend %clearfix;
     &:hover{
-      box-shadow: 0 2px 30px rgba(0, 78, 141, 0.45);
+      box-shadow: 0 2px 30px -5px rgba(0, 78, 141, 0.45);
       z-index: 20;
     }
     &.xs-card{
@@ -412,8 +412,8 @@
     transition: height .20s linear;
     background-color: #f0f2f4;
     &.open{
-        height: 205px;
-        max-width: 645px !important;
+        height: 225px;
+        max-width: 665px !important;
     }
   }
   .news-card.open{

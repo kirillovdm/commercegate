@@ -367,7 +367,7 @@
 	}
 	.right-img{
 		position: absolute;
-		top:50%;
+		top:65%;
 		right:50px;
 		transform:translateY(-50%);
 		z-index: 2;
@@ -589,7 +589,7 @@ svg#aqa-graph {
 		}
 		&.overflowscrollX{
 			position: relative;
-			&:after{
+			/*&:after{
 				position: absolute;
 				top: 0;
 				right: 0;
@@ -597,7 +597,7 @@ svg#aqa-graph {
 			    width: 130px;
 			    height: 100%;
 			    background-image: linear-gradient(to left, rgba(35, 184, 172, 0.9) 20%, rgba(255, 255, 255, 0) 100%);
-			}
+			}*/
 
 			.info-block{
 				width: 320px;
@@ -814,7 +814,7 @@ svg#aqa-graph {
 		}
 
 		& ~ .first-item{
-			
+
 			.il-circle{
 				color:#6741D9;
 				background-color: transparent;

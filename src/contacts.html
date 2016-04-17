@@ -16,22 +16,22 @@
                         <div class="contacts-wrapper">
                             <div class="contact-item">
                                 <h3>Sales Department</h3>
-                                <div class="cont-phone"><span class="phone-icon"></span>+34 673 908 333</div>
+                                <a href="skype:+34673908333?call" class="cont-phone"><span class="phone-icon"></span>+34 673 908 333</a >
                                 <a href="mailto:sales@commercegate.com" class="cont-email"><span class="icon-email"></span>sales@commercegate.com</a>
                             </div>
                             <div class="contact-item">
                                 <h3>Public Relations</h3>
-                                <div class="cont-phone"><span class="phone-icon"></span>+34 673 908 329</div>
+                                <a href="skype:+34673908329?call" class="cont-phone"><span class="phone-icon"></span>+34 673 908 329</a>
                                 <a href="mailto:pr@commercegate.com" class="cont-email"><span class="icon-email"></span>pr@commercegate.com</a>
                             </div>
                             <div class="contact-item">
                                 <h3>HR</h3>
-                                <div class="cont-phone"><span class="phone-icon"></span>+34 662 542 454</div>
+                                <a href="skype:+34662542454?call" class="cont-phone"><span class="phone-icon"></span>+34 662 542 454</a >
                                 <a href="mailto:hr@commercegate.com" class="cont-email"><span class="icon-email"></span>hr@commercegate.com</a>
                             </div>
                             <div class="contact-item">
                                 <h3>Partners</h3>
-                                <div class="cont-phone"><span class="phone-icon"></span>+34 931 149 991</div>
+                                <a href="skype:+34931149991?call" class="cont-phone"><span class="phone-icon"></span>+34 931 149 991</a>
                                 <a href="mailto:partners@commercegate.com" class="cont-email"><span class="icon-email"></span>partners@commercegate.com</a>
                             </div>
                             <div class="contact-footer">
@@ -60,7 +60,9 @@
                                         <input class="form-control" type="email" name="cont_email" id="cont-email" data-rules="not-empty email" placeholder="Email">
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" name="contact_commentery" id="input5" placeholder="How can we help you?"></textarea>
+                                        <textarea class="form-control commentary-textarea" max-length="500" name="contact_commentary" id="input5" placeholder="How can we help you?"></textarea>
+                                            <div class="characters-remaining-wrapper">
+                                                <span class="characters-remaining"></span>characters left</div>
                                     </div>
                                 </form>
                                 <button type="submit" class="btn btn-primary">Send request</button>

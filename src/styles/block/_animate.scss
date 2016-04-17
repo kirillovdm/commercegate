@@ -3270,3 +3270,66 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
 }
+
+.head-globe {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  img {
+    width: 100%;
+    position: absolute;
+    bottom: -25%;
+    right: -15%;
+    transition: all 2.5s ease;
+    opacity: 0;
+    // animation: globeFadeIn 2s infinite;
+    backface-visibility: hidden;
+    transform: rotate3d(6, 3, 8, 10deg) scale(.8);
+  }
+  img.animated {
+    animation: globeFadeIn 2s infinite;
+  }
+  img.oanim {
+    bottom: -20%;
+    right: -10%;
+    opacity: 1;
+    transform: rotate3d(0, 0, 0, 0);
+    transform: scale(1);
+  }
+}
+
+@keyframes globeFadeIn {
+  0% {
+    bottom: -180px;
+    right: -120px;
+    opacity: .1;
+    transform: rotate3d(6, 3, 8, 10deg) scale(.8);
+  }
+  100% {
+    bottom: -160px;
+    right: -50px;
+    opacity: 1;
+    transform: rotate3d(0, 0, 0, 0);
+    transform: scale(1);
+  }
+}
+
+.svg-lines svg {
+  bottom: 8%;
+  position: absolute;
+  right: -8.5%;
+  z-index: 1;
+  margin: 0;
+  width: 95%;
+
+  opacity: 0;
+
+  // transition: all 3s ease;
+}
+
+.svg-lines #map-points {
+  opacity: 0;
+  // transition: all 3s ease;
+}
