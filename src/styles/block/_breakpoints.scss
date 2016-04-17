@@ -295,7 +295,39 @@
 
     .mobile-left {
        text-align: left !important;
+       padding: 0 10px 0 10px;
+    }
 
+    .separator100 {
+        height: 50px;
+    }
+
+    .green-square {
+        width: 100%;
+    }
+
+    .container.solutions-cont {
+        .btn-transparent {
+            display: block;
+            width: 90%;
+            margin: 40px auto 20px auto;
+        }
+        .news-card{
+			width: 100%!important;
+            max-height: 440px;
+            .card-content {
+                padding: 0 20px;
+            }
+		}
+        .aligncenter {
+            text-align: left!important;
+            font-size: 18px;
+        }
+
+        .col-lg-1,
+        .col-lg-2 {
+            height: 30px;
+        }
     }
 
 	.menu-icon{
@@ -617,19 +649,21 @@
 			}
 		}
 
-		.about-body .about-p{
-		    width: 100% !important;
-            padding: 0;
-            text-align: left !important;
-            font-size: 16px !important;
-            margin: 0;
-		}
-		.about-body .rect-img {
-            position: relative;
-            width: 440px;
-            height: 430px;
-            left: -50px;
-            margin: 10px 0 0;
+		.about-body {
+            .about-p{
+                width: 100% !important;
+                padding: 0 10px 0 10px;
+                text-align: left !important;
+                font-size: 16px !important;
+                margin: 0;
+            }
+            .rect-img {
+                position: relative;
+                width: 440px;
+                height: 430px;
+                left: -50px;
+                margin: 10px 0 0;
+            }
         }
 
         .news-and-events .slide {
@@ -677,6 +711,7 @@
 
         .up-block {
             margin-top: -50%;
+            padding: 0;
         }
 
 		#about-map-svg{
