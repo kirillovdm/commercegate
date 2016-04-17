@@ -8,14 +8,13 @@ var isMobile = false; //initiate as false
             var $preloader = $('.page-preloader'),
                 $spinner   = $preloader.find('.preloader-itself');
             $spinner.fadeOut('fast', function(){
-                    // new WOW().init();
-                    // drawCareer();
+                    new WOW().init();
+                    drawCareer();
             });
             $preloader.delay(350).fadeOut('slow');
         });
 
     }
-
 
 
 (function ($) {
@@ -36,36 +35,6 @@ var isMobile = false; //initiate as false
             };
         }
     });
-
-    // $(document).on('slide.bs.carousel','.carousel-top', function(event) {
-    //     var $this   = $(this),
-    //         itemLength = $this.find('.item').length,
-    //         $slides = $this.find('.item'),
-    //         $next   = $(event.relatedTarget),
-    //         targetID = $next.index(),
-    //         $active = $slides.filter('.active'),
-    //         $bg = $('.slide-background-wrap .slide-background'),
-    //         $left = $this.find('.carousel-control.left'),
-    //         $right = $this.find('.carousel-control.right'),
-
-    //         activeIndex = $slides.index($active),
-    //         nextIndex   = $slides.index($next),
-    //         background = $this.find('.slide-background');
-
-    //     if (targetID === 0) {
-    //             $left.addClass('hidden');
-    //             $right.removeClass('hidden');
-    //         } else if (targetID == itemLength - 1) {
-    //             $left.removeClass('hidden');
-    //             $right.addClass('hidden');
-    //         } else {
-    //             $left.removeClass('hidden');
-    //             $right.removeClass('hidden');
-    //         }
-
-    //     $bg.eq(nextIndex).addClass('active');
-    //     $bg.eq(activeIndex).removeClass('active');
-    // });
 
 
     $("#spy-list a").on('click', function(event) {
@@ -122,269 +91,7 @@ var isMobile = false; //initiate as false
         $('.h-scroll-cont').addClass('addmargin');
     }
 
-
-    var hoverParent, hoverChild, startAttr, parentAttr;
-    $('[data-hover-parent]').on('mouseenter', function(){
-            hoverParent = $(this).attr('data-hover-parent');
-            hoverChild = $('[data-hover-child="'+ hoverParent +'"]');
-            startAttr = hoverChild.attr('r');
-            hoverChild.attr('r', 35);
-    });
-
-    $('[data-hover-parent]').on('mouseleave', function(){
-            hoverChild.attr('r', startAttr);
-    });
-
-
-    $('[data-hover-parent-c]').on('mouseenter', function(){
-            hoverParent = $(this);
-            parentAttr = hoverParent.attr('data-hover-parent-c');
-            hoverChild = $('[data-hover-child-c="'+ parentAttr +'"]');
-            startAttr = hoverChild.attr('stroke');
-            hoverChild.attr('fill', startAttr);
-    });
-
-    $('[data-hover-parent-c]').on('mouseleave', function(){
-            hoverChild.attr('fill', 'none');
-    });
-
-
-    $('.svg-hover').on('mouseenter', function(){
-    });
-
-    $('.svg-hover').on('mouseleave', function(){
-    });
-
-    // $('.svg-hover').hover(
-
-    //     function(){
-
-    //     },
-
-    //     function(){
-
-    // );
-
-    if(!isMobile){
-
-
-        $(document).on('scroll onload', function(){
-                if($('.count-num').hasClass('animated')){
-                    $('.count-num h2').attr('id', 'count-num');
-                    var options = {
-                          useEasing : true,
-                          useGrouping : true,
-                          separator : '',
-                          decimal : '.',
-                          prefix : '',
-                          suffix : '+'
-                    };
-                    var count = new CountUp("count-num", 0, 4000, 0, 5, options);
-                    count.start();
-                }
-
-                if($('.count-num2').hasClass('animated')){
-                    $('.count-num2 tr:nth-of-type(1) .td-num').attr('id', 'count-num2');
-                    $('.count-num2 tr:nth-of-type(2) .td-num').attr('id', 'count-num3');
-                    $('.count-num2 tr:nth-of-type(3) .td-num').attr('id', 'count-num4');
-                    $('.count-num2 tr:nth-of-type(4) .td-num').attr('id', 'count-num5');
-                    var options2 = {
-                          useEasing : true,
-                          useGrouping : true,
-                          separator : '',
-                          decimal : '.',
-                          prefix : '',
-                          suffix : '%'
-                    };
-                    var count2 = new CountUp("count-num2", 0, 72, 0, 5, options2);
-                    var count3 = new CountUp("count-num3", 0, 18, 0, 5, options2);
-                    var count4 = new CountUp("count-num4", 0, 6, 0, 5, options2);
-                    var count5 = new CountUp("count-num5", 0, 4, 0, 5, options2);
-                    count2.start();
-                    count3.start();
-                    count4.start();
-                    count5.start();
-                }
-
-                if($('.lc-block').hasClass('animated')){
-                    $('.lc-count').attr('id', 'lc-count-num');
-                    var options = {
-                          useEasing : true,
-                          useGrouping : true,
-                          separator : ',',
-                          decimal : '.',
-                          prefix : '',
-                          suffix : ''
-                    };
-                    var lcCount = new CountUp("lc-count-num", 2.5, 0.7, 1, 6, options);
-                        lcCount.start();
-                }
-
-        }
-
-        function animationCompete(inputId){
-
-                // // $('#'+inputId).('opacity', '0.3');
-                // $('#'+inputId).attr('data-animated', 'done');
-                // // $(this).closest('svg').attr('data-animated', 'done');
-                // console.log(this.targe);
-
-                animComplete = true;
-        }
-
-
-        function drawMap(){
-            var anematedMapLines = '#_x31_0-line-london_1_, #_x39_-line-paris_1_, #_x35_-line-sydney_1_, #_x34_-line-johannensburg_1_, #_x33_-line-moskow_1_, #_x31_-line-buharest_1_, #_x32_-line-ukraine_1_';
-            var anematedMapLinesRev = '#_x31_1-line-montreal_1_,#_x38_-line-rio_1_,#_x37_-line-la_1_,#_x36_-line-ny_1_'
-            var mPoints = '#map-points'
-            var tlMap = new TimelineMax();
-            TweenMax.staggerFrom(anematedMapLines, 6, {drawSVG:0, delay:1}, 0.2);
-            tlMap.staggerFromTo(anematedMapLinesRev, 6, {drawSVG:"100% 100%"}, {drawSVG:'0% 100%', delay:1, ease: Circ.easeOut}, 0.2).to(mPoints, 1, {opacity:0.3});;
-        }
-
-        function drawHeadMap(){
-            var anematedMapLines = '#_x31_0-line-london_1_, #_x39_-line-paris_1_, #_x35_-line-sydney_1_, #_x34_-line-johannensburg_1_, #_x33_-line-moskow_1_, #_x31_-line-buharest_1_, #_x32_-line-ukraine_1_';
-            var anematedMapLinesRev = '#_x31_1-line-montreal_1_,#_x38_-line-rio_1_,#_x37_-line-la_1_,#_x36_-line-ny_1_'
-            var mPoints = '#map-points'
-            var tlMap = new TimelineMax();
-            TweenMax.staggerFrom(anematedMapLines, 6, {drawSVG:0, delay:0.1}, 0.2);
-            tlMap.staggerFromTo(anematedMapLinesRev, 6, {drawSVG:"100% 100%"}, {drawSVG:'0% 100%', delay:0.1, ease: Circ.easeOut}, 0.2).to(mPoints, 1, {opacity:0.3});;
-        }
-
-        function drawSagrada(){
-            var animSagrada = '#sagrada-svg g > line, #sagrada-svg g > path';
-            var sagradaG = $('#sagrada-svg .sagrada-g ~ path, #sagrada-svg .sagrada-g ~ line');
-                console.log('ok');
-
-            TweenMax.staggerFrom(sagradaG, .1, {drawSVG:0, delay:5}, .1);
-            // for (var i=0; i < sagradaG.length; i++){
-            //     console.log('ok2');
-            //     var sagradaPath = $(sagradaG[i]).children('path');
-            //     TweenMax.staggerFrom(sagradaPath, .1, {drawSVG:0, delay:5}, .1);
-            // }
-            
-        }
-
-
-        function drawBanks(){
-            var shadows = '#_x31__1_, #_x32__1_, #_x33__1_, #_x34__1_, #_x35__1_, #_x36__1_, #_x37__1_';
-            var points = '#_x37_, #_x36_, #_x35_, #_x34_, #_x33_, #_x32_, #_x31_';
-            var lines = '#_x37_-to-1, #_x32_-to-7, #_x36_-to-7, #_x36_-to-7, #_x33_-to-6, #_x35_-to-6, #_x34_-to-5, #_x33_-to-4, #_x32_-to-3, #_x31_-to-2';
-            var tlBank = new TimelineMax();
-            tlBank.staggerFrom('.dots-fill',.3, {opacity:0, delay:1}, .3)
-                    .from(lines, 3, {drawSVG:0, ease:Power2.easeOut})
-                    .from(shadows, 1, {opacity:0});
-        }
-
-        function drawPulse(){
-            var dot = '#pulse-dot2 path';
-
-            if($(dot).length<1) return;
-
-            var path = MorphSVGPlugin.pathDataToBezier('#pulse-back', {align:dot});
-            TweenMax.set(dot, {xPercent:-50, yPercent:-50});
-            TweenMax.to(dot, 3, {bezier:{curviness:1, values:path, type:'cubic'}, ease:Linear.easeNone, repeat:-1});
-
-        }
-        drawPulse();
-
-        function drawUsers(){
-            var users = ".s-users";
-            var usertl = new TimelineMax();
-
-            usertl.staggerFrom(users, 1, {opacity:0, delay:1}, .25).to('#b-user', .75, {morphSVG:'#b-user-end'}).from('#done-icon', .75, {opacity:0});
-
-        }
-
-        function drawCareer(){
-            var arrow = '#arrow'
-            var text = "#type path";
-            var circle = ".careers-photo-block .circle"
-            var careertl = new TimelineMax();
-            careertl.staggerFromTo(text, .1, {drawSVG:"100% 100%"}, {drawSVG:'0% 100%', delay:1.5}, .1).from(circle, .5, {opacity:0}).fromTo(arrow, .75, {drawSVG:"100% 100%"}, {drawSVG:'0% 100%', ease:Power2.easeIn});
-            // careertl.from(text, 1.5, {opacity:0}).from(arrow, 1.5, {opacity:0});
-        }
-
-        function drawAqa(){
-            var line = "#aqa-line";
-            var dots = '.qst6';
-            var aqaTl = new TimelineMax();
-            aqaTl.to('#aqa-graph', .1, {opacity:1}).from(line, 3, {drawSVG:0}).staggerFrom(dots, .5, {opacity:0}, .2);
-
-        }
-
-        var aboutKey = true;
-        var sagradaKey = true;
-        var bankKey = true;
-        var usersKey = true;
-        var careerKey = true;
-        var aqaKey = true;
-
-
-        function checkAnimations(){
-            var animElement, elemIsAnimated, animatedSVG;
-
-                animElement = $('[data-start-anim]');
-                elemIsAnimated = animElement.hasClass('animated');
-                animatedSVG = $('.animated[data-start-anim]');
-
-                animData = animatedSVG.attr('data-start-anim');
-
-                    switch (animData) {
-
-                        case 'about_map':
-                            if(aboutKey){
-                                drawMap();
-                            }
-                                aboutKey = false;
-                                break
-
-                        case 'aqa-go':
-                            if(aqaKey){
-                                drawAqa();
-                            }
-                                aqaKey = false;
-                            break
-
-                        case 'sagrada':
-                            if(sagradaKey){
-                                drawSagrada();
-                            }
-                                sagradaKey = false;
-                            break
-
-                        case 'ext_map':
-                            if(bankKey){
-                                drawBanks();
-                            }
-                            bankKey = false;
-                            break
-
-                        case 'pulse':
-                            drawPulse();
-                            break
-
-                        case 'users':
-                            if(usersKey){
-                                drawUsers();
-                            }
-                            usersKey = false;
-                            break
-
-                        case 'you-can':
-                            if(careerKey){
-                                drawCareer();
-                            }
-                            careerKey = false;
-                            break
-                    }
-                    requestAnimationFrame(checkAnimations);
-
-        }
-        checkAnimations();
-
-
-    }//isMobile
+    
 
     $(document).on('mouseenter', '.circle-wrapper', function(){
             var hoverCircle = $(this).attr('data-circle');
@@ -405,6 +112,35 @@ var isMobile = false; //initiate as false
 
             countCircl.start();
         });
+
+    $.fn.popelValidator.setRuleMessage({
+        'not-empty ': "This field cannot be left blank"
+    });
+
+
+    $.fn.popelValidator.defaults.messageTemplate = '<p class="help-block collapse"><span class="message-text"></span></p>';
+
+    $.fn.popelValidator.defaults.messageTextSelector = '.message-text';
+
+    $(document).on('controlvalidated.popel.validator', '.form-control', function (event) {
+        var state = event.state;
+
+        if (state === $.fn.popelValidator.Constructor.STATE_INVALID) {
+            $(this).closest('.form-group').find('.help-block').collapse('show');
+        }
+    });
+
+    $(document).on('resetcontrolmessage.popel.validator', '.form-control', function (event) {
+        event.preventDefault();
+
+        var $message = $(event.relatedTarget);
+
+        $message.collapse('hide').one('hidden.bs.collapse', function () {
+            $message.remove();
+        });
+    });
+
+    $(document).off('keyup.popel.validator');
 
 })(window.jQuery);
 
@@ -485,34 +221,7 @@ $(document).on("change", ".file-input", function(){
 
 
 
-$.fn.popelValidator.setRuleMessage({
-        'not-empty ': "This field cannot be left blank"
-    });
 
-
-$.fn.popelValidator.defaults.messageTemplate = '<p class="help-block collapse"><span class="message-text"></span></p>';
-
-$.fn.popelValidator.defaults.messageTextSelector = '.message-text';
-
-$(document).on('controlvalidated.popel.validator', '.form-control', function (event) {
-    var state = event.state;
-
-    if (state === $.fn.popelValidator.Constructor.STATE_INVALID) {
-        $(this).closest('.form-group').find('.help-block').collapse('show');
-    }
-});
-
-$(document).on('resetcontrolmessage.popel.validator', '.form-control', function (event) {
-    event.preventDefault();
-
-    var $message = $(event.relatedTarget);
-
-    $message.collapse('hide').one('hidden.bs.collapse', function () {
-        $message.remove();
-    });
-});
-
-$(document).off('keyup.popel.validator');
 
 
 $(function(){
@@ -529,7 +238,7 @@ $(function(){
 
 
 $(document).ready(function(){
-
+console.log(isMobile);
     if (!isMobile) {
       $('.fullscreen-slider').bxSlider({
             slideWidth: 430,
@@ -585,7 +294,7 @@ $(document).ready(function(){
 
     else{
 
-        $('.wow').removeClass('wow' );
+        $('.wow').removeClass('wow');
 
         $('.fullscreen-slider').bxSlider({
             slideWidth: 300,
@@ -764,21 +473,6 @@ $(document).on('click', '.timeline-arrow.prev', function(){
 // textarea
 window.autosize && autosize(document.querySelectorAll('textarea.form-control'));
 
-// $(document).on('click', 'a[class^="cicon"]', function(e){
-//     e.preventDefault();
-// });
-
-
-
-
-
-// (function ($) {
-
-//     var container = document.getElementById('head-block');
-
-//     if (!container) return;
-
-//  })(window.jQuery);
 
 $(document).on('hover', '.fae-c', function(){
     $('.st11').css('color', '#000');
@@ -798,7 +492,7 @@ $(document).ready(function() {
 
 $('#creersTab').tab('show');
 
-$('.collapse-title').on('click touchstart', function(){
+$('.collapse-title').on('touchstart', function(){
     $(this).children().toggleClass('up');
 });
 
@@ -806,8 +500,6 @@ $('.collapse-title').on('click touchstart', function(){
 var bubbleInterval;
 var topCount = 0;
 $(document).on('mouseenter', '.bubbles', function(){
-
-    // $('.bubbles').css({top:'-=100px'});
 
        bubbleInterval = setInterval(function(){
             if(topCount <= 255){
@@ -838,7 +530,7 @@ $(document).on('mouseleave', '.dialog-block', function(){
 //     setTimeout(draw,20,v,c,w,h);
 // }
 
-$(".commentary-textarea").keyup(function(){
+$(".commentary-textarea").on('keyup', function(){
     $(".characters-remaining-wrapper").css("display", "block");
     el = $(this);
     if(el.val().length > 500){
@@ -856,7 +548,245 @@ $(document).on('scroll onload', function(){
     }
     else {
         $header.removeClass('scrolled');
+    }
    
 });
 
 
+
+    var hoverParent, hoverChild, startAttr, parentAttr;
+    $('[data-hover-parent]').on('mouseenter', function(){
+            hoverParent = $(this).attr('data-hover-parent');
+            hoverChild = $('[data-hover-child="'+ hoverParent +'"]');
+            startAttr = hoverChild.attr('r');
+            hoverChild.attr('r', 35);
+    });
+
+    $('[data-hover-parent]').on('mouseleave', function(){
+            hoverChild.attr('r', startAttr);
+    });
+
+
+    $('[data-hover-parent-c]').on('mouseenter', function(){
+            hoverParent = $(this);
+            parentAttr = hoverParent.attr('data-hover-parent-c');
+            hoverChild = $('[data-hover-child-c="'+ parentAttr +'"]');
+            startAttr = hoverChild.attr('stroke');
+            hoverChild.attr('fill', startAttr);
+    });
+
+    $('[data-hover-parent-c]').on('mouseleave', function(){
+            hoverChild.attr('fill', 'none');
+    });
+
+
+
+        function drawMap(){
+            var anematedMapLines = '#_x31_0-line-london_1_, #_x39_-line-paris_1_, #_x35_-line-sydney_1_, #_x34_-line-johannensburg_1_, #_x33_-line-moskow_1_, #_x31_-line-buharest_1_, #_x32_-line-ukraine_1_';
+            var anematedMapLinesRev = '#_x31_1-line-montreal_1_,#_x38_-line-rio_1_,#_x37_-line-la_1_,#_x36_-line-ny_1_'
+            var mPoints = '#map-points'
+            var tlMap = new TimelineMax();
+            TweenMax.staggerFrom(anematedMapLines, 6, {drawSVG:0, delay:1}, 0.2);
+            tlMap.staggerFromTo(anematedMapLinesRev, 6, {drawSVG:"100% 100%"}, {drawSVG:'0% 100%', delay:1, ease: Circ.easeOut}, 0.2).to(mPoints, 1, {opacity:0.3});;
+        }
+
+        function drawHeadMap(){
+            var anematedMapLines = '#_x31_0-line-london_1_, #_x39_-line-paris_1_, #_x35_-line-sydney_1_, #_x34_-line-johannensburg_1_, #_x33_-line-moskow_1_, #_x31_-line-buharest_1_, #_x32_-line-ukraine_1_';
+            var anematedMapLinesRev = '#_x31_1-line-montreal_1_,#_x38_-line-rio_1_,#_x37_-line-la_1_,#_x36_-line-ny_1_'
+            var mPoints = '#map-points'
+            var tlMap = new TimelineMax();
+            TweenMax.staggerFrom(anematedMapLines, 6, {drawSVG:0, delay:0.1}, 0.2);
+            tlMap.staggerFromTo(anematedMapLinesRev, 6, {drawSVG:"100% 100%"}, {drawSVG:'0% 100%', delay:0.1, ease: Circ.easeOut}, 0.2).to(mPoints, 1, {opacity:0.3});;
+        }
+
+        function drawSagrada(){
+            var animSagrada = '#sagrada-svg g > line, #sagrada-svg g > path';
+            var sagradaG = $('#sagrada-svg .sagrada-g ~ path, #sagrada-svg .sagrada-g ~ line');
+                console.log('ok');
+
+            TweenMax.staggerFrom(sagradaG, .1, {drawSVG:0, delay:5}, .1);
+            // for (var i=0; i < sagradaG.length; i++){
+            //     console.log('ok2');
+            //     var sagradaPath = $(sagradaG[i]).children('path');
+            //     TweenMax.staggerFrom(sagradaPath, .1, {drawSVG:0, delay:5}, .1);
+            // }
+            
+        }
+
+
+        function drawBanks(){
+            var shadows = '#_x31__1_, #_x32__1_, #_x33__1_, #_x34__1_, #_x35__1_, #_x36__1_, #_x37__1_';
+            var points = '#_x37_, #_x36_, #_x35_, #_x34_, #_x33_, #_x32_, #_x31_';
+            var lines = '#_x37_-to-1, #_x32_-to-7, #_x36_-to-7, #_x36_-to-7, #_x33_-to-6, #_x35_-to-6, #_x34_-to-5, #_x33_-to-4, #_x32_-to-3, #_x31_-to-2';
+            var tlBank = new TimelineMax();
+            tlBank.staggerFrom('.dots-fill',.3, {opacity:0, delay:1}, .3)
+                    .from(lines, 3, {drawSVG:0, ease:Power2.easeOut})
+                    .from(shadows, 1, {opacity:0});
+        }
+
+        function drawPulse(){
+            var dot = '#pulse-dot2 path';
+
+            if($(dot).length<1) return;
+
+            var path = MorphSVGPlugin.pathDataToBezier('#pulse-back', {align:dot});
+            TweenMax.set(dot, {xPercent:-50, yPercent:-50});
+            TweenMax.to(dot, 3, {bezier:{curviness:1, values:path, type:'cubic'}, ease:Linear.easeNone, repeat:-1});
+
+        }
+        drawPulse();
+
+        function drawUsers(){
+            var users = ".s-users";
+            var usertl = new TimelineMax();
+
+            usertl.staggerFrom(users, 1, {opacity:0, delay:1}, .25).to('#b-user', .75, {morphSVG:'#b-user-end'}).from('#done-icon', .75, {opacity:0});
+
+        }
+
+        function drawCareer(){
+            var arrow = '#arrow'
+            var text = "#type path";
+            var circle = ".careers-photo-block .circle"
+            var careertl = new TimelineMax();
+            careertl.staggerFromTo(text, .1, {drawSVG:"100% 100%"}, {drawSVG:'0% 100%', delay:1.5}, .1).from(circle, .5, {opacity:0}).fromTo(arrow, .75, {drawSVG:"100% 100%"}, {drawSVG:'0% 100%', ease:Power2.easeIn});
+            // careertl.from(text, 1.5, {opacity:0}).from(arrow, 1.5, {opacity:0});
+        }
+
+        function drawAqa(){
+            var line = "#aqa-line";
+            var dots = '.qst6';
+            var aqaTl = new TimelineMax();
+            aqaTl.to('#aqa-graph', .1, {opacity:1}).from(line, 3, {drawSVG:0}).staggerFrom(dots, .5, {opacity:0}, .2);
+
+        }
+
+
+$(document).on('scroll onload', function(){
+    if(isMobile){return};
+
+    if($('.count-num').hasClass('animated')){
+        $('.count-num h2').attr('id', 'count-num');
+        var options = {
+              useEasing : true,
+              useGrouping : true,
+              separator : '',
+              decimal : '.',
+              prefix : '',
+              suffix : '+'
+        };
+        var count = new CountUp("count-num", 0, 4000, 0, 5, options);
+        count.start();
+    }
+
+    if($('.count-num2').hasClass('animated')){
+        $('.count-num2 tr:nth-of-type(1) .td-num').attr('id', 'count-num2');
+        $('.count-num2 tr:nth-of-type(2) .td-num').attr('id', 'count-num3');
+        $('.count-num2 tr:nth-of-type(3) .td-num').attr('id', 'count-num4');
+        $('.count-num2 tr:nth-of-type(4) .td-num').attr('id', 'count-num5');
+        var options2 = {
+              useEasing : true,
+              useGrouping : true,
+              separator : '',
+              decimal : '.',
+              prefix : '',
+              suffix : '%'
+        };
+        var count2 = new CountUp("count-num2", 0, 72, 0, 5, options2);
+        var count3 = new CountUp("count-num3", 0, 18, 0, 5, options2);
+        var count4 = new CountUp("count-num4", 0, 6, 0, 5, options2);
+        var count5 = new CountUp("count-num5", 0, 4, 0, 5, options2);
+        count2.start();
+        count3.start();
+        count4.start();
+        count5.start();
+    }
+
+    if($('.lc-block').hasClass('animated')){
+        $('.lc-count').attr('id', 'lc-count-num');
+        var options = {
+              useEasing : true,
+              useGrouping : true,
+              separator : ',',
+              decimal : '.',
+              prefix : '',
+              suffix : ''
+        };
+        var lcCount = new CountUp("lc-count-num", 2.5, 0.7, 1, 6, options);
+        lcCount.start();
+    }
+
+});
+
+
+var aboutKey = true;
+var sagradaKey = true;
+var bankKey = true;
+var usersKey = true;
+var careerKey = true;
+var aqaKey = true;
+
+    function checkAnimations(){
+
+        if(isMobile){return}
+
+        var animElement, elemIsAnimated, animatedSVG;
+
+        animElement = $('[data-start-anim]');
+        elemIsAnimated = animElement.hasClass('animated');
+        animatedSVG = $('.animated[data-start-anim]');
+
+        animData = animatedSVG.attr('data-start-anim');
+
+        switch (animData) {
+
+            case 'about_map':
+            if(aboutKey){
+                drawMap();
+            }
+            aboutKey = false;
+            break
+
+            case 'aqa-go':
+            if(aqaKey){
+                drawAqa();
+            }
+            aqaKey = false;
+            break
+
+            case 'sagrada':
+            if(sagradaKey){
+                drawSagrada();
+            }
+            sagradaKey = false;
+            break
+
+            case 'ext_map':
+            if(bankKey){
+                drawBanks();
+            }
+            bankKey = false;
+            break
+
+            case 'pulse':
+            drawPulse();
+            break
+
+            case 'users':
+            if(usersKey){
+                drawUsers();
+            }
+            usersKey = false;
+            break
+
+            case 'you-can':
+            if(careerKey){
+                drawCareer();
+            }
+            careerKey = false;
+            break
+        }
+        requestAnimationFrame(checkAnimations);
+
+    }
+    checkAnimations();
