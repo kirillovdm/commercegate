@@ -335,6 +335,9 @@
     .green-square {
         width: 100%;
         box-shadow: none;
+        h2 {
+            color:#fff;
+        }
     }
 
     .m-pricing {
@@ -853,6 +856,9 @@
 
 		.pricing-cont .btn-primary{
 			margin-top: 20px!important;
+            height: 45px;
+            padding-top: 10px;
+            border-radius: 22px;
 		}
 
 		.news-card {
