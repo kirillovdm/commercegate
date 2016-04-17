@@ -168,19 +168,7 @@ var isMobile = false; //initiate as false
     if(!isMobile){
 
 
-
         $(document).on('scroll onload', function(){
-
-
-                var $header = $('.layout-header');
-                if($header.offset().top > $header.height()) {
-                    $header.addClass('scrolled');
-                }
-                else {
-                    $header.removeClass('scrolled');
-                }
-
-
                 if($('.count-num').hasClass('animated')){
                     $('.count-num h2').attr('id', 'count-num');
                     var options = {
@@ -232,8 +220,7 @@ var isMobile = false; //initiate as false
                         lcCount.start();
                 }
 
-
-            });
+        }
 
         function animationCompete(inputId){
 
@@ -860,3 +847,16 @@ $(".commentary-textarea").keyup(function(){
         $(".characters-remaining").text(500-el.val().length);
     }
 });
+
+$(document).on('scroll onload', function(){
+
+    var $header = $('.layout-header');
+    if($header.offset().top > $header.height()) {
+        $header.addClass('scrolled');
+    }
+    else {
+        $header.removeClass('scrolled');
+   
+});
+
+
