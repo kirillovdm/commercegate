@@ -1194,8 +1194,13 @@ svg#you-can {
     display: none;
 }
 
-.mobile-glob,
 .mobile-only,
+.mobile-only-inline,
+.mobile-glob,
 .mobile-world-globe {
     display: none !important;
+}
+
+.one-line {
+    width: 51%;
 }
