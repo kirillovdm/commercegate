@@ -313,7 +313,7 @@
         .col-md-4 {
             display: inline-block;
             padding: 0;
-            width: 48%;
+            width: 180px;
         }
         .info-block h3 {
             color: #1f2b3a;
@@ -805,6 +805,7 @@
 			height: auto!important;
 			min-height: 60vh!important;
 			padding-bottom: 20px;
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
 		}
 
 		h1{
@@ -910,7 +911,7 @@
 			    right:45px;
 		}
 		.head-block-middle-content .careers-photo-block{
-			margin-bottom: 40px;
+			margin-bottom: 60px;
 				img{
 					width: 100%;
 				}
@@ -922,7 +923,18 @@
 					bottom: 6px;
 					left: 48%;
 				}
+
+                svg#you-can {
+                    position: absolute;
+                    top: -35px;
+                    width: 250px;
+                    margin-left: 50px;
+                }
 			}
+
+            .m-center-title {
+                text-align: center;
+            }
 
 		.careeers-cont{
 			padding-top: 30px!important;
@@ -930,6 +942,7 @@
 				display: none;
 			}
 			.info-block{
+                width: 165px;
 				height: auto!important;
 				margin-bottom: 20px;
 			}
