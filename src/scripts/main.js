@@ -130,7 +130,7 @@ $(window).on('load', function() {
     }
 
 
-    var hoverParent, hoverChild, startAttr;
+    var hoverParent, hoverChild, startAttr, parentAttr;
     $('[data-hover-parent]').on('mouseenter', function(){
             hoverParent = $(this).attr('data-hover-parent');
             hoverChild = $('[data-hover-child="'+ hoverParent +'"]');
@@ -140,6 +140,19 @@ $(window).on('load', function() {
 
     $('[data-hover-parent]').on('mouseleave', function(){
             hoverChild.attr('r', startAttr);
+    });
+
+
+    $('[data-hover-parent-c]').on('mouseenter', function(){
+            hoverParent = $(this);
+            parentAttr = hoverParent.attr('data-hover-parent-c');
+            hoverChild = $('[data-hover-child-c="'+ parentAttr +'"]');
+            startAttr = hoverChild.attr('stroke');
+            hoverChild.attr('fill', startAttr);
+    });
+
+    $('[data-hover-parent-c]').on('mouseleave', function(){
+            hoverChild.attr('fill', 'none');
     });
 
 
@@ -378,7 +391,7 @@ $(document).ready(function(){
 
           $('.career-slider').bxSlider({
             slideWidth: 290,
-            minSlides: 3,
+            minSlides: 2,
             maxSlides: 8,
             moveSlides: 2,
             slideMargin: 20,
@@ -561,7 +574,7 @@ $(document).on('click', '.timeline-arrow.next', function(){
         $tarrowPrev.removeClass('hidden');
     }
 
-    $hOuter.animate({scrollLeft:leftPos+850}, 200);
+    $hOuter.animate({scrollLeft:leftPos+850}, 500);
 
 });
 
@@ -576,7 +589,7 @@ $(document).on('click', '.timeline-arrow.prev', function(){
         $tarrowNext.removeClass('hidden');
     }
 
-    $hOuter.animate({scrollLeft:leftPos-850}, 200);
+    $hOuter.animate({scrollLeft:leftPos-850}, 500);
 
 
 });
@@ -620,8 +633,17 @@ function drawHeadMap(){
 }
 
 function drawSagrada(){
-    var animSagrada = '#sagrada-svg line, #sagrada-svg path';
-    TweenMax.staggerFrom(animSagrada, .2, {drawSVG:0, delay:1}, .001);
+    var animSagrada = '#sagrada-svg g > line, #sagrada-svg g > path';
+    var sagradaG = $('#sagrada-svg .sagrada-g ~ path, #sagrada-svg .sagrada-g ~ line');
+        console.log('ok');
+
+    TweenMax.staggerFrom(sagradaG, .1, {drawSVG:0, delay:5}, .1);
+    // for (var i=0; i < sagradaG.length; i++){
+    //     console.log('ok2');
+    //     var sagradaPath = $(sagradaG[i]).children('path');
+    //     TweenMax.staggerFrom(sagradaPath, .1, {drawSVG:0, delay:5}, .1);
+    // }
+    
 }
 
 
@@ -887,7 +909,7 @@ function draw(v,c,w,h) {
 $(".commentary-textarea").keyup(function(){
     $(".characters-remaining-wrapper").css("display", "block");
     el = $(this);
-    if(el.val().length >= 500){
+    if(el.val().length > 500){
         el.val( el.val().substr(0, 500) );
     } else {
         $(".characters-remaining").text(500-el.val().length);

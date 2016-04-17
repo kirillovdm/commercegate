@@ -44,11 +44,19 @@
 }
 
 @media (min-width: 993px){
-
 	.ppad{
 	    p{
 	        padding-right: 75px;
 	    }
+	}
+	.btn-signup {
+	    margin-right: 40px;
+	}
+}
+
+@media (min-width: 1280px){
+	.btn-signup {
+	    margin-right: 20px;
 	}
 }
 
