@@ -325,7 +325,13 @@
 
     .mobile-left {
        text-align: left !important;
-       padding: 0 10px 0 10px;
+       p.aligncenter {
+           text-align: left !important;
+       }
+    }
+
+    .mobile-center {
+        text-align: center !important;
     }
 
     .separator100 {
@@ -662,6 +668,7 @@
                     right: 0;
                     text-align: center;
                     border-top: 1px solid #dbdee4;
+                    border-right: 0 !important;
 
                     &.copyrights {
                         border-right: 0;
@@ -691,7 +698,7 @@
 		body .about-head-cont{
 			width: 100%;
 			left: 0 !important;
-			padding: 20px;
+			padding: 10px;
 			h1{
 				font-size: 35px;
                 margin-top: 40px;
@@ -906,7 +913,38 @@
 				    	height: 340px !important;
 				    }
 			}
+            .vmargin40 {
+                margin: 0;
+                text-align: left;
+            }
 		}
+
+        .sol-body .layout-content {
+            padding-top: 0!important;
+            .m-no-margin {
+                margin: 0;
+            }
+        }
+
+        .sol-body .solution-head,
+        .sol-body .payment-head,
+        .sol-body .support-head {
+            background-image: linear-gradient(135deg, #7E44F2 0%, #490F66 100%) !important;
+            margin-bottom: 0 !important;
+        }
+
+        .sol-body .layout-footer .left-block .copyrights {
+            border-top: 1px solid #582f89;
+        }
+
+        .risk-body .layout-footer .left-block .copyrights {
+            border-top: 1px solid #1ba698;
+        }
+
+        .risk-body .risk-head {
+            background-image: linear-gradient(135deg, #00EBA8 0%, #00EBA8 0%, #109E9E 100%) !important;
+            margin-bottom: 0 !important;
+        }
 
 		.sol-body .head-screen .container,
 		.risk-body .head-screen .container{
