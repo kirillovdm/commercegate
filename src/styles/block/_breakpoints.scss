@@ -307,6 +307,7 @@
     }
 	.news-card{
 		margin-right: 0;
+        width: 100%!important;
 	}
     .card-row {
         margin: 0 10px;
@@ -773,6 +774,10 @@
 			}
 		}
 
+        .m-leftside {
+            padding-left: 10px;
+        }
+
         .leftside {
             padding-left: 10px;
         }
@@ -898,13 +903,12 @@
 		.newsletter-news-wrapper{
 			width: 100%!important;
 			.get-newsletter,
-            .ccat-column,
 			.side-news{
 				width: 100%!important;
 			}
 		}
 
-        .news-wrapper .ccat-column{
+        .ccat-column{
 		    width: 100%!important;
 	    }
 
@@ -914,6 +918,7 @@
 		}
 
         .ccat-column{
+            width: 100%!important;
             margin-right: 0;
 		}
 
@@ -921,11 +926,30 @@
 			width: 100px !important;
 		}
 
+        .contacts-cont {
+            h1{
+                margin-bottom: 0!important;
+            }
+        }
+
 		.contacts-wrapper{
 			h3{
 				padding-left: 0!important;
 			}
+            .contact-item {
+                margin-bottom: 20px;
+            }
+            .contact-text {
+                display: block;
+                width: 60%;
+                margin-right: 30%;
+                float: right;
+            }
 		}
+
+        .contacts-form-wrapper {
+            margin-top: 90px;
+        }
 		.contacts-form-block{
 			margin-top: 30px;
 		}
