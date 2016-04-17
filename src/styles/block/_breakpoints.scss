@@ -279,7 +279,9 @@
 			}
 		}
 	}
-
+        .m-top {
+            height: 30px;
+        }
     .mobile-glob {
         display: block;
         position: absolute;
@@ -304,6 +306,19 @@
 
     .green-square {
         width: 100%;
+        box-shadow: none;
+    }
+
+    .m-pricing {
+        .col-md-4 {
+            display: inline-block;
+            padding: 0;
+            width: 48%;
+        }
+        .info-block h3 {
+            color: #1f2b3a;
+            font-size: 21px;
+        }
     }
 
     .container.solutions-cont {
@@ -324,10 +339,6 @@
             font-size: 18px;
         }
 
-        .col-lg-1,
-        .col-lg-2 {
-            height: 30px;
-        }
     }
 
 	.menu-icon{
