@@ -216,6 +216,10 @@ function pointAttachmentOffset(){
 pointAttachmentOffset();
 pointAttachmentPos();
 
+// $(window).on('resize', function(){
+//     pointAttachmentOffset();
+//     pointAttachmentPos();
+// })
 
 /*
 $(function() {
