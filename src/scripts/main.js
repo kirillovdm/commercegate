@@ -786,7 +786,7 @@ $(document).on('hover', '.fae-c', function(){
 
 // $("#ellipse3").hover(over, out);
 
-$(document).on('click tap', '.menu-icon', function(){
+$(document).on('touchstart', '.menu-icon', function(){
     $('.layout-header, .menu-icon, .content-wrapper').toggleClass('active');
 });
 
@@ -873,6 +873,11 @@ $(document).bind('touchend', function(){
 
 // },false);
 
+// function draw(v,c,w,h) {
+//     if(v.paused || v.ended) return false;
+//     c.drawImage(v,0,0,w,h);
+//     setTimeout(draw,20,v,c,w,h);
+// }
 function draw(v,c,w,h) {
     if(v.paused || v.ended) return false;
     c.drawImage(v,0,0,w,h);
