@@ -18,43 +18,45 @@
         scene = new THREE.Scene(),
         image = (container.dataset && container.dataset.image) || 'images/map-lines.png';
 
-    camera.position.z = 1650;
-    camera.position.x = 50;
+    // camera.position.z = 1650;
+    // camera.position.x = 50;
 
-    scene.rotation.y = -1.1;
+    // scene.rotation.y = -1.1;
 
-    group.position.x = 700;
-    group.position.y = -150;
+    // group.position.x = 700;
+    // group.position.y = -150;
 
     scene.add(group);
 
     // earth
-    var loader = new THREE.TextureLoader();
-    var linex = new THREE.JSONLoader('scripts/vendor/line.js', function (texture) {
+    // var loader = new THREE.TextureLoader(texture);
+    var loader = new THREE.JSONLoader(texture);
+
+    loader.load('scripts/vendor/mapMesh.js', function (texture) {
         var geometry = new THREE.SphereGeometry(500, 64, 64);
 
         var material = new THREE.MeshBasicMaterial({
             map: texture,
             overdraw: 0.15
         });
-
+        
         var mesh = new THREE.Mesh(geometry, material);
 
         group.add(mesh);
     });
 
-    loader.load(image, function (texture) {
-        var geometry = new THREE.SphereGeometry(500, 64, 64);
+    // loader.load(image, function (texture) {
+    //     var geometry = new THREE.SphereGeometry(500, 64, 64);
 
-        var material = new THREE.MeshBasicMaterial({
-            map: texture,
-            overdraw: 0.15
-        });
+    //     var material = new THREE.MeshBasicMaterial({
+    //         map: texture,
+    //         overdraw: 0.15
+    //     });
 
-        var mesh = new THREE.Mesh(geometry, material);
+    //     var mesh = new THREE.Mesh(geometry, material);
 
-        group.add(mesh);
-    });
+    //     group.add(mesh);
+    // });
 
     // shadow
     var canvas = document.createElement('canvas');
@@ -89,8 +91,8 @@
 
     var mesh = new THREE.Mesh(geometry, material);
 
-    mesh.position.y = -450;
-    mesh.rotation.x = -(Math.PI / 2);
+    // mesh.position.y = -450;
+    // mesh.rotation.x = -(Math.PI / 2);
     group.add(mesh);
 
     var renderer = new THREE.CanvasRenderer();

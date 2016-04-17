@@ -763,7 +763,7 @@ $(document).on('hover', '.fae-c', function(){
 
 // $("#ellipse3").hover(over, out);
 
-$(document).on('click tap', '.menu-icon', function(){
+$(document).on('click touchstart', '.menu-icon', function(){
     $('.layout-header, .menu-icon, .content-wrapper').toggleClass('active');
 });
 
@@ -833,24 +833,24 @@ $(document).bind('touchend', function(){
 */
 
 
-document.addEventListener('DOMContentLoaded', function(){
-    var v = $(".blurheader");
-    var canvas = document.getElementById('mycanvas');
-    var context = canvas.getContext('2d');
-    var ch = $(".blurheader").height();
-    var cw = $(".blurheader").width();
+// document.addEventListener('DOMContentLoaded', function(){
+//     var v = $(".blurheader");
+//     var canvas = document.getElementById('mycanvas');
+//     var context = canvas.getContext('2d');
+//     var ch = $(".blurheader").height();
+//     var cw = $(".blurheader").width();
 
-    canvas.width = cw;
-    canvas.height = ch;
+//     canvas.width = cw;
+//     canvas.height = ch;
 
-    v.addEventListener('play', function(){
-        draw(this,context,cw,ch);
-    },false);
+//     v.addEventListener('play', function(){
+//         draw(this,context,cw,ch);
+//     },false);
 
-},false);
+// },false);
 
-function draw(v,c,w,h) {
-    if(v.paused || v.ended) return false;
-    c.drawImage(v,0,0,w,h);
-    setTimeout(draw,20,v,c,w,h);
-}
+// function draw(v,c,w,h) {
+//     if(v.paused || v.ended) return false;
+//     c.drawImage(v,0,0,w,h);
+//     setTimeout(draw,20,v,c,w,h);
+// }
