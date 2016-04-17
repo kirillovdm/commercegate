@@ -386,7 +386,7 @@
         }
         .news-card{
 			width: 100%!important;
-            max-height: 440px;
+            max-height: 700px;
             .card-content {
                 padding: 0 20px;
             }
@@ -1272,6 +1272,17 @@
 
 	.head-block canvas {
 		display: none!important;
+	}
+
+	.container.solutions-cont .news-card .card-content .more{
+		position: relative;
+    bottom: 0;
+    margin-bottom: 20px;
+	}
+	.container.solutions-cont .news-card {
+	    width: 100% !important;
+	    max-height: 700px;
+	    height: auto!important;
 	}
 
 }
