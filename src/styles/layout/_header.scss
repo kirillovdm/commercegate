@@ -129,7 +129,8 @@ body.risk-body {
 .nav-header {
     display: none;
     position: absolute;
-    top: 55px;
+    top: 60px;
+    left: 100px;
     opacity: 0;
     transition: opacity .15s linear;
     li {
@@ -148,9 +149,12 @@ body.risk-body {
 .right-block ul.nav-header li {
     display: block;
     margin-left: 30px;
-    width: 180px;
+    width: 260px;
     height: 30px;
+    padding: 0 20px;
     text-align: left;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 
