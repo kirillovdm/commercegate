@@ -786,6 +786,15 @@
             padding-left: 145px;
         }
 
+        .timeline-wrap {
+            padding-left:0;
+        }
+
+        .timeline-arrow.next,
+        .timeline-arrow.prev {
+            display: none;
+        }
+
         .up-block {
             margin-top: -50%;
             padding: 0;
@@ -941,8 +950,8 @@
             }
             .contact-text {
                 display: block;
-                width: 60%;
-                margin-right: 30%;
+                width: 63%;
+                margin-right: 29%;
                 float: right;
             }
 		}
@@ -1069,7 +1078,7 @@
 
                 svg#you-can {
                     position: absolute;
-                    top: -35px;
+                    top: 0;
                     width: 250px;
                     margin-left: 50px;
                 }
@@ -1289,12 +1298,10 @@
 }
 
 @media (max-width: 360px) {
-/*
-    .layout-header {
-        height: 75px;
-        background-image: linear-gradient(to bottom left, #e8eaed 0%, #f3f4f5 100%);
+
+    .head-block-middle-content .careers-photo-block svg#you-can {
+        top: -65px;
     }
-*/
 
     .about-map{
 		margin-top: -30px;
