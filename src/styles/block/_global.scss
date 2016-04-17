@@ -651,7 +651,14 @@
 						bottom: 92.8%;
 						left: 98%;
 					}
-
+					&:hover{
+						&.circle1{
+							z-index: 99;
+							.c-inner{
+								margin-left: 48px;
+							}
+						}
+					}
 					&:hover .c-inner{
 						border-radius: 50px;
 						height: 70px;
@@ -1240,4 +1247,8 @@ svg#you-can {
 
 .one-line {
     width: 51%;
+}
+
+.content-wrapper{
+	overflow: hidden;
 }
