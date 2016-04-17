@@ -167,6 +167,74 @@ var isMobile = false; //initiate as false
 
     if(!isMobile){
 
+
+
+        $(document).on('scroll onload', function(){
+
+
+                var $header = $('.layout-header');
+                if($header.offset().top > $header.height()) {
+                    $header.addClass('scrolled');
+                }
+                else {
+                    $header.removeClass('scrolled');
+                }
+
+
+                if($('.count-num').hasClass('animated')){
+                    $('.count-num h2').attr('id', 'count-num');
+                    var options = {
+                          useEasing : true,
+                          useGrouping : true,
+                          separator : '',
+                          decimal : '.',
+                          prefix : '',
+                          suffix : '+'
+                    };
+                    var count = new CountUp("count-num", 0, 4000, 0, 5, options);
+                    count.start();
+                }
+
+                if($('.count-num2').hasClass('animated')){
+                    $('.count-num2 tr:nth-of-type(1) .td-num').attr('id', 'count-num2');
+                    $('.count-num2 tr:nth-of-type(2) .td-num').attr('id', 'count-num3');
+                    $('.count-num2 tr:nth-of-type(3) .td-num').attr('id', 'count-num4');
+                    $('.count-num2 tr:nth-of-type(4) .td-num').attr('id', 'count-num5');
+                    var options2 = {
+                          useEasing : true,
+                          useGrouping : true,
+                          separator : '',
+                          decimal : '.',
+                          prefix : '',
+                          suffix : '%'
+                    };
+                    var count2 = new CountUp("count-num2", 0, 72, 0, 5, options2);
+                    var count3 = new CountUp("count-num3", 0, 18, 0, 5, options2);
+                    var count4 = new CountUp("count-num4", 0, 6, 0, 5, options2);
+                    var count5 = new CountUp("count-num5", 0, 4, 0, 5, options2);
+                    count2.start();
+                    count3.start();
+                    count4.start();
+                    count5.start();
+                }
+
+                if($('.lc-block').hasClass('animated')){
+                    $('.lc-count').attr('id', 'lc-count-num');
+                    var options = {
+                          useEasing : true,
+                          useGrouping : true,
+                          separator : ',',
+                          decimal : '.',
+                          prefix : '',
+                          suffix : ''
+                    };
+                    var lcCount = new CountUp("lc-count-num", 2.5, 0.7, 1, 6, options);
+                        lcCount.start();
+                }
+
+
+            });
+
         function animationCompete(inputId){
 
                 // // $('#'+inputId).('opacity', '0.3');
@@ -472,74 +540,6 @@ $(function(){
 });
 
 
-// $(document).on('scroll onload', function(){
-
-
-//     var $header = $('.layout-header');
-//     if($header.offset().top > $header.height()) {
-//         $header.addClass('scrolled');
-//     }
-//     else {
-//         $header.removeClass('scrolled');
-//     }
-
-
-//     if($('.count-num').hasClass('animated')){
-//         $('.count-num h2').attr('id', 'count-num');
-//         var options = {
-//               useEasing : true,
-//               useGrouping : true,
-//               separator : '',
-//               decimal : '.',
-//               prefix : '',
-//               suffix : '+'
-//         };
-//         var count = new CountUp("count-num", 0, 4000, 0, 5, options);
-//         count.start();
-//     }
-
-//     if($('.count-num2').hasClass('animated')){
-//         $('.count-num2 tr:nth-of-type(1) .td-num').attr('id', 'count-num2');
-//         $('.count-num2 tr:nth-of-type(2) .td-num').attr('id', 'count-num3');
-//         $('.count-num2 tr:nth-of-type(3) .td-num').attr('id', 'count-num4');
-//         $('.count-num2 tr:nth-of-type(4) .td-num').attr('id', 'count-num5');
-//         var options2 = {
-//               useEasing : true,
-//               useGrouping : true,
-//               separator : '',
-//               decimal : '.',
-//               prefix : '',
-//               suffix : '%'
-//         };
-//         var count2 = new CountUp("count-num2", 0, 72, 0, 5, options2);
-//         var count3 = new CountUp("count-num3", 0, 18, 0, 5, options2);
-//         var count4 = new CountUp("count-num4", 0, 6, 0, 5, options2);
-//         var count5 = new CountUp("count-num5", 0, 4, 0, 5, options2);
-//         count2.start();
-//         count3.start();
-//         count4.start();
-//         count5.start();
-//     }
-
-//     if($('.lc-block').hasClass('animated')){
-//         $('.lc-count').attr('id', 'lc-count-num');
-//         var options = {
-//               useEasing : true,
-//               useGrouping : true,
-//               separator : ',',
-//               decimal : '.',
-//               prefix : '',
-//               suffix : ''
-//         };
-//         var lcCount = new CountUp("lc-count-num", 2.5, 0.7, 1, 6, options);
-//             lcCount.start();
-//     }
-
-
-// });
-
-
-
 
 $(document).ready(function(){
 
@@ -785,28 +785,18 @@ window.autosize && autosize(document.querySelectorAll('textarea.form-control'));
 
 
 
-(function ($) {
+// (function ($) {
 
-    var container = document.getElementById('head-block');
+//     var container = document.getElementById('head-block');
 
-    if (!container) return;
+//     if (!container) return;
 
- })(window.jQuery);
+//  })(window.jQuery);
 
 $(document).on('hover', '.fae-c', function(){
     $('.st11').css('color', '#000');
 });
 
-
-// function over(){
-//     TweenMax.to('#ellipse3', 1, {top:'-5'});
-// }
-
-// function out(){
-//     TweenMax.to('#ellipse3', 1, {top:'5px'});
-// }
-
-// $("#ellipse3").hover(over, out);
 
 $('.menu-icon').on('touchstart', function(){
     $('.layout-header, .menu-icon, .content-wrapper').toggleClass('active');
@@ -824,12 +814,13 @@ $('#creersTab').tab('show');
 $('.collapse-title').on('click touchstart', function(){
     $(this).children().toggleClass('up');
 });
+
+
 var bubbleInterval;
 var topCount = 0;
 $(document).on('mouseenter', '.bubbles', function(){
 
     // $('.bubbles').css({top:'-=100px'});
-
 
        bubbleInterval = setInterval(function(){
             if(topCount <= 255){
