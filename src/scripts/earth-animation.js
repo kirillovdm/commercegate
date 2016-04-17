@@ -10,7 +10,7 @@
     var container = document.getElementById('head-block');
 
     if (!container || !THREE && isMobile) return;
-    console.log(isMobile);
+
     var mouseX = 0,
         mouseY = 0,
         camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 2000),
