@@ -1189,6 +1189,34 @@ svg#you-can {
     height: 20px;
 }
 
+.selectize-control.single .selectize-input:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    margin-top: -6px;
+    width: 8px;
+    height: 8px;
+    transform: rotate(225deg);
+    border-left: 1px solid #8d95a6;
+    border-top: 1px solid #8d95a6;
+}
+
+.selectize-control.single .selectize-input.dropdown-active:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    margin-top: -3px;
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg);
+    border-left: 1px solid #8d95a6;
+    border-top: 1px solid #8d95a6;
+}
+
 .characters-remaining-wrapper {
     display: none;
     font-size: 14px;
