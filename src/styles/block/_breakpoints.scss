@@ -880,9 +880,23 @@
 		.newsletter-news-wrapper{
 			width: 100%!important;
 			.get-newsletter,
+            .ccat-column,
 			.side-news{
 				width: 100%!important;
 			}
+		}
+
+        .news-wrapper .ccat-column{
+		    width: 100%!important;
+	    }
+
+        .get-newsletter,
+	    .side-news{
+		    width: 100%!important;
+		}
+
+        .ccat-column{
+            margin-right: 0;
 		}
 
 		.news-card .card-photo img.news-head-icon {
@@ -904,6 +918,10 @@
 				width: 100%!important;
 			}
 		}
+
+        .backlink {
+            margin-left: 20px;
+        }
 
 		.sol-body,
 		.risk-body{
