@@ -10,6 +10,22 @@
 	}
 	.head-block .carousel-wrap .carousel {
 	    width: 100%;
+        .carousel-indicators{
+            left: 0;
+            margin: 0 auto;
+            text-align: center;
+            width: 100%;
+            li {
+                border: 2px solid #0094de;
+                background-color: #0094de;
+                width: 16px;
+                height: 16px;
+            }
+            li.active {
+                border-color: #0094de;
+                background-color: transparent;
+            }
+        }
 	}
 
 	.about-p{
@@ -267,10 +283,16 @@
     .head-arrow-down,
     .map-bg,
     .about-map {
-        display: none;
+        display: none !important;
     }
     .mobile-only {
-        display: block;
+        display: block !important;
+    }
+    .mobile-only-inline {
+        display: inline-block !important;
+    }
+    h1, h2, h3 {
+        color: #1f2b3a;
     }
     .layout-content {
         padding-top: 35px !important;
@@ -278,6 +300,12 @@
 	.news-card{
 		margin-right: 0;
 	}
+    .card-row {
+        margin: 0 10px;
+    }
+    .news-card.xxs-card {
+        width: 100%;
+    }
 	.evolution-text{
 		span{
 			width: 300px;
@@ -291,14 +319,14 @@
             height: 30px;
         }
     .mobile-glob {
-        display: block;
+        display: block !important;
         position: absolute;
         bottom: -70px;
         right: -30px;
     }
 
     .mobile-world-globe {
-        display: block;
+        display: block !important;
         position: relative;
         left: 10%;
     }
@@ -315,13 +343,16 @@
     .green-square {
         width: 100%;
         box-shadow: none;
+        h2 {
+            color:#fff;
+        }
     }
 
     .m-pricing {
         .col-md-4 {
             display: inline-block;
             padding: 0;
-            width: 48%;
+            width: 180px;
         }
         .info-block h3 {
             color: #1f2b3a;
@@ -333,6 +364,9 @@
         .btn-transparent {
             display: block;
             width: 90%;
+            height: 45px;
+            padding-top: 10px;
+            border-radius: 22px;
             margin: 40px auto 20px auto;
         }
         .news-card{
@@ -561,7 +595,7 @@
     		.icon-placeholder{
     			    left: 50%;
     			    top:20px;
-    margin-left: -40px;
+                    margin-left: -40px;
     		}
     		.card-text{
     			    border-top: 1px solid $grey;
@@ -817,14 +851,22 @@
 			height: auto!important;
 			min-height: 60vh!important;
 			padding-bottom: 20px;
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
 		}
 
 		h1{
 			font-size: 35px !important;
 		}
 
+        h2 {
+            font-size: 24px !important;
+        }
+
 		.pricing-cont .btn-primary{
 			margin-top: 20px!important;
+            height: 45px;
+            padding-top: 10px;
+            border-radius: 22px;
 		}
 
 		.news-card {
@@ -922,7 +964,7 @@
 			    right:45px;
 		}
 		.head-block-middle-content .careers-photo-block{
-			margin-bottom: 40px;
+			margin-bottom: 60px;
 				img{
 					width: 100%;
 				}
@@ -934,7 +976,26 @@
 					bottom: 6px;
 					left: 48%;
 				}
+
+                svg#you-can {
+                    position: absolute;
+                    top: -35px;
+                    width: 250px;
+                    margin-left: 50px;
+                }
 			}
+
+            .m-center-title {
+                text-align: center;
+            }
+
+        .one-line {
+            width: 100%;
+        }
+
+        .cards-wrapper {
+            margin: 20px 0 0 0;
+        }
 
 		.careeers-cont{
 			padding-top: 30px!important;
@@ -942,6 +1003,7 @@
 				display: none;
 			}
 			.info-block{
+                width: 165px;
 				height: auto!important;
 				margin-bottom: 20px;
 			}
@@ -949,6 +1011,117 @@
 		.cards-wrapper.free .card-row .bx-wrapper .career-slider .slide{
 			width: 285px!important;
 		}
+
+            #careerModal {
+                .modal-dialog {
+                    margin: 20% 10px;
+                }
+                .modal-content {
+                    width: 100% !important;
+                    padding: 30px 10px 15px 10px !important;
+                }
+            }
+
+            .news-wrapper.career-list-cont.head-screen {
+                background-image: linear-gradient(to bottom left, #e8eaed 0%, #f3f4f5 100%);
+                padding-bottom: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+                .container.desktop {
+                    display: none;
+                }
+
+                .container.mobile {
+                    display: block;
+                }
+
+                .career-list-cont {
+                    padding-top: 75px;
+                    padding-bottom: 0;
+                }
+
+                .btn {
+                    width: 100%;
+                    margin: 20px 0;
+                }
+
+                h1 {
+                text-align: center;
+                }
+
+                h3 {
+                color: #1f2b3a;
+                text-align: left;padding-top: 22px;
+                margin: 15px 0;
+                border-top: 1px solid #d4d8de;
+                }
+
+                .arrow {
+                    position: absolute;
+                    width: 8px;
+                    height: 8px;
+                    margin: 6px 0 0 6px;
+                    transform: rotate(225deg);
+                    border-left: 1px solid #8d95a6;
+                    border-top: 1px solid #8d95a6;
+                    transition: all 0.6s ease-in-out;
+                }
+
+                .up {
+                    transform: rotate(45deg);
+                    margin: 10px 0 0 6px;
+                    border-left: 2px solid #1f2b3a;
+                    border-top: 2px solid #1f2b3a;
+                }
+
+                .collapse-title {
+                    display: block;
+                    color: #1f2b3a;
+                    font-weight: 700;
+                    border-top: 1px solid #d4d8de;
+                    padding: 15px 0;
+                    background-color: #fff;
+                    padding: 10px;
+                    border-radius: 4px 4px 0 0;
+                    box-shadow: 0px 2px 7px -2px #616061;
+                }
+
+                .collapse-title.collapsed {
+                    display: block;
+                    color: #8d95a6;
+                    font-weight: 400;
+                    border-top: 1px solid #d4d8de;
+                    padding: 15px 0;
+                    background-color: #ECECEC;
+                    padding: 10px;
+                    border-radius: 0;
+                    box-shadow: none;
+                }
+
+                .vacancies-title {
+                    display: block;
+                    color: #8d95a6;
+                    padding: 5px 0;
+                }
+
+                li.active .vacancies-title {
+                    color: #0094de;
+                }
+
+                .collapse.in {
+                    display: block;
+                    visibility: visible;
+                    background-color: #fff;
+                    padding: 10px;
+                    border-radius: 0 0 4px 4px;
+                    box-shadow: 0px 2px 7px -2px rgba(97,96,97,1);
+                    margin-bottom: 10px;
+                }
+
+                .tab-content {
+                    padding: 0;
+                }
+            }
 
 		// .fadeInUp,
 		// .fadeIn{
@@ -1013,7 +1186,7 @@
 
 }
 
-@media (min-width: 361px) {
+@media (min-width: 645px) {
     .news-wrapper.career-list-cont.head-screen {
         .container.desktop {
             display: block;
@@ -1032,111 +1205,6 @@
         background-image: linear-gradient(to bottom left, #e8eaed 0%, #f3f4f5 100%);
     }
 */
-    #careerModal .modal-content {
-        width: 100%;
-        padding: 30px 10px 15px 10px;
-    }
-
-    .news-wrapper.career-list-cont.head-screen {
-        background-image: linear-gradient(to bottom left, #e8eaed 0%, #f3f4f5 100%);
-        padding-bottom: 20px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-
-        .container.desktop {
-            display: none;
-        }
-
-        .container.mobile {
-            display: block;
-        }
-
-        .career-list-cont {
-            padding-top: 75px;
-            padding-bottom: 0;
-        }
-
-        .btn {
-            width: 100%;
-            margin: 20px 0;
-        }
-
-        h1 {
-           text-align: center;
-        }
-
-        h3 {
-           color: #1f2b3a;
-           text-align: left;padding-top: 22px;
-           margin: 15px 0;
-           border-top: 1px solid #d4d8de;
-        }
-
-        .arrow {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            margin: 6px 0 0 6px;
-            transform: rotate(225deg);
-            border-left: 1px solid #8d95a6;
-            border-top: 1px solid #8d95a6;
-            transition: all 0.6s ease-in-out;
-        }
-
-        .up {
-            transform: rotate(45deg);
-            margin: 10px 0 0 6px;
-            border-left: 2px solid #1f2b3a;
-            border-top: 2px solid #1f2b3a;
-        }
-
-        .collapse-title {
-            display: block;
-            color: #1f2b3a;
-            font-weight: 700;
-            border-top: 1px solid #d4d8de;
-            padding: 15px 0;
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 4px 4px 0 0;
-            box-shadow: 0px 2px 7px -2px #616061;
-        }
-
-        .collapse-title.collapsed {
-            display: block;
-            color: #8d95a6;
-            font-weight: 400;
-            border-top: 1px solid #d4d8de;
-            padding: 15px 0;
-            background-color: #ECECEC;
-            padding: 10px;
-            border-radius: 0;
-            box-shadow: none;
-        }
-
-        .vacancies-title {
-            display: block;
-            color: #8d95a6;
-            padding: 5px 0;
-        }
-
-        li.active .vacancies-title {
-            color: #0094de;
-        }
-
-        .collapse.in {
-            display: block;
-            visibility: visible;
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 0 0 4px 4px;
-            box-shadow: 0px 2px 7px -2px rgba(97,96,97,1);
-            margin-bottom: 10px;
-        }
-
-        .tab-content {
-            padding: 0;
-        }
-    }
 
     .about-map{
 		margin-top: -30px;
