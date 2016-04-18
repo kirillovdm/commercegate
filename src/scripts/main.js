@@ -520,6 +520,17 @@ $(document).on('mouseleave', '.dialog-block', function(){
     clearInterval(bubbleInterval);
 });
 
+
+function drawHeadMap(){
+    var anematedHeadMap = '#_x31_0-line-london_1_, #_x35_-line-sydney_1_, #_x33_-line-moskow_1_, #_x31_-line-buharest_1_, #_x32_-line-ukraine_1_, #_x38_-line-rio_1_';
+    var anematedHeadMapRev = '#_x31_1-line-montreal_1_, #_x39_-line-paris_1_, #_x37_-line-la_1_,#_x36_-line-ny_1_,#_x34_-line-johannensburg_1_'
+    var mPoints = '#map-points'
+    var tlMap = new TimelineMax();
+    TweenMax.staggerFrom(anematedHeadMap, 6, {drawSVG:0, delay:0.1}, 0.2);
+    tlMap.staggerFromTo(anematedHeadMapRev, 6, {drawSVG:"100% 100%"}, {drawSVG:'0% 100%', delay:0.1, ease: Circ.easeOut}, 0.2).to(mPoints, 1, {opacity:0.3});;
+}
+
+
 var globe = $('#head-globe-img');
 $(window).on('load', function() {
 
@@ -597,14 +608,6 @@ $(document).on('scroll onload', function(){
             hoverChild.attr('fill', 'none');
     });
 
-function drawHeadMap(){
-    var anematedMapLines = '#_x31_0-line-london_1_, #_x39_-line-paris_1_, #_x35_-line-sydney_1_, #_x34_-line-johannensburg_1_, #_x33_-line-moskow_1_, #_x31_-line-buharest_1_, #_x32_-line-ukraine_1_';
-    var anematedMapLinesRev = '#_x31_1-line-montreal_1_,#_x38_-line-rio_1_,#_x37_-line-la_1_,#_x36_-line-ny_1_'
-    var mPoints = '#map-points'
-    var tlMap = new TimelineMax();
-    TweenMax.staggerFrom(anematedMapLines, 6, {drawSVG:0, delay:0.1}, 0.2);
-    tlMap.staggerFromTo(anematedMapLinesRev, 6, {drawSVG:"100% 100%"}, {drawSVG:'0% 100%', delay:0.1, ease: Circ.easeOut}, 0.2).to(mPoints, 1, {opacity:0.3});;
-}
 
         function drawMap(){
             var anematedMapLines = '#_x31_0-line-london_1_, #_x39_-line-paris_1_, #_x35_-line-sydney_1_, #_x34_-line-johannensburg_1_, #_x33_-line-moskow_1_, #_x31_-line-buharest_1_, #_x32_-line-ukraine_1_';
@@ -613,15 +616,6 @@ function drawHeadMap(){
             var tlMap = new TimelineMax();
             TweenMax.staggerFrom(anematedMapLines, 6, {drawSVG:0, delay:1}, 0.2);
             tlMap.staggerFromTo(anematedMapLinesRev, 6, {drawSVG:"100% 100%"}, {drawSVG:'0% 100%', delay:1, ease: Circ.easeOut}, 0.2).to(mPoints, 1, {opacity:0.3});;
-        }
-
-        function drawHeadMap(){
-            var anematedMapLines = '#_x31_0-line-london_1_, #_x39_-line-paris_1_, #_x35_-line-sydney_1_, #_x34_-line-johannensburg_1_, #_x33_-line-moskow_1_, #_x31_-line-buharest_1_, #_x32_-line-ukraine_1_';
-            var anematedMapLinesRev = '#_x31_1-line-montreal_1_,#_x38_-line-rio_1_,#_x37_-line-la_1_,#_x36_-line-ny_1_'
-            var mPoints = '#map-points'
-            var tlMap = new TimelineMax();
-            TweenMax.staggerFrom(anematedMapLines, 6, {drawSVG:0, delay:0.1}, 0.2);
-            tlMap.staggerFromTo(anematedMapLinesRev, 6, {drawSVG:"100% 100%"}, {drawSVG:'0% 100%', delay:0.1, ease: Circ.easeOut}, 0.2).to(mPoints, 1, {opacity:0.3});;
         }
 
         function drawSagrada(){
