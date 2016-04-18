@@ -816,6 +816,10 @@ $(document).on('touchstart', '.menu-icon', function(){
     $('.layout-header, .menu-icon, .content-wrapper').toggleClass('active');
 });
 
+$(document).on('click', '.close-icon', function(){
+    $('.cookies-block').css('display', 'none');
+});
+
 $('.collapse').collapse();
 
 $(document).ready(function() {
