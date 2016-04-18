@@ -312,6 +312,7 @@
 
 .h-scroll-inner{
 	.bottom-info{
+		white-space: nowrap;
 		ul{
 			li{
 				margin-right: 27px;
@@ -589,7 +590,7 @@ svg#aqa-graph {
 		}
 		&.overflowscrollX{
 			position: relative;
-			&:after{
+			/*&:after{
 				position: absolute;
 				top: 0;
 				right: 0;
@@ -597,7 +598,7 @@ svg#aqa-graph {
 			    width: 130px;
 			    height: 100%;
 			    background-image: linear-gradient(to left, rgba(35, 184, 172, 0.9) 20%, rgba(255, 255, 255, 0) 100%);
-			}
+			}*/
 
 			.info-block{
 				width: 320px;
@@ -775,7 +776,7 @@ svg#aqa-graph {
 	width: auto;
 	white-space: nowrap;
 	// margin-top: -27px;
-	&:nth-of-type(2){
+	&:nth-of-type(1){
 		// margin-left: -40px;
 		float: right;
 	}

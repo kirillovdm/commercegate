@@ -10,7 +10,7 @@
     var container = document.getElementById('head-block');
 
     if (!container || !THREE && isMobile) return;
-    console.log(isMobile);
+
     var mouseX = 0,
         mouseY = 0,
         camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 2000),
@@ -29,19 +29,21 @@
     scene.add(group);
 
     // earth
-    var loader = new THREE.TextureLoader();
-    var linex = new THREE.JSONLoader('scripts/vendor/line.js', function (texture) {
-        var geometry = new THREE.SphereGeometry(500, 64, 64);
+    var loader = new THREE.TextureLoader(texture);
+    // var loader = new THREE.JSONLoader(texture);
 
-        var material = new THREE.MeshBasicMaterial({
-            map: texture,
-            overdraw: 0.15
-        });
+    // loader.load('scripts/vendor/mapMesh.js', function (texture) {
+    //     var geometry = new THREE.SphereGeometry(500, 64, 64);
 
-        var mesh = new THREE.Mesh(geometry, material);
+    //     var material = new THREE.MeshBasicMaterial({
+    //         map: texture,
+    //         overdraw: 0.15
+    //     });
+        
+    //     var mesh = new THREE.Mesh(geometry, material);
 
-        group.add(mesh);
-    });
+    //     group.add(mesh);
+    // });
 
     loader.load(image, function (texture) {
         var geometry = new THREE.SphereGeometry(500, 64, 64);
@@ -99,7 +101,7 @@
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     //vd working
-    // container.appendChild(renderer.domElement);
+    container.appendChild(renderer.domElement);
 
     // onMouseMove
     document.addEventListener('mousemove', function (event) {

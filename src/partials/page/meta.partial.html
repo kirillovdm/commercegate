@@ -83,9 +83,14 @@
                         position: absolute;
                         left: 50%;
                         top: 50%;
-                        background: url('preloader.gif') no-repeat 50% 50%;
+                        background: url(preloader.gif) no-repeat 50% 50%;
                         margin: -55px 0 0 -55px;
                         background-size: cover;
+                }
+                @media (max-width: 644px) {
+                    .page-preloader{
+                        display: none;
+                    }
                 }
         </style>
 
