@@ -1282,7 +1282,6 @@ svg#you-can {
     border-radius: 5px;
     background-color: #5c6373;
     transform:rotateZ(-45deg) translate(8px, -6px);
-    cursor: pointer;
     z-index: 1000000;
 }
 
@@ -1297,5 +1296,14 @@ svg#you-can {
     transform: rotateZ(90deg) translate(8px, 6px);
     border-radius: 5px;
     background-color: #5c6373;
+}
+
+.close-icon-wrap {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
 }

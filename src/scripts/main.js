@@ -68,7 +68,7 @@ var isMobile = false; //initiate as false
         childrenSlider.closest('.bx-wrapper').toggleClass('open');
     });
 
-    $(document).on('click', '.close-icon', function(){
+    $(document).on('click', '.close-icon-wrap', function(){
         $('.cookies-block').css('display', 'none');
     });
 
