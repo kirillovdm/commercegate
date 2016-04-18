@@ -662,8 +662,7 @@ $(document).on('scroll onload', function(){
         }
 
 
-$(document).on('scroll onload', function(){
-    if(isMobile){return};
+if(!isMobile) $(document).on('scroll onload', function(){
 
     if($('.count-num').hasClass('animated')){
         $('.count-num h2').attr('id', 'count-num');
@@ -726,9 +725,9 @@ var usersKey = true;
 var careerKey = true;
 var aqaKey = true;
 
-    function checkAnimations(){
+if(!isMobile) function checkAnimations(){
 
-        if(isMobile){return}
+        
 
         var animElement, elemIsAnimated, animatedSVG;
 
