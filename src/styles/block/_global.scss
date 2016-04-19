@@ -1334,3 +1334,18 @@ svg#you-can {
         }
     }
 }
+
+.sagrada-cover{
+	display: block;
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	z-index: -1;
+}
+.sagrada-bg{
+	z-index: -2;
+}

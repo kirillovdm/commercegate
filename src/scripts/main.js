@@ -619,16 +619,13 @@ $(document).on('scroll onload', function(){
         }
 
         function drawSagrada(){
-            var animSagrada = '#sagrada-svg g > line, #sagrada-svg g > path';
-            var sagradaG = $('#sagrada-svg .sagrada-g ~ path, #sagrada-svg .sagrada-g ~ line');
-                console.log('ok');
-
-            TweenMax.staggerFrom(sagradaG, .1, {drawSVG:0, delay:5}, .1);
-            // for (var i=0; i < sagradaG.length; i++){
-            //     console.log('ok2');
-            //     var sagradaPath = $(sagradaG[i]).children('path');
-            //     TweenMax.staggerFrom(sagradaPath, .1, {drawSVG:0, delay:5}, .1);
-            // }
+            var animSagrada = '#sagrada-svg line, #sagrada-svg path';
+            var sagradaG = $('#sagrada-svg');
+            var sagradaCover = $('.sagrada-cover');
+            // TweenMax.set(sagradaG, {opacity:0});
+            // TweenMax.to(sagradaG, 0, {opacity:1})
+            // TweenMax.staggerFrom(animSagrada, .1, {drawSVG:0, delay:1}, -0.0007); 
+            TweenMax.to(sagradaCover, 3, {height:0});
 
         }
 
