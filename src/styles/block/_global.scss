@@ -1315,3 +1315,22 @@ svg#you-can {
 .topmargin40 {
     margin: 40px 0 0 0;
 }
+
+.inf-block {
+    position: absolute;
+    top: 70%;
+    left: 100px;
+    z-index: 100;
+    .inf-item {
+        display: inline-block;
+        width: 120px;
+        vertical-align: top;
+        height: auto;
+        .inf-text {
+            color: #0094de;
+        }
+        .inf-text:hover {
+            color: #30baff;
+        }
+    }
+}

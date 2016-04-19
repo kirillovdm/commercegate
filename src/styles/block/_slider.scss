@@ -169,9 +169,9 @@ ul.bxslider {
     margin-top: -35px;
 }
 
-.bx-wrapper .bx-prev,
-.bx-wrapper .bx-next{
-    &:hover {box-shadow: 0 2px 30px rgba(0, 78, 141, 0.45);}
+.about-content .bx-wrapper .bx-prev,
+.about-content .bx-wrapper .bx-next {
+    box-shadow: 0 2px 30px rgba(0, 78, 141, 0.45);
 }
 
 .bx-wrapper .bx-prev {
@@ -183,6 +183,7 @@ ul.bxslider {
     right: 20px;
     background: url('../images/gallery-arrow.svg') no-repeat 50% 50%;
 }
+
 
 .card-row{
   .bx-wrapper .bx-prev {
