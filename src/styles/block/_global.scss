@@ -1349,3 +1349,11 @@ svg#you-can {
 .sagrada-bg{
 	z-index: -2;
 }
+
+input[type="file"] {
+    display: block;
+    position: absolute;
+    bottom: 25px;
+    height: 80px;
+    opacity: 0;
+}
