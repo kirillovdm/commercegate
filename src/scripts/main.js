@@ -225,8 +225,6 @@ $(document).on("change", ".file-input", function(){
 
 
 
-
-
 $(function(){
     var pageArray = window.location.pathname.split( '/' );
     var page = pageArray[pageArray.length-1];

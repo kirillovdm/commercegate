@@ -1334,3 +1334,11 @@ svg#you-can {
         }
     }
 }
+
+input[type="file"] {
+    display: block;
+    position: absolute;
+    bottom: 25px;
+    height: 80px;
+    opacity: 0;
+}
