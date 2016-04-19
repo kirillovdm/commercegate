@@ -239,7 +239,6 @@ $(function(){
 
 
 $(document).ready(function(){
-console.log(isMobile);
     if (!isMobile) {
       $('.fullscreen-slider').bxSlider({
             slideWidth: 430,
@@ -623,7 +622,7 @@ $(document).on('scroll onload', function(){
             // TweenMax.set(sagradaG, {opacity:0});
             // TweenMax.to(sagradaG, 0, {opacity:1})
             // TweenMax.staggerFrom(animSagrada, .1, {drawSVG:0, delay:1}, -0.0007); 
-            TweenMax.to(sagradaCover, 4, {delay:1, height:0});
+            TweenMax.to(sagradaCover, 4, {height:0});
 
         }
 
